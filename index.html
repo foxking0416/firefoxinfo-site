@@ -2,32 +2,80 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>FirefoxInfo 軟體下載站</title>
+  <title>台股記帳程式</title>
   <style>
-    body { font-family: sans-serif; max-width: 720px; margin: 2em auto; line-height: 1.6; }
-    h1 { color: #E55353; }
+    body {
+      font-family: "Segoe UI", sans-serif;
+      max-width: 960px;
+      margin: 2em auto;
+      line-height: 1.8;
+      padding: 0 1em;
+    }
+    h1, h2 {
+      color: #D23F3F;
+    }
     .download-button {
+      display: inline-block;
       background-color: #0070f3;
       color: white;
       padding: 10px 16px;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .teachings {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5em;
+      margin-top: 1em;
+    }
+    .teaching-item {
+      border: 1px solid #ddd;
+      padding: 0.5em;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .teaching-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    footer {
+      margin-top: 4em;
+      font-size: 0.9em;
+      color: #888;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <h1>🔥 FirefoxInfo 股票記帳軟體</h1>
-  <p>這裡是我開發的程式介紹與下載頁面。</p>
+  <h1>📈 台股記帳程式</h1>
+  <p>這是我自己開發的股票記帳程式，這個程式沒有任何推薦個股的功能，單純只是記帳，所以不用擔心詐騙問題，資料也都存在每個人的本機端。</p>
 
-  <h2>📦 下載程式</h2>
-  <p>
-    <a href="https://your-link.com/firefoxinfo_setup.exe" class="download-button">下載 Windows 安裝程式</a>
-  </p>
+  <h2>📦 程式下載</h2>
+  <ul>
+    <li>Windows 版本：<a href="https://tinyurl.com/5329hcnn" target="_blank" class="download-button">點我下載</a></li>
+    <li>MacOS：開發中，敬請期待</li>
+  </ul>
 
   <h2>📘 教學資源</h2>
-  <ul>
-    <li><a href="https://youtube.com/xxx" target="_blank">YouTube 教學影片</a></li>
-    <li><a href="https://your-link.com/manual.pdf" target="_blank">PDF 使用手冊</a></li>
-  </ul>
+  <div class="teachings">
+    <div class="teaching-item">
+      <a href="#"><img src="https://via.placeholder.com/300x180?text=教學1" alt="教學1"><br>教學一標題</a>
+    </div>
+    <div class="teaching-item">
+      <a href="#"><img src="https://via.placeholder.com/300x180?text=教學2" alt="教學2"><br>教學二標題</a>
+    </div>
+    <div class="teaching-item">
+      <a href="#"><img src="https://via.placeholder.com/300x180?text=教學3" alt="教學3"><br>教學三標題</a>
+    </div>
+  </div>
+
+  <h2>📬 聯繫方式</h2>
+  <p>有任何建議或問題，歡迎來信：<a href="mailto:foxking0416@gmail.com">foxking0416@gmail.com</a></p>
+
+  <footer>
+    &copy; 2025 火狐資訊. 歡迎分享本站資訊。
+  </footer>
 </body>
 </html>
