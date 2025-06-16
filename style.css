@@ -1,0 +1,649 @@
+/* General Body and Container Styles */
+:root {
+    --primary-color: #f77f00; /* Orange-red from logo */
+    --secondary-color: #2e8b57; /* Deep green from logo */
+    --text_highlight-color: #f3dd13;
+    --dark-bg-color: #1a1a1a;
+    --darker-bg-color: #0d0d0d;
+    --text-color: #e0e0e0;
+    --light-text-color: #a0a0a0;
+    --border-color: #333;
+    --button-hover-bg: #e07000;
+    --button-secondary-bg: #267a4b; /* A slightly darker green for hover */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--darker-bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--dark-bg-color);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+header .logo {
+    height: 50px;
+    width: 50px; /* Ensure logo is circular or square for consistency */
+    border-radius: 50%; /* If your logo is not perfectly round, this will make it so */
+    margin-right: 15px;
+    object-fit: cover; /* Ensures image fills the circle */
+}
+
+header h1 {
+    font-size: 1.8em;
+    color: var(--text-color);
+    margin: 0;
+    flex-grow: 1; /* Allows h1 to take available space */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* Allows nav items to wrap */
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('images/background.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero-section h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-section p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    color: var(--light-text-color);
+    text-align: left;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.primary-button {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.primary-button:hover {
+    background-color: var(--button-hover-bg);
+    transform: translateY(-2px);
+}
+
+/* Section Common Styles */
+section {
+    padding: 80px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+section h2 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Features Section (Carousel) */
+.features-section {
+    background-color: var(--dark-bg-color);
+    overflow: hidden; /* Ensure content outside track is hidden */
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden; /* Hide overflow from individual feature-item margins if any */
+    margin: 0 auto;
+    max-width: 900px; /* Max width for the carousel content */
+    padding: 0px 50px; /* Add padding for buttons if they are outside the track */
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform; /* Performance optimization */
+    padding: 20px 0; /* Padding for the track content itself */
+}
+
+.feature-item {
+    min-width: 100%; /* Reverted to show one item at a time */
+	max-width: 100%;
+    flex-shrink: 0;
+    padding: 40px;
+    background-color: var(--darker-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.feature-item h3 {
+    color: var(--secondary-color);
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.feature-item p {
+    font-size: 1.1em;
+    color: var(--light-text-color);
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 15px 10px;
+    cursor: pointer;
+    font-size: 2em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-button:hover {
+    /* background-color: rgba(0,0,0,0.8); */
+	background-color: var(--primary-color);
+	transition: background-color 0.3s ease;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* 與輪播內容的間距 */
+    gap: 10px; /* 點之間的間距 */
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    background-color: var(--light-text-color); /* 預設顏色 */
+    border-radius: 50%; /* 圓形 */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: 1px solid var(--border-color); /* 增加邊框增加區分度 */
+}
+
+.indicator:hover {
+    background-color: var(--primary-color); /* 懸停顏色 */
+    transform: scale(1.1);
+}
+
+.indicator.active {
+    background-color: var(--primary-color); /* 活躍時的顏色 */
+    transform: scale(1.2); /* 活躍時稍微放大 */
+    border-color: var(--primary-color);
+}
+
+/* Tutorials Section */
+.tutorials-section {
+		background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('images/background5.jpg') no-repeat center center/cover;
+    /* background-color: var(--darker-bg-color); */
+}
+
+.tutorial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tutorial-card {
+    background-color: var(--dark-bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--text-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.tutorial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+.tutorial-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tutorial-card h3 {
+    font-size: 1.4em;
+    margin: 15px 15px 10px;
+    color: var(--primary-color);
+}
+
+.tutorial-card p {
+    font-size: 0.95em;
+    color: var(--light-text-color);
+    margin: 0 15px 15px;
+}
+
+.more-tutorials {
+    margin-top: 40px;
+    font-style: italic;
+    color: var(--light-text-color);
+}
+
+/* Download Section */
+.download-section {
+    background-color: var(--dark-bg-color);
+}
+
+.download-options {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.download-item {
+    background-color: var(--darker-bg-color);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    width: 300px;
+}
+
+.download-item h3 {
+    color: var(--secondary-color);
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.download-item p {
+    color: var(--light-text-color);
+    margin-bottom: 25px;
+}
+
+.download-button, .disabled-button {
+    width: 100%;
+    padding: 15px 0;
+    font-size: 1.1em;
+    margin-top: auto; /* Push button to bottom if content varies */
+}
+
+.download-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+}
+
+.download-button:hover {
+    background-color: var(--button-hover-bg);
+    transform: translateY(-2px);
+}
+
+.disabled-button {
+    background-color: var(--border-color);
+    color: var(--light-text-color);
+    cursor: not-allowed;
+}
+
+/* Contact Section */
+.contact-section {
+	background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('images/background4.jpg') no-repeat center center/cover;
+    /* background-color: var(--darker-bg-color); */
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 讓 Logo 和按鈕垂直居中對齊 */
+    gap: 20px; /* 項目之間的間距 */
+    flex-wrap: wrap;
+}
+
+/* 新增的 Logo 樣式 */
+.contact-logo {
+    width: 150px; /* 調整 Logo 的寬度，使其足夠大 */
+    height: auto; /* 保持 Logo 的長寬比 */
+    margin-right: 30px; /* Logo 和 Facebook 按鈕之間的間距 */
+    object-fit: contain; /* 確保圖片在指定尺寸內完整顯示 */
+    /* 您可以根據需要添加其他樣式，例如陰影或圓角 */
+}
+
+
+.social-button {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 12px 25px;
+}
+
+.social-button:hover {
+    background-color: var(--button-secondary-bg); /* Use defined hover color */
+    transform: translateY(-2px);
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--dark-bg-color);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Tutorial Detail Page Specific Styles */
+.tutorial-detail-section {
+    background-color: var(--darker-bg-color);
+    text-align: center;
+    padding: 60px 0;
+}
+
+.tutorial-detail-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2em;
+    color: var(--primary-color);
+}
+
+.tutorial-detail-section h2::after {
+    margin: 10px auto 0; /* Center the underline */
+}
+
+.tutorial-detail-section h3 {
+    text-align: left;
+}
+
+.tutorial-detail-section p {
+    text-align: left;
+}
+
+.tutorial-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.tutorial-content h3 {
+    color: var(--secondary-color);
+    font-size: 1.6em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.tutorial-content p {
+    margin-bottom: 20px;
+    font-size: 1.05em;
+    color: var(--text-color);
+}
+
+.tutorial-main-image {
+    /* width: 100%; */
+    height: auto;
+    /* max-height: 400px; */
+    object-fit: contain;
+    background-color: #000; /* Dark background for images */
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.content-image {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+
+    background-color: transparent;
+    margin: 0px 0px 20px 0px;
+}
+
+.back-to-tutorials {
+    margin-top: 50px;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px 30px;
+    font-size: 1.1em;
+}
+
+.highlight-field {
+    color: var(--text_highlight-color);
+    /* 例如，使用您定義的橙紅色主題色 */
+    font-weight: bold;
+    /* 您也可以考慮加粗文字 */
+    /* text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* 輕微的文字陰影增加立體感 */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header .logo {
+        margin-bottom: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    header nav ul li {
+        margin: 5px 0;
+    }
+
+    .hero-section {
+        padding: 80px 20px;
+        min-height: 400px;
+    }
+
+    .hero-section h2 {
+        font-size: 2.2em;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    section h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    /* Features Section (Carousel) for small screens */
+    .carousel-container {
+        padding: 0 20px; /* Reduce padding on smaller screens */
+        max-width: 100%;
+    }
+    
+    .carousel-button {
+        padding: 10px 5px;
+        font-size: 1.5em;
+        left: 5px;
+        right: 5px;
+    }
+    .carousel-button.prev { left: 5px; }
+    .carousel-button.next { right: 5px; }
+
+
+    .download-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .download-item {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .tutorial-detail-section h2 {
+        font-size: 1.8em;
+    }
+    .tutorial-content h3 {
+        font-size: 1.4em;
+    }
+    .tutorial-content p {
+        font-size: 0.95em;
+    }
+
+    /* 響應式調整聯絡區塊的 Logo 和按鈕排列 */
+    .contact-links {
+        flex-direction: column; /* 在小螢幕上讓 Logo 和按鈕堆疊 */
+        gap: 15px; /* 調整堆疊時的間距 */
+    }
+    .contact-logo {
+        margin-right: 0; /* 堆疊時移除右側間距 */
+        margin-bottom: 15px; /* 在 Logo 下方添加間距 */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    .hero-section h2 {
+        font-size: 1.8em;
+    }
+
+    .hero-section p {
+        font-size: 0.9em;
+    }
+
+    section h2 {
+        font-size: 1.8em;
+    }
+
+    .feature-item h3 {
+        font-size: 1.5em;
+    }
+
+    .feature-item p {
+        font-size: 0.95em;
+    }
+
+    .tutorial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-button {
+        width: 80%;
+        margin: 5px auto;
+    }
+
+    .tutorial-detail-section {
+        padding: 40px 0;
+    }
+    .tutorial-content {
+        padding: 0 15px;
+    }
+}

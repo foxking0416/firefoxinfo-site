@@ -1,0 +1,84 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const carouselTrack = document.querySelector('.carousel-track');
+    const prevButton = document.querySelector('.carousel-button.prev');
+    const nextButton = document.querySelector('.carousel-button.next');
+    const featureItems = document.querySelectorAll('.feature-item');
+    const indicatorsContainer = document.querySelector('.carousel-indicators'); // 新增：獲取指示器容器
+    let currentIndex = 0;
+
+    if (carouselTrack && prevButton && nextButton && featureItems.length > 0 && indicatorsContainer) {
+
+        // 計算單個輪播項目的完整寬度，包含 padding 和 border
+        const calculateItemFullWidth = () => {
+            if (featureItems.length === 0) return 0;
+            return featureItems[0].getBoundingClientRect().width;
+        };
+
+        // 更新輪播位置的函數
+        const updateCarouselPosition = () => {
+            const itemFullWidth = calculateItemFullWidth();
+            carouselTrack.style.transform = `translateX(-${currentIndex * itemFullWidth}px)`;
+            updateIndicators(); // 新增：更新指示器狀態
+        };
+
+        // 新增：生成指示器點的函數
+        const createIndicators = () => {
+            indicatorsContainer.innerHTML = ''; // 清空現有指示器
+            featureItems.forEach((_, index) => {
+                const indicator = document.createElement('div');
+                indicator.classList.add('indicator');
+                indicator.dataset.index = index; // 儲存對應的索引
+                indicator.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarouselPosition();
+                });
+                indicatorsContainer.appendChild(indicator);
+            });
+        };
+
+        // 新增：更新指示器活躍狀態的函數
+        const updateIndicators = () => {
+            document.querySelectorAll('.indicator').forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        };
+
+        // 監聽視窗大小改變事件，重新計算位置
+        window.addEventListener('resize', () => {
+            updateCarouselPosition();
+            // 在 resize 時重新生成指示器，確保與項目數量一致
+            // 如果項目數量是固定的，這裡可以不用重新生成，只更新狀態
+            // 如果項目數量會動態變化，則需要重新生成
+            // 這裡假設項目數量是固定的，所以只更新位置和指示器狀態
+        });
+
+        const goToNextSlide = () => {
+            currentIndex = (currentIndex + 1) % featureItems.length;
+            updateCarouselPosition();
+        };
+
+        const goToPrevSlide = () => {
+            currentIndex = (currentIndex - 1 + featureItems.length) % featureItems.length;
+            updateCarouselPosition();
+        };
+
+        nextButton.addEventListener('click', goToNextSlide);
+        prevButton.addEventListener('click', goToPrevSlide);
+
+        // 初始化時：生成指示器，並顯示正確的位置
+        createIndicators(); // 先生成指示器
+        updateCarouselPosition(); // 再更新位置，也會觸發指示器狀態更新
+
+        // Optional: Auto-play carousel
+         setInterval(goToNextSlide, 6000); // Change slide every 5 seconds
+    } else {
+        console.warn("Carousel elements or indicators container not found, or no feature items.");
+        if (prevButton) prevButton.style.display = 'none';
+        if (nextButton) nextButton.style.display = 'none';
+        if (indicatorsContainer) indicatorsContainer.style.display = 'none'; // 如果沒有輪播元素，也隱藏指示器
+    }
+});
