@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const featureItems = document.querySelectorAll('.feature-item');
     const indicatorsContainer = document.querySelector('.carousel-indicators'); // 新增：獲取指示器容器
     let currentIndex = 0;
+    let startX; // 用於記錄觸摸開始時的 X 座標
+    let endX;   // 用於記錄觸摸結束時的 X 座標
 
     if (carouselTrack && prevButton && nextButton && featureItems.length > 0 && indicatorsContainer) {
 
@@ -69,6 +71,30 @@ document.addEventListener('DOMContentLoaded', () => {
         nextButton.addEventListener('click', goToNextSlide);
         prevButton.addEventListener('click', goToPrevSlide);
 
+        // --- 手勢滑動邏輯 ---
+        const carouselContainer = document.querySelector('.carousel-container'); // 獲取輪播的父容器來監聽觸控
+
+        carouselContainer.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX; // 記錄觸摸開始時的 X 座標
+        });
+
+        carouselContainer.addEventListener('touchmove', (e) => {
+            // 防止頁面滾動，僅在需要時使用，可能會影響使用者體驗
+            // e.preventDefault();
+        });
+
+        carouselContainer.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX; // 記錄觸摸結束時的 X 座標
+            const sensitivity = 50; // 滑動的敏感度，移動超過 50px 算一次有效滑動
+
+            if (startX - endX > sensitivity) { // 從右往左滑 (下一頁)
+                goToNextSlide();
+            } else if (endX - startX > sensitivity) { // 從左往右滑 (上一頁)
+                goToPrevSlide();
+            }
+        });
+        // --- 手勢滑動邏輯結束 ---
+        
         // 初始化時：生成指示器，並顯示正確的位置
         createIndicators(); // 先生成指示器
         updateCarouselPosition(); // 再更新位置，也會觸發指示器狀態更新
