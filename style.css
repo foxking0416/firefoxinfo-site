@@ -628,14 +628,13 @@ footer {
     }
     
     .carousel-button {
-        padding: 10px 5px;
-        font-size: 1.5em;
-        /* left: 5px; */
-        /* right: 5px; */
+        display: none;
     }
-    .carousel-button.prev { left: 5px; }
-    .carousel-button.next { right: 5px; }
 
+    .carousel-indicators {
+        margin-top: 10px;
+            /* 調整與上方輪播的間距 */
+    }
 
     .download-options {
         flex-direction: column;
