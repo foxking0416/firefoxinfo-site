@@ -347,10 +347,62 @@ section h2::after {
 }
 
 .download-item h3 {
-    color: var(--secondary-color);
-    font-size: 1.8em;
-    margin-bottom: 15px;
+    text-align: center;
+    /* 保持文字居中 */
+    margin-bottom: 10px;
+    /* 標題與下方內容的間距 */
+    margin-top: 10px;
+    /* 標題與上方圖標的間距 */
 }
+
+/* 圖標包裹層的樣式 */
+.download-icon-wrapper {
+    text-align: center;
+    /* 讓內部的圖標居中 */
+    margin-bottom: 10px;
+    /* 圖標與下方標題的間距 */
+    font-size: 3em;
+    /* 調整單個圖標的整體大小 */
+    /* 或者針對每個圖標單獨設定大小 */
+}
+
+/* 下載項目中的 Font Awesome 圖標基本樣式 */
+.download-item .download-icon-wrapper .fa-brands {
+    /* 這裡可以設定圖標的預設顏色，或者在 h3 內個別設定 */
+    color: var(--light-text-color);
+    /* 預設顏色，可以改為主題色 */
+    transition: color 0.3s ease;
+    /* 增加顏色過渡效果 */
+}
+
+/* 針對特定圖標的顏色 */
+.download-item .download-icon-wrapper .fa-windows {
+    color: #0078D7;
+    /* Windows 藍色 */
+}
+
+.download-item .download-icon-wrapper .fa-apple {
+    color: #999;
+    /* 蘋果灰色 */
+}
+
+.download-item .download-icon-wrapper .fa-android {
+    color: #A4C639;
+    /* Android 綠色 */
+}
+
+/* 多圖標包裹層的樣式調整 */
+.download-icon-wrapper.multiple-icons {
+    display: flex;
+    /* 讓多個圖標在內部水平排列 */
+    justify-content: center;
+    /* 水平居中 */
+    gap: 15px;
+    /* 圖標之間的間距 */
+    font-size: 2.5em;
+    /* 降低多個圖標時的整體大小，避免過大 */
+}
+
 
 .download-item p {
     color: var(--light-text-color);
@@ -409,6 +461,16 @@ section h2::after {
     background-color: var(--secondary-color);
     color: #fff;
     padding: 12px 25px;
+}
+
+.social-button .fa-brands {
+    margin-right: 8px;
+    /* 圖標與文字之間的間距 */
+    font-size: 1.1em;
+    /* 調整圖標大小，使其與按鈕文字大小協調 */
+    /* 這裡可以設定 Facebook 圖標的顏色，或者在按鈕的整體樣式中繼承 */
+    color: white;
+    /* 讓圖標和文字都是白色，或者使用 Facebook 藍色 */
 }
 
 .social-button:hover {
