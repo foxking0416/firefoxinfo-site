@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         // --- 手勢滑動邏輯結束 ---
-        
+
         // 初始化時：生成指示器，並顯示正確的位置
         createIndicators(); // 先生成指示器
         updateCarouselPosition(); // 再更新位置，也會觸發指示器狀態更新
@@ -106,5 +106,36 @@ document.addEventListener('DOMContentLoaded', () => {
         if (prevButton) prevButton.style.display = 'none';
         if (nextButton) nextButton.style.display = 'none';
         if (indicatorsContainer) indicatorsContainer.style.display = 'none'; // 如果沒有輪播元素，也隱藏指示器
+    }
+
+    // --- 漢堡菜單邏輯 (只新增這部分) ---
+    const hamburgerToggle = document.querySelector('.hamburger-menu-toggle');
+    const mainNav = document.getElementById('main-nav');
+    const navLinks = document.querySelectorAll('#main-nav ul li a'); // 獲取所有導航連結
+
+    if (hamburgerToggle && mainNav) {
+        hamburgerToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active'); // 切換 nav 的 active 類別
+            hamburgerToggle.classList.toggle('active'); // 切換漢堡按鈕的 active 類別 (用於動畫)
+            document.body.classList.toggle('no-scroll'); // 防止背景滾動
+        });
+
+        // 點擊導航連結後關閉菜單
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active'); // 移除 nav 的 active 類別
+                hamburgerToggle.classList.remove('active'); // 移除漢堡按鈕的 active 類別
+                document.body.classList.remove('no-scroll'); // 恢復背景滾動
+            });
+        });
+
+        // 當螢幕尺寸改變時，如果菜單是打開的，強制關閉它 (避免從手機模式切換到桌面模式時菜單依然打開)
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) { // 假設 768px 是手機和桌面模式的斷點
+                mainNav.classList.remove('active');
+                hamburgerToggle.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            }
+        });
     }
 });
