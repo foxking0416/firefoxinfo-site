@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教學：如何匯入Excel對帳單 - StockKeeper</title>
+    <link rel="stylesheet" href="../style.css"> <link rel="icon" href="../images/FoxInfo.jpg" type="image/jpeg">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="../images/FoxInfo_Big.png" alt="火狐資訊 Logo" class="logo">
+            <h1>火狐資訊 - StockKeeper</h1>
+            <button class="hamburger-menu-toggle" aria-label="Toggle navigation">
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+            </button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="../index.html#intro">回首頁</a></li>
+                    <li><a href="../index.html#features">程式特點</a></li>
+                    <li><a href="../index.html#tutorials">教學</a></li>
+                    <li><a href="../index.html#download">下載</a></li>
+                    <li><a href="../index.html#contact">聯絡方式</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="tutorial-detail-section">
+            <div class="container">
+                <h2>如何匯入Excel對帳單</h2>
+                <div class="tutorial-content">
+                    <h3>步驟一：選擇匯入對帳單功能</h3>
+                    <p>點選工具列的「檔案」並選擇「匯入Excel對帳單」：</p>
+                    <p>備註：只能載入 (.xlsx) 的檔案格式，無法支援舊版的Excel檔案 (.xls) 及 (.csv) 檔案</p>
+                    <img src="../images/Tutorial/如何匯入Excel對帳單/如何匯入Excel對帳單1.png" alt="開啟調整顯示欄位dialog的按鈕" class="content-image">
+                    <h3>步驟二：依序設定匯入對帳單的對應欄位</h3>
+                    <p>選取對帳單之後會跳出一個對話框，程式會先將整個對帳單的所有內容讀進程式裡，使用者要依序設定所要讀取的欄位。</p>
+                    <p>1. 設定讀取檔案的<span class="highlight-field">起始列</span>以及<span class="highlight-field">終止列</span>。</p>
+                    <img src="../images/Tutorial/如何匯入Excel對帳單/如何匯入Excel對帳單2.png" alt="調整顯示欄位的dialog" class="content-image">
+
+                    <p>2. 設定讀取檔案的各項對應欄位，包含『<span class="highlight-field">交易日期</span>』『<span class="highlight-field">交易種類</span>』『<span class="highlight-field">股票代碼</span>』『<span class="highlight-field">公司名稱</span>』『<span class="highlight-field">交易數量</span>』『<span class="highlight-field">成交單價</span>』及『<span class="highlight-field">手續費</span>』。
+                        <!-- <br>直接參考最上面的英文欄位 -->
+                    </p>
+                    <img src="../images/Tutorial/如何匯入Excel對帳單/如何匯入Excel對帳單3.png" alt="調整顯示欄位的dialog" class="content-image">
+                    <p>3. 設定各種交易類型的實際用詞，例如一般買進股票在各家劵商也許會使用不同的名稱像「普通買進」「現股買進」「一般買進」等，為了讓程式可以順利判讀資料，需要自行設定這些交易在您的對帳單裡是使用什麼名詞。
+                    </p>
+                    <p>接著就可以按下確定囉!</p>
+                    <img src="../images/Tutorial/如何匯入Excel對帳單/如何匯入Excel對帳單4.png" alt="調整顯示欄位的dialog" class="content-image">
+                    <h3>貼心功能</h3>
+                    <p>StockKeeper 還有個貼心的小功能，可以把程式無法判讀的部分輸出成Excel檔，提供使用者決定是否要手動新增這些未被匯入的交易紀錄。 </p>
+                    <img src="../images/Tutorial/如何匯入Excel對帳單/如何匯入Excel對帳單5.png" alt="調整顯示欄位的dialog" class="content-image">
+                    <img src="../images/Tutorial/如何匯入Excel對帳單/如何匯入Excel對帳單6.png" alt="調整顯示欄位的dialog" class="content-image">
+
+                    <p>另外這些設定參數都會被記錄下來，方便下次使用喔!</p>
+                    <p>如果遇到任何問題，請參考<a href="../index.html#contact">聯絡我們</a>。</p>
+                </div>
+                <a href="../index.html#tutorials" class="button primary-button back-to-tutorials">返回教學列表</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 火狐資訊. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
