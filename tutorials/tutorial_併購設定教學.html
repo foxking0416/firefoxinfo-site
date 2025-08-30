@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教學：併購設定 - StockKeeper</title>
+    <link rel="stylesheet" href="../style.css"> <link rel="icon" href="../images/FoxInfo.jpg" type="image/jpeg">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="../images/FoxInfo_Big.png" alt="火狐資訊 Logo" class="logo">
+            <h1>火狐資訊 - StockKeeper</h1>
+            <button class="hamburger-menu-toggle" aria-label="Toggle navigation">
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+            </button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="../index.html#intro">回首頁</a></li>
+                    <li><a href="../index.html#features">程式特點</a></li>
+                    <li><a href="../index.html#tutorials">教學</a></li>
+                    <li><a href="../index.html#download">下載</a></li>
+                    <li><a href="../index.html#contact">聯絡方式</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="tutorial-detail-section">
+            <div class="container">
+                <h2>如何設定併購條件</h2>
+                <div class="tutorial-content">
+                    <h3>步驟一：開啟併購設定</h3>
+                    <p>點選工具列的「設定」並選擇「公司併購設定」：</p>
+                    <img src="../images/Tutorial/併購設定/併購設定1.png" alt="開啟併購設定的按鈕" class="content-image">
+                    <h3>步驟二：檢視及編輯已存在的併購，或是新增併購</h3>
+                    <p>開啟併購設定功能後，會看到已經存在的併購資料，從這邊可以<span class="highlight-field">編輯</span>或<span class="highlight-field">刪除</span>現有的併購資料，也可以<span class="highlight-field">新增</span>新的併購資料。</p>
+                    <p>P.S. 程式預設有先把「台新-新光」的併購資料設定好，方便使用者參考。</p>
+                    <img src="../images/Tutorial/併購設定/併購設定2.png" alt="調整顯示欄位的dialog" class="content-image">
+                    <p></p>
+                    <p>設定併購條件時，至少要從『普通股』、『特別股』、『現金』裡面選擇一個，不然就不予通過。</p>
+                    <div class="image-row">
+                        <img src="../images/Tutorial/併購設定/併購設定3.png" alt="開啟併購設定的按鈕" class="content-image">
+                        <img src="../images/Tutorial/併購設定/併購設定4.png" alt="併購設定資料列表" class="content-image">
+                    </div>
+                    <p></p>
+                    <p>併購設定後，會自己產生存續股及相對應的資料出來。這樣就完成啦！</p>
+                    <img src="../images/Tutorial/併購設定/併購設定5.png" alt="調整顯示欄位的dialog" class="content-image">
+                    <h3>計算參考</h3>
+                    <p>被併購消滅的股票，他的<span class="highlight-field">現股成本(劵商App顯示成本)</span>會被挪進存續的股票裡，但若是存續股票不只一支(例如 2887 台新金及2887I 台新辛種特別股)，那麼現股成本只會被挪進主要股票，不會挪進特別股裡。</p>
+                    <p>被併購消滅的股票，他的<span class="highlight-field">累計損益</span>會繼續被保留在原始這支股票裡。因為併購時也有可能沒有換股，單純只是現金溢價收購。</p>
+
+                    <br>
+                    <br>
+                    <p>下面用修改過的併購條件來解釋計算原理(台新新光合併實際上沒有現金，但這邊多增加1元現金來說明有現金時的併購狀況)</p>
+                    <img src="../images/Tutorial/併購設定/併購設定6.png" alt="調整顯示欄位的dialog" class="content-image">
+                    <img src="../images/Tutorial/併購設定/併購設定7.png" alt="調整顯示欄位的dialog" class="content-image">
+                    <img src="../images/Tutorial/併購設定/併購設定8.png" alt="調整顯示欄位的dialog" class="content-image">
+                    <img src="../images/Tutorial/併購設定/併購設定9.png" alt="調整顯示欄位的dialog" class="content-image">
+                    <p>被併購股票的累計損益計算： -10020(第一次買進) +10947 (第一次賣出) – 10020 (第二次買進) + 1000 (併購獲得現金) = -8093</p>
+                    <p>但相對的，台新金的累計損益就變成： 10987(市值) – 20(手續費) – 32(交易稅) – 0(累計成本) = 10935</p>
+                    <p>然後台新辛特的累計損益則是： 1594(市值) – 20(手續費) – 4(交易稅) – 0(累計成本) = 1570</p>
+
+                    <h3>後續規劃</h3>
+                    <p>因為併購資訊並沒有統一發布的表格可以爬蟲，因此目前需要使用者手動輸入相關資料。若未來StockKeeper有機會發展到有Server端的話，將會考慮自動化這個流程。</p>
+                </div>
+                <a href="../index.html#tutorials" class="button primary-button back-to-tutorials">返回教學列表</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 火狐資訊. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

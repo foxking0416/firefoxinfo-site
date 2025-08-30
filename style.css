@@ -342,8 +342,10 @@ section h2::after {
 .tutorial-card img {
     width: 100%;
     height: 180px;
-    object-fit: cover;
-    border-bottom: 1px solid var(--border-color);
+    object-fit: contain;
+    /* 保持比例並完整顯示 */
+    background-color: #000;
+    /* 背景填充，避免留白不好看 */
 }
 
 .tutorial-card h3 {
@@ -587,7 +589,7 @@ footer {
     max-width: 100%;
     width: auto;
     height: auto;
-    max-height: 400px;
+    max-height: 500px;
     object-fit: contain;
 
     background-color: transparent;
@@ -610,6 +612,24 @@ footer {
     font-weight: bold;
     /* 您也可以考慮加粗文字 */
     /* text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* 輕微的文字陰影增加立體感 */
+}
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* 圖片間距 */
+    margin: 20px 0;
+    /* 與上下段落間距 */
+    flex-wrap: wrap;
+    /* 確保小螢幕會自動換行 */
+}
+
+.image-row .content-image {
+    flex: 1;
+    max-width: 48%;
+    /* 讓兩張剛好並排 */
+    height: auto;
 }
 
 /* Responsive Design */
@@ -808,4 +828,5 @@ footer {
     .tutorial-content {
         padding: 0 15px;
     }
+
 }
