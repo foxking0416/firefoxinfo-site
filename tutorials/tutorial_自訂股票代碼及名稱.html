@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教學：併購設定 - StockKeeper</title>
+    <link rel="stylesheet" href="../style.css"> <link rel="icon" href="../images/FoxInfo.jpg" type="image/jpeg">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="../images/FoxInfo_Big.png" alt="火狐資訊 Logo" class="logo">
+            <h1>火狐資訊 - StockKeeper</h1>
+            <button class="hamburger-menu-toggle" aria-label="Toggle navigation">
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+            </button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="../index.html#intro">回首頁</a></li>
+                    <li><a href="../index.html#features">程式特點</a></li>
+                    <li><a href="../index.html#tutorials">教學</a></li>
+                    <li><a href="../index.html#download">下載</a></li>
+                    <li><a href="../index.html#contact">聯絡方式</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="tutorial-detail-section">
+            <div class="container">
+                <h2>自訂股票代碼及名稱</h2>
+                <div class="tutorial-content">
+                    <p>若是公司被併購或是特別股的時間到期，那麼該股票代碼及相關資料就會從『公開資訊觀測站』被移除。因為 StockKeeper 的所有資料皆是從政府公開網站下載下來，因此資料被移除的話，連股票名稱都有可能沒辦法顯示。
+                    </p>
+                    <p>例如圖例的 2888B 原本是新光金乙種特別股，但自從新光金被台新金併購後，這檔特別股就消失了。因此股票名稱就變成未知公司，但記錄過的交易資料還會存在。
+                    </p>
+                    <p>以下介紹遇到這種情況的解決方式：</p>
+                    <img src="../images/Tutorial/自訂股票代碼及名稱/自訂股票代碼及名稱1.png" alt="開啟編輯已下市或未公開發行的股票清單設定的按鈕" class="content-image">
+                    <h3>步驟一：開啟自訂股票代碼設定</h3>
+                    <img src="../images/Tutorial/自訂股票代碼及名稱/自訂股票代碼及名稱2.png" alt="調整顯示欄位的dialog" class="content-image">
+                    <p>點選工具列的「設定」並選擇「編輯已下市或未公開發行的股票清單」</p>
+                    <h3>步驟二：檢視及編輯已存在的自訂股票清單，或是新增自訂清單</h3>
+                    <p>開啟自訂股票代碼功能後，會看到已經存在的自訂股票清單，從這邊可以<span class="highlight-field">編輯</span>或<span class="highlight-field">刪除</span>現有的自訂股票代碼，也可以<span class="highlight-field">新增</span>新的自訂股票代碼。</p>
+                    <img src="../images/Tutorial/自訂股票代碼及名稱/自訂股票代碼及名稱3.png" alt="開啟併購設定的按鈕" class="content-image">
+                    <p></p>
+                    <p>自訂股票代碼時，可以設定此股票為『上市』、『上櫃』、『興櫃』或『其他』，這不影響任何計算，單純只是顯示上的區分。</p>
+                    <p>另外也可以設定該支股票是否為ETF。若設定為ETF，則證交稅的計算方式會有所不同 ( 0.3%->0.1% )。</p>
+                    <img src="../images/Tutorial/自訂股票代碼及名稱/自訂股票代碼及名稱4.png" alt="併購設定資料列表" class="content-image">
+                    <p>自訂股票代碼時，不能設定為目前還存在的股票代碼。</p>
+                    <p></p>
+                    <img src="../images/Tutorial/自訂股票代碼及名稱/自訂股票代碼及名稱5.png" alt="調整顯示欄位的dialog" class="content-image">
+                    <p>設定完成後，就可以在股票列表裡面看到自訂的股票代碼及名稱了。</p>
+                    <img src="../images/Tutorial/自訂股票代碼及名稱/自訂股票代碼及名稱6.png" alt="調整顯示欄位的dialog" class="content-image">
+                    <img src="../images/Tutorial/自訂股票代碼及名稱/自訂股票代碼及名稱7.png" alt="調整顯示欄位的dialog" class="content-image">
+                    
+                </div>
+                <a href="../index.html#tutorials" class="button primary-button back-to-tutorials">返回教學列表</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 火狐資訊. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
