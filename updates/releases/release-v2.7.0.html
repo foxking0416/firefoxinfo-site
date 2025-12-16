@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>版本更新：v2.7.0 - StockKeeper</title>
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="icon" href="../../images/FoxInfo.jpg" type="image/jpeg">
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <img src="../../images/FoxInfo_Big.png" alt="火狐資訊 Logo" class="logo">
+      <h1>火狐資訊 - StockKeeper</h1>
+      <button class="hamburger-menu-toggle" aria-label="Toggle navigation">
+        <span class="hamburger-icon"></span>
+        <span class="hamburger-icon"></span>
+        <span class="hamburger-icon"></span>
+      </button>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="../index.html#intro">回首頁</a></li>
+          <li><a href="../index.html#features">程式特點</a></li>
+          <li><a href="../index.html#tutorials">教學</a></li>
+          <li><a href="../index.html#download">下載</a></li>
+          <li><a href="../index.html#contact">聯絡方式</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="tutorial-detail-section">
+      <div class="container">
+        <h2>v2.7.0 版本更新說明</h2>
+        <div class="tutorial-content">
+
+          <p>本次 v2.7.0 更新主要回應使用者回饋，針對 <span class="highlight-field">交易彈性</span>、<span class="highlight-field">UI
+              易用性</span> 與 <span class="highlight-field">計算正確性</span> 進行補強與優化。</p>
+
+          <h3>1、分割 / 合併 / 減資紀錄設定全面開放</h3>
+          <p>StockKeeper 會自動帶入股利、減資、分割、合併等資料，過去僅提供股利的控制介面。</p>
+          <p>本次更新將所有相關設定 <span class="highlight-field">全面開放 UI</span>，讓使用者可以自行決定是否要自動帶入各類資料。</p>
+
+          <h3>2、共用按鈕列（小螢幕更友善）</h3>
+          <p>將「自動帶入股利 / 減資 / 分割合併、匯出、刪除」整合為 <span class="highlight-field">共用按鈕</span> 並移至畫面前方。</p>
+          <p>若偏好舊版配置，可從「顯示 → 使用個別按鈕」切換回原樣。</p>
+
+          <h3>3、新增交易時保留股票列表排序</h3>
+          <p>新增交易後，股票列表將 <span class="highlight-field">保留原有排序條件</span>，不再因刷新資料而重置排序。</p>
+
+          <h3>4、UI 字型大小調整（大 / 中 / 小）</h3>
+          <p>可依個人需求調整字型大小。<br>※ 切換後需重新啟動程式才會生效。</p>
+
+          <h3>5、交易列表欄寬可調整並自動記憶</h3>
+          <p>交易列表欄寬可手動拖拉調整，設定會被記憶，不需每次重新設定。</p>
+
+          <h3>6、重新下載資料功能</h3>
+          <p>當資料出現不完整時，可使用「重新下載資料」功能，從政府網站重新爬取資料。</p>
+
+          <h3>7、匯入對帳單功能補強</h3>
+          <p>新增支援僅有 <span class="highlight-field">股票代碼</span> 或 <span class="highlight-field">股票名稱</span> 的匯入模式。</p>
+
+          <h3>8、當沖交易架構重整</h3>
+          <p>新版將整筆買賣交易定義為一筆當沖交易，同時設定買價與賣價，可正確顯示當沖買與賣。</p>
+          <p>舊有當沖紀錄可保留，或刪除後以新版方式重新建立。</p>
+
+          <h3>9、股票右鍵快速查詢</h3>
+          <p>在股票列表中按右鍵，可快速連結至 <span class="highlight-field">GoodInfo</span> 或 <span class="highlight-field">Yahoo
+              Finance</span> 查詢進階資訊。</p>
+
+          <h3>10、F1 快速開啟教學</h3>
+          <p>滑鼠移至帶有 ⓘ 的功能上，按下 <span class="highlight-field">F1</span> 即可開啟對應教學頁。</p>
+
+          <h3>11、支援 0 元成本交易</h3>
+          <p>允許建立成本為 0 元的交易紀錄，以因應無法回溯歷史成本的情境。</p>
+
+          <h3>12、股價上下鍵符合實際跳動檔位</h3>
+          <p>調整股價時，會依實際台股與 ETF 跳動檔位變動，而非固定 0.1 元。</p>
+
+          <h3>13、新增交易時預設帶入目前股價</h3>
+          <p>新增交易紀錄時，預設填入目前股價作為交易價格。</p>
+
+<div class="bugfix-block">
+  <h3>🐞 計算 Bug 修正</h3>
+
+  <div class="bugfix-item">
+    <span class="bugfix-icon">✔</span>
+    <span>修正無現金股利時補充保費無法計算的問題</span>
+  </div>
+
+  <div class="bugfix-item">
+    <span class="bugfix-icon">✔</span>
+    <span>現金減資補上匯費計算</span>
+  </div>
+
+  <div class="bugfix-item">
+    <span class="bugfix-icon">✔</span>
+    <span>修正非 10 元面額股票配股計算錯誤</span>
+  </div>
+</div>
+<br>
+          <a href="https://www.firefoxinfo.com/download/latest.html" class="button primary-button">下載最新版本</a>
+        </div>
+
+        <a href="../release_index.html" class="button back-to-tutorials">返回版本更新列表</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 火狐資訊. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
