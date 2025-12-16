@@ -474,7 +474,7 @@ section h2::after {
     cursor: not-allowed;
 }
 
-/* Contact Section */
+Contact Section
 .contact-section {
 	background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('images/background4.jpg') no-repeat center center/cover;
     /* background-color: var(--darker-bg-color); */
@@ -876,4 +876,62 @@ footer {
     color: var(--secondary-color);
     font-weight: bold;
     margin-top: 2px;
+}
+
+/* ===== Latest Release Section ===== */
+
+.latest-release-section {
+    background-color: var(--dark-bg-color);
+    text-align: center;
+}
+
+.latest-release-card {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 35px 40px;
+    background-color: var(--darker-bg-color);
+    border-radius: 12px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
+}
+
+.latest-release-info {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 0.95em;
+    color: var(--light-text-color);
+}
+
+.release-version {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.release-date {
+    opacity: 0.8;
+}
+
+.latest-release-section {
+    /* background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('images/background4.jpg') no-repeat center center/cover; */
+    background-color: var(--darker-bg-color);
+}
+
+.latest-release-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+.latest-release-card p {
+    margin-bottom: 25px;
+    font-size: 1.05em;
+    color: var(--text-color);
+}
+
+.latest-release-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
