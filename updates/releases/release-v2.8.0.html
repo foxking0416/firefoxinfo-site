@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>版本更新：v2.8.0 - StockKeeper</title>
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="icon" href="../../images/FoxInfo.jpg" type="image/jpeg">
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <img src="../../images/FoxInfo_Big.png" alt="火狐資訊 Logo" class="logo">
+      <h1>火狐資訊 - StockKeeper</h1>
+      <button class="hamburger-menu-toggle" aria-label="Toggle navigation">
+        <span class="hamburger-icon"></span>
+        <span class="hamburger-icon"></span>
+        <span class="hamburger-icon"></span>
+      </button>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="../../index.html#intro">回首頁</a></li>
+          <li><a href="../../index.html#features">程式特點</a></li>
+          <li><a href="../../index.html#tutorials">教學</a></li>
+          <li><a href="../../index.html#download">下載</a></li>
+          <li><a href="../../index.html#contact">聯絡方式</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="tutorial-detail-section">
+      <div class="container">
+        <h2>v2.8.0 版本更新說明</h2>
+        <div class="tutorial-content">
+
+          <p>本次 v2.8.0 更新主要回應使用者回饋，針對 <span class="highlight-field">交易彈性</span>、<span class="highlight-field">UI
+              易用性</span> 與 <span class="highlight-field">計算正確性</span> 進行補強與優化。</p>
+
+          <h3>1、手續費折扣方式新增『事後退佣』</h3>
+          <p>劵商交易手續費折扣有兩種方式：<span class="highlight-field">立即折扣</span>與<span class="highlight-field">事後退佣</span>。雖然折扣方式不影響實際累計損益的數值，但會影響『#現股總成本』跟『#未實現損益』所呈現的數字。</p>
+          <p>StockKeeper 之前只有提供 <span class="highlight-field">立即折扣</span>的計算模式，此次更新讓使用者可以自行決定要選擇哪種模式。</p>
+
+          <h3>2、增資認購成本計算方式新增『計入現股總成本』</h3>
+          <p>StockKeeper 之前對增資認購的交易只計入<span class="highlight-field">累計總成本</span>，而未將其計入<span class="highlight-field">現股總成本</span>(這是參考元大證劵App的計算方式)。但近期發現部分劵商(如華南永昌)是會將增資認購的股票計入現股總成本。</p>
+          <p>此次更新讓使用者可以自行決定是否要將增資認購成本計入現股總成本。</p>
+
+          <h3>3、未實現損益計算方式新增『不預扣手續費及交易稅』</h3>
+          <p>此次更新讓使用者可以自行決定是否要在未實現損益計算中<span class="highlight-field">預扣手續費及交易稅</span>。</p>
+
+          <h3>4、賣出成本新增『平均價賣出』</h3>
+          <p>台股交易一般都是以<span class="highlight-field">先買先賣</span>為損益計算方式。但若是公司法人戶需要做會計帳，則在賣出時會需要以<span class="highlight-field">平均價</span>作為成本。</p>
+          <p>StockKeeper 此次更新新增了此功能，讓使用者可以根據需求選擇適合的成本計算方式。</p>
+
+          <h3>5、交易列表新增『垂直捲動』方式</h3>
+          <p>過往 StockKeeper 的交易列表是水平呈現，因此無法使用滑鼠滾輪來捲動。</p>
+          <p>此次更新新增了垂直捲動的方式，讓使用者可以更方便地瀏覽交易列表。</p>
+         
+<br>
+          <a href="https://www.firefoxinfo.com/download/latest.html" class="button primary-button">下載最新版本</a>
+        </div>
+
+        <a href="../release_index.html" class="button back-to-tutorials">返回版本更新列表</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 火狐資訊. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

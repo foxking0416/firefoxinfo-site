@@ -3,6 +3,7 @@
     --primary-color: #f77f00; /* Orange-red from logo */
     --secondary-color: #2e8b57; /* Deep green from logo */
     --text_highlight-color: #f3dd13;
+    --text_highlight-color-blue: #13a4f3;
     --dark-bg-color: #1a1a1a;
     --darker-bg-color: #0d0d0d;
     --text-color: #e0e0e0;
@@ -610,6 +611,14 @@ footer {
     color: var(--text_highlight-color);
     /* 例如，使用您定義的橙紅色主題色 */
     font-weight: bold;
+    /* 您也可以考慮加粗文字 */
+    /* text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* 輕微的文字陰影增加立體感 */
+}
+
+.highlight-field-blue {
+    color: var(--text_highlight-color-blue);
+    /* 例如，使用您定義的橙紅色主題色 */
+    /* font-weight: bold; */
     /* 您也可以考慮加粗文字 */
     /* text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* 輕微的文字陰影增加立體感 */
 }

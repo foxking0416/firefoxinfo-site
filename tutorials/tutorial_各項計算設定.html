@@ -43,7 +43,11 @@
                     <p><span class="highlight-field">補充保費</span>：預設為勾選，一般自然人皆須繳納補充保費，除非是公司戶法人才取消勾選計算補充保費。</p>
                     <p><span class="highlight-field">整股交易最低手續費</span>：預設為20元，若券商有提供更低的最低手續費，可以自行調整此數值。</p>
                     <p><span class="highlight-field">零股交易最低手續費</span>：預設為1元，若券商有提供更低的最低手續費，可以自行調整此數值。</p>
+                    <p><span class="highlight-field">手續費折扣方式</span>：劵商交易手續費折扣有兩種方式：『<span class="highlight-field-blue">立即折扣</span>』與『<span class="highlight-field-blue">事後退佣</span>』。雖然折扣方式不影響實際累計損益的數值，但會影響『<span class="highlight-field-blue">#現股總成本</span>』跟『<span class="highlight-field-blue">#未實現損益</span>』所呈現的數字。預設為及時折扣，可依劵商規定自行調整。</p>
                     <p><span class="highlight-field">手續費小數計算</span>：預設為無條件捨去，可依劵商規定自行調整。</p>
+                    <p><span class="highlight-field">增資認購成本計算方式</span>：StockKeeper 之前對增資認購的交易只計入『<span class="highlight-field-blue">累計總成本</span>』，而未將其計入『<span class="highlight-field-blue">現股總成本</span>』(這是參考元大證劵App的計算方式)。但近期發現部分劵商(如華南永昌)是會將增資認購的股票計入現股總成本。預設為不計入現股總成本，可依劵商規定自行調整。</p>
+                    <p><span class="highlight-field">未實現損益計算方式</span>：預設為預扣手續費及交易稅，可依劵商規定自行調整。</p>
+                    <p><span class="highlight-field">賣出成本設定</span>：台股交易一般都是以『<span class="highlight-field-blue">先買先賣</span>』為損益計算方式。但若是公司法人戶需要做會計帳，則在賣出時會需要以『<span class="highlight-field-blue">平均價</span>』作為成本。預設為不計入現股總成本，可依劵商規定自行調整。</p>
                     <p><span class="highlight-field">股利匯費設定</span>：除非有特別設定，否則沒有設定的股利匯費皆為10元。</p>
                 </div>
                 <a href="../index.html#tutorials" class="button primary-button back-to-tutorials">返回教學列表</a>
@@ -53,7 +57,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 火狐資訊. All rights reserved.</p>
+            <p>&copy; 2026 火狐資訊. All rights reserved.</p>
         </div>
     </footer>
 </body>
