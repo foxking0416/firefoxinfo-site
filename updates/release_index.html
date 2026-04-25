@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>版本更新紀錄 - StockKeeper</title>
   <link rel="stylesheet" href="../style.css">
-  <link rel="icon" href="../images/FoxInfo.jpg" type="image/jpeg">
+  <link rel="icon" href="../FoxInfo.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="../FoxInfo.ico">
 </head>
 <body>
     <header>
@@ -31,8 +32,46 @@
 
   <main class="release-index">
     <section>
-      <h2><a href="releases/release-v3.0.0.html">v3.0.0（2026/04）－雲端模式上線 & 三大新功能</a></h2>
-      <h2><a href="releases/release-v2.8.0.html">v2.8.0（2026/01）－功能補強 & 易用性提升</a></h2>
+      <div class="container">
+        <h2>版本更新紀錄</h2>
+        <p class="release-index-intro">每一個版本都是為了讓你的投資紀錄更輕鬆、更精準。點擊任一版本可查看完整的更新內容與功能說明。</p>
+
+        <div class="release-list">
+          <a href="releases/release-v3.0.0.html" class="release-list-card is-latest">
+            <div class="release-list-meta">
+              <span class="release-version-pill">v3.0.0</span>
+              <span class="release-date">2026 / 04</span>
+              <span class="release-tag">最新</span>
+            </div>
+            <h3>雲端模式上線 & 三大新功能</h3>
+            <p>
+              雲端模式（Google 帳號登入）正式上線；新增
+              <span class="highlight-field">庫存損益走勢圖表</span>、
+              <span class="highlight-field">歷史回溯</span>、
+              <span class="highlight-field">時序列表（TWR / XIRR）</span>，
+              並修正卡 90% 等多項老問題。
+            </p>
+            <span class="release-list-link">查看完整更新內容 →</span>
+          </a>
+
+          <a href="releases/release-v2.8.0.html" class="release-list-card">
+            <div class="release-list-meta">
+              <span class="release-version-pill">v2.8.0</span>
+              <span class="release-date">2026 / 01</span>
+            </div>
+            <h3>功能補強 & 易用性提升</h3>
+            <p>
+              本次更新重點包含
+              <span class="highlight-field">交易彈性調整</span>、
+              <span class="highlight-field">UI 操作優化</span>，
+              並修正多項使用者回報的計算問題。
+            </p>
+            <span class="release-list-link">查看完整更新內容 →</span>
+          </a>
+        </div>
+
+        <a href="../index.html#intro" class="button back-to-tutorials">返回首頁</a>
+      </div>
     </section>
   </main>
 
@@ -43,7 +82,7 @@
     </div>
   </footer>
 
-
+  <script src="../script.js"></script>
 </body>
 
 </html>

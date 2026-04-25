@@ -944,3 +944,148 @@ footer {
     gap: 20px;
     flex-wrap: wrap;
 }
+
+/* ===== Release Index Page - Card List ===== */
+
+.release-index {
+    padding: 60px 0 80px;
+}
+
+.release-index .container {
+    max-width: 900px;
+}
+
+.release-index > section {
+    text-align: center;
+    padding: 0;
+    border-bottom: none;
+}
+
+.release-index h2 {
+    font-size: 2.4em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.release-index h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.release-index-intro {
+    color: var(--light-text-color);
+    font-size: 1.05em;
+    max-width: 640px;
+    margin: 0 auto 50px;
+    line-height: 1.7;
+}
+
+.release-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+.release-list .release-list-card {
+    display: block;
+    background-color: var(--dark-bg-color);
+    border-left: 5px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 26px 32px;
+    color: var(--text-color);
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-left-color 0.25s ease;
+    position: relative;
+}
+
+.release-list .release-list-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.55);
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.release-list .release-list-card.is-latest {
+    border-left-color: var(--secondary-color);
+}
+
+.release-list-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.release-version-pill {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 14px;
+    font-size: 0.95em;
+    letter-spacing: 0.5px;
+}
+
+.release-list .release-date {
+    color: var(--light-text-color);
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+.release-tag {
+    background-color: var(--secondary-color);
+    color: #fff;
+    font-size: 0.78em;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+.release-list-card h3 {
+    color: var(--secondary-color);
+    font-size: 1.45em;
+    margin-bottom: 12px;
+}
+
+.release-list-card p {
+    color: var(--light-text-color);
+    margin-bottom: 16px;
+    line-height: 1.7;
+    font-size: 1em;
+}
+
+.release-list-link {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.98em;
+    transition: color 0.25s ease;
+}
+
+.release-list .release-list-card:hover .release-list-link {
+    color: var(--button-hover-bg);
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .release-list .release-list-card {
+        padding: 22px 22px;
+    }
+    .release-index h2 {
+        font-size: 1.9em;
+    }
+    .release-list-card h3 {
+        font-size: 1.2em;
+    }
+}
