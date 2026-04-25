@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教學：時序列表（TWR / XIRR） - StockKeeper</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../FoxInfo.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="../FoxInfo.ico">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <img src="../images/FoxInfo_Big.png" alt="火狐資訊 Logo" class="logo">
+            <h1>火狐資訊 - StockKeeper</h1>
+            <button class="hamburger-menu-toggle" aria-label="Toggle navigation">
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+            </button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="../index.html#intro">回首頁</a></li>
+                    <li><a href="../index.html#features">程式特點</a></li>
+                    <li><a href="../index.html#tutorials">教學</a></li>
+                    <li><a href="../index.html#download">下載</a></li>
+                    <li><a href="../index.html#contact">聯絡方式</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="tutorial-detail-section">
+            <div class="container">
+                <h2>時序列表（TWR / XIRR）</h2>
+                <div class="tutorial-content">
+
+                    <p>v3.0.0 新增<span class="highlight-field">時序列表</span>功能，可自訂任意時間區段，
+                        列出該區間內<span class="highlight-field-blue">所有交易明細</span>，
+                        並自動計算這段期間的<span class="highlight-field">時間加權報酬率（TWR）</span>與
+                        <span class="highlight-field">年化報酬率（XIRR）</span>。</p>
+                    <p>當你想知道「今年到目前為止賺了多少」、「過去三年的真實年化報酬」、
+                        「某個策略執行期間的績效」時，這個功能就能直接給出答案。</p>
+                    <img src="../images/Tutorial/時序列表/Main.png" alt="時序列表主畫面" class="content-image">
+
+                    <h3>1、開啟時序列表</h3>
+                    <p>在主畫面工具列上方點擊<span class="highlight-field-blue">開啟時序列表</span>按鈕，
+                        即會跳出時序列表視窗。</p>
+
+                    <h3>2、設定時間區段</h3>
+                    <p>在視窗上方分別選擇<span class="highlight-field-blue">開始日期</span>與
+                        <span class="highlight-field-blue">結束日期</span>，
+                        接著按下<span class="highlight-field-blue">確認</span>，
+                        系統就會列出該區間內所有交易，並顯示：</p>
+                    <p>● <span class="highlight-field">起始日期庫存總額</span>：區間第一天的部位市值。</p>
+                    <p>● <span class="highlight-field">結束日期庫存總額</span>：區間最後一天的部位市值。</p>
+                    <p>● 每筆交易的<span class="highlight-field-blue">日期</span>、<span class="highlight-field-blue">股票代碼</span>、
+                        <span class="highlight-field-blue">交易種類</span>（買進、賣出、當沖、定期買進、股利分配等）、
+                        <span class="highlight-field-blue">交易金額</span>、<span class="highlight-field-blue">手續費</span>、
+                        <span class="highlight-field-blue">交易稅</span>、<span class="highlight-field-blue">應收付</span>等。</p>
+
+                    <h3>3、計算 TWR 與 XIRR</h3>
+                    <p>按下<span class="highlight-field-blue">計算報酬率</span>，系統會自動算出：</p>
+                    <p>● <span class="highlight-field">時間加權報酬率（TWR）</span>：
+                        排除「資金進出時點」造成的影響，純粹反映<span class="highlight-field-blue">投資組合本身的績效</span>，
+                        是用來比較<span class="highlight-field-blue">操盤能力</span>最常見的指標，
+                        也是基金績效公開揭露時所採用的計算方式。</p>
+                    <p>● <span class="highlight-field">年化報酬率（XIRR）</span>：
+                        將不規則時間進出的所有現金流，換算成<span class="highlight-field-blue">每年的報酬率</span>，
+                        最能反映<span class="highlight-field-blue">投資人實際資金的真實年化報酬</span>。</p>
+
+                    <h3>4、自訂欄位與排序</h3>
+                    <p>● 點擊<span class="highlight-field-blue">自訂欄位</span>可調整列表中要顯示的欄位。</p>
+                    <p>● 切換<span class="highlight-field-blue">由遠到近</span>或<span class="highlight-field-blue">由近到遠</span>，
+                        可依需求排序交易列表。</p>
+
+                    <h3>5、實用情境</h3>
+                    <p>● <span class="highlight-field">年度績效檢視</span>：設定 1/1 ~ 12/31，
+                        立刻拿到當年度真實 TWR 與 XIRR。</p>
+                    <p>● <span class="highlight-field">策略期間驗證</span>：例如導入「定期定額」期間的真實年化報酬，
+                        驗證策略是否如預期。</p>
+                    <p>● <span class="highlight-field">與大盤比較</span>：算出自己的 TWR 後，與同期間台股加權指數比較，
+                        判斷是否有超額報酬。</p>
+
+                </div>
+                <a href="../index.html#tutorials" class="button primary-button back-to-tutorials">返回教學列表</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 火狐資訊. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

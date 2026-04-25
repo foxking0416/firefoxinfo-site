@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教學：庫存損益走勢圖表 - StockKeeper</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../FoxInfo.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="../FoxInfo.ico">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <img src="../images/FoxInfo_Big.png" alt="火狐資訊 Logo" class="logo">
+            <h1>火狐資訊 - StockKeeper</h1>
+            <button class="hamburger-menu-toggle" aria-label="Toggle navigation">
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+            </button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="../index.html#intro">回首頁</a></li>
+                    <li><a href="../index.html#features">程式特點</a></li>
+                    <li><a href="../index.html#tutorials">教學</a></li>
+                    <li><a href="../index.html#download">下載</a></li>
+                    <li><a href="../index.html#contact">聯絡方式</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="tutorial-detail-section">
+            <div class="container">
+                <h2>庫存損益走勢圖表</h2>
+                <div class="tutorial-content">
+
+                    <p>很多投資者都有一個困擾：庫存淨值看起來持續變多，
+                        但其實分不清楚到底是<span class="highlight-field">本金一直投入變多</span>，
+                        還是<span class="highlight-field">真的有賺到錢</span>。</p>
+                    <p>v3.0.0 新增的<span class="highlight-field">庫存損益走勢圖表</span>，
+                        會將<span class="highlight-field-blue">庫存淨值</span>與
+                        <span class="highlight-field-blue">累計損益</span>同時繪製在一張圖上，
+                        讓兩者的差距與趨勢一目了然。</p>
+                    <img src="../images/Tutorial/庫存損益走勢圖表/Main.png" alt="庫存損益走勢圖表主畫面" class="content-image">
+
+                    <h3>1、走勢圖如何解讀</h3>
+                    <p>圖中藍線為<span class="highlight-field-blue">庫存淨值</span>（目前持有部位的總市值），
+                        綠線為<span class="highlight-field-blue">累計損益</span>（已實現 + 未實現損益的總和）。</p>
+                    <p>● <span class="highlight-field">兩條線同步上升</span>：代表庫存增加是來自獲利，是健康的成長。</p>
+                    <p>● <span class="highlight-field">藍線上升、綠線停滯</span>：代表庫存增加主要來自新投入的本金，
+                        並非實際獲利。</p>
+                    <p>● <span class="highlight-field">藍線下降、綠線下降</span>：代表市值與累計損益同時減少，
+                        可能是市場修正或停損出場所致。</p>
+
+                    <h3>2、查看任一日期的詳細數值</h3>
+                    <p>將滑鼠移動到圖表上的任一位置，會顯示該日期的<span class="highlight-field-blue">庫存淨值</span>與
+                        <span class="highlight-field-blue">損益金額</span>，方便快速比對任意時點的狀況。</p>
+                    <img src="../images/Tutorial/庫存損益走勢圖表/走勢圖_tooltip.png" alt="走勢圖游標提示" class="content-image">
+
+                    <h3>3、自由縮放</h3>
+                    <p>圖表支援自由縮放，操作方式如下：</p>
+                    <p>● <span class="highlight-field">水平縮放</span>：按住 <span class="highlight-field-blue">Ctrl</span> + 滑鼠滾輪。</p>
+                    <p>● <span class="highlight-field">垂直縮放</span>：按住 <span class="highlight-field-blue">Shift</span> + 滑鼠滾輪。</p>
+                    <p>● 想恢復原始比例，按下左上角<span class="highlight-field-blue">重置縮放</span>即可。</p>
+
+                    <h3>4、匯出圖表</h3>
+                    <p>點擊上方的<span class="highlight-field-blue">匯出 PNG</span>或<span class="highlight-field-blue">匯出 JPG</span>，
+                        即可將目前的走勢圖儲存為圖片檔，
+                        可作為投資紀錄、月報整理或自我檢討的素材。</p>
+
+                </div>
+                <a href="../index.html#tutorials" class="button primary-button back-to-tutorials">返回教學列表</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 火狐資訊. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教學：歷史回溯功能 - StockKeeper</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../FoxInfo.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="../FoxInfo.ico">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <img src="../images/FoxInfo_Big.png" alt="火狐資訊 Logo" class="logo">
+            <h1>火狐資訊 - StockKeeper</h1>
+            <button class="hamburger-menu-toggle" aria-label="Toggle navigation">
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+            </button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="../index.html#intro">回首頁</a></li>
+                    <li><a href="../index.html#features">程式特點</a></li>
+                    <li><a href="../index.html#tutorials">教學</a></li>
+                    <li><a href="../index.html#download">下載</a></li>
+                    <li><a href="../index.html#contact">聯絡方式</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="tutorial-detail-section">
+            <div class="container">
+                <h2>歷史回溯功能</h2>
+                <div class="tutorial-content">
+
+                    <p>有沒有想過：「<span class="highlight-field">2023 年 5 月那一天，我手上到底有哪些股票？當時的損益又是多少？</span>」</p>
+                    <p>v3.0.0 新增的<span class="highlight-field">歷史回溯</span>功能，讓你只要選定任意一天，
+                        主畫面會立刻切換成<span class="highlight-field-blue">該日期的實際持股狀態</span>，
+                        包含庫存張數、收盤價、市值、現股總成本、未實現損益、已實現損益等所有欄位。</p>
+                    <img src="../images/Tutorial/歷史回溯/Main.png" alt="歷史回溯按鈕位置" class="content-image">
+
+                    <h3>1、回溯到指定日期</h3>
+                    <p>在主畫面工具列上方選擇要回溯的<span class="highlight-field-blue">日期</span>，
+                        接著點擊<span class="highlight-field-blue">回溯到指定日期</span>按鈕，
+                        畫面所有欄位都會立即重新計算為該日期的真實狀態。</p>
+                    <p>你可以拿來：</p>
+                    <p>● 檢視某次重大行情前後（例如除權息日、財報日）持股組合的變化。</p>
+                    <p>● 對照<span class="highlight-field">當時下單決策</span>與<span class="highlight-field">後續結果</span>，做為交易檢討的依據。</p>
+                    <p>● 確認某次<span class="highlight-field-blue">減資</span>、<span class="highlight-field-blue">分割</span>、
+                        <span class="highlight-field-blue">併購</span>事件當下的庫存狀態是否正確。</p>
+
+                    <h3>2、解除回溯</h3>
+                    <p>當你看完歷史狀態，點擊<span class="highlight-field-blue">解除回溯日期</span>按鈕，
+                        畫面就會回到<span class="highlight-field">最新即時資料</span>，不會影響你的交易紀錄。</p>
+
+                    <h3>3、與時序列表搭配使用</h3>
+                    <p>歷史回溯功能還可以搭配新版的<span class="highlight-field">時序列表</span>使用：
+                        先回溯到某個時間點，再開啟時序列表查看後續區段的所有交易與報酬率變化，
+                        能夠完整重現你的投資歷程。</p>
+                    <p><a href="tutorial_時序列表.html" class="highlight-field">→ 查看時序列表教學</a></p>
+
+                    <h3>4、注意事項</h3>
+                    <p>● 回溯日期僅影響<span class="highlight-field-blue">畫面顯示</span>，不會修改任何已輸入的交易資料。</p>
+                    <p>● 回溯期間<span class="highlight-field">不建議新增 / 修改交易</span>，請先解除回溯後再進行操作。</p>
+                    <p>● 若回溯日期早於該股票第一筆交易日，該股票會以<span class="highlight-field-blue">無持股</span>狀態呈現。</p>
+
+                </div>
+                <a href="../index.html#tutorials" class="button primary-button back-to-tutorials">返回教學列表</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 火狐資訊. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

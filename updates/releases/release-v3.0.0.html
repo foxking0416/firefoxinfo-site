@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>版本更新：v3.0.0 - StockKeeper</title>
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="icon" href="../../FoxInfo.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="../../FoxInfo.ico">
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <img src="../../images/FoxInfo_Big.png" alt="火狐資訊 Logo" class="logo">
+      <h1>火狐資訊 - StockKeeper</h1>
+      <button class="hamburger-menu-toggle" aria-label="Toggle navigation">
+        <span class="hamburger-icon"></span>
+        <span class="hamburger-icon"></span>
+        <span class="hamburger-icon"></span>
+      </button>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="../../index.html#intro">回首頁</a></li>
+          <li><a href="../../index.html#features">程式特點</a></li>
+          <li><a href="../../index.html#tutorials">教學</a></li>
+          <li><a href="../../index.html#download">下載</a></li>
+          <li><a href="../../index.html#contact">聯絡方式</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="tutorial-detail-section">
+      <div class="container">
+        <h2>v3.0.0 版本更新說明</h2>
+        <div class="tutorial-content">
+
+          <p>v3.0.0 是 StockKeeper 推出以來最大幅度的一次更新，主軸是
+            <span class="highlight-field">雲端模式正式上線</span>，並新增三項長期被使用者敲碗的功能：
+            <span class="highlight-field">庫存損益走勢圖表</span>、
+            <span class="highlight-field">歷史回溯</span>、
+            <span class="highlight-field">時序列表（含 TWR / XIRR）</span>。
+            另外也修復了多個老問題，使用體驗更穩定。
+          </p>
+
+          <h3>1、雲端模式正式上線</h3>
+          <p>過去 StockKeeper 只能在單機環境使用，本次更新加入<span class="highlight-field">雲端模式</span>，
+            支援以 <span class="highlight-field">Google 帳號一鍵登入</span>，首次使用時可自動將原本的單機檔案匯入雲端，無痛轉移。</p>
+          <p>雲端版本的操作體驗與單機版幾乎一致（僅鎖定<span class="highlight-field-blue">復原 / 取消復原</span>功能），
+            資料隨時可<span class="highlight-field">下載備份</span>，不會被雲端版綁住。</p>
+          <p><a href="../../tutorials/tutorial_雲端模式登入.html" class="highlight-field">→ 查看雲端模式詳細教學</a></p>
+
+          <h3>2、新功能：庫存損益走勢圖表</h3>
+          <p>許多人看著庫存淨值不斷增加，卻分不清楚到底是<span class="highlight-field">本金投入變多</span>，
+            還是<span class="highlight-field">真的有賺到錢</span>。</p>
+          <p>新增的<span class="highlight-field">庫存損益走勢圖表</span>會把<span class="highlight-field-blue">庫存淨值</span>與
+            <span class="highlight-field-blue">累計損益</span>畫在同一張圖上，讓你一眼就看出兩者的差距與趨勢，
+            並支援<span class="highlight-field">水平 / 垂直自由縮放</span>，以及<span class="highlight-field">匯出 PNG / JPG</span>留存。</p>
+          <p><a href="../../tutorials/tutorial_庫存損益走勢圖表.html" class="highlight-field">→ 查看走勢圖表詳細教學</a></p>
+
+          <h3>3、新功能：歷史回溯</h3>
+          <p>想知道<span class="highlight-field">某一年的某一天，自己當時持有哪些股票、損益是多少</span>嗎？</p>
+          <p>新版只要選定一個<span class="highlight-field">回溯日期</span>，主畫面就會立即呈現該日的實際持股明細、
+            收盤價、未實現損益、已實現損益等完整狀態，回溯期間可隨時<span class="highlight-field">解除回溯</span>回到當前。</p>
+          <p><a href="../../tutorials/tutorial_歷史回溯.html" class="highlight-field">→ 查看歷史回溯詳細教學</a></p>
+
+          <h3>4、新功能：時序列表（TWR / XIRR）</h3>
+          <p>新增<span class="highlight-field">時序列表</span>，可自訂<span class="highlight-field-blue">開始日期</span>與
+            <span class="highlight-field-blue">結束日期</span>，列出該區間內所有交易明細，
+            並自動計算這段期間的<span class="highlight-field">時間加權報酬率（TWR）</span>與
+            <span class="highlight-field">年化報酬率（XIRR）</span>。</p>
+          <p>這對於檢視<span class="highlight-field-blue">某一年</span>、<span class="highlight-field-blue">某一季</span>，
+            或<span class="highlight-field-blue">特定投資策略期間</span>的真實績效非常有幫助。</p>
+          <p><a href="../../tutorials/tutorial_時序列表.html" class="highlight-field">→ 查看時序列表詳細教學</a></p>
+
+          <div class="bugfix-block">
+            <h3>修正與優化</h3>
+            <div class="bugfix-item">
+              <span class="bugfix-icon">✔</span>
+              <span>修正部分使用者反映的<span class="highlight-field">程式卡在 90%</span>無法繼續的老問題：
+                股利相關資訊改由伺服器端集中下載，避免本地端爬蟲不穩定的狀況。</span>
+            </div>
+            <div class="bugfix-item">
+              <span class="bugfix-icon">✔</span>
+              <span>新增<span class="highlight-field">版本更新提示</span>：當有新版本釋出時，程式會主動通知使用者下載，
+                不再需要手動到網站確認。</span>
+            </div>
+            <div class="bugfix-item">
+              <span class="bugfix-icon">✔</span>
+              <span>多項 UI 細節調整與穩定性修正。</span>
+            </div>
+          </div>
+
+          <br>
+          <a href="https://www.firefoxinfo.com/download/latest.html" class="button primary-button">下載最新版本</a>
+        </div>
+
+        <a href="../release_index.html" class="button back-to-tutorials">返回版本更新列表</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 火狐資訊. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../../script.js"></script>
+</body>
+
+</html>
