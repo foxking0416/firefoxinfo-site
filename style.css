@@ -204,109 +204,9 @@ section h2::after {
     border-radius: 2px;
 }
 
-/* Features Section (Carousel) */
+/* Features Section */
 .features-section {
     background-color: var(--dark-bg-color);
-    overflow: hidden; /* Ensure content outside track is hidden */
-}
-
-.carousel-container {
-    position: relative;
-    overflow: hidden; /* Hide overflow from individual feature-item margins if any */
-    margin: 0 auto;
-    max-width: 900px; /* Max width for the carousel content */
-    padding: 0px 50px; /* Add padding for buttons if they are outside the track */
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    will-change: transform; /* Performance optimization */
-    padding: 20px 0; /* Padding for the track content itself */
-}
-
-.feature-item {
-    min-width: 100%; /* Reverted to show one item at a time */
-	max-width: 100%;
-    flex-shrink: 0;
-    padding: 40px;
-    background-color: var(--darker-bg-color);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.feature-item h3 {
-    color: var(--secondary-color);
-    font-size: 1.8em;
-    margin-bottom: 15px;
-}
-
-.feature-item p {
-    font-size: 1.1em;
-    color: var(--light-text-color);
-}
-
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5);
-    color: white;
-    border: none;
-    padding: 15px 10px;
-    cursor: pointer;
-    font-size: 2em;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    z-index: 10;
-}
-
-.carousel-button:hover {
-    /* background-color: rgba(0,0,0,0.8); */
-	background-color: var(--primary-color);
-	transition: background-color 0.3s ease;
-}
-
-.carousel-button.prev {
-    left: 10px;
-}
-
-.carousel-button.next {
-    right: 10px;
-}
-
-/* Carousel Indicators */
-.carousel-indicators {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px; /* 與輪播內容的間距 */
-    gap: 10px; /* 點之間的間距 */
-}
-
-.indicator {
-    width: 12px;
-    height: 12px;
-    background-color: var(--light-text-color); /* 預設顏色 */
-    border-radius: 50%; /* 圓形 */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    border: 1px solid var(--border-color); /* 增加邊框增加區分度 */
-}
-
-.indicator:hover {
-    background-color: var(--primary-color); /* 懸停顏色 */
-    transform: scale(1.1);
-}
-
-.indicator.active {
-    background-color: var(--primary-color); /* 活躍時的顏色 */
-    transform: scale(1.2); /* 活躍時稍微放大 */
-    border-color: var(--primary-color);
 }
 
 /* Tutorials Section */
@@ -532,20 +432,72 @@ footer {
 
 /* Tutorial Detail Page Specific Styles */
 .tutorial-detail-section {
-    background-color: var(--darker-bg-color);
+    background:
+        radial-gradient(ellipse at top, rgba(247,127,0,0.08), transparent 60%),
+        var(--darker-bg-color);
     text-align: center;
-    padding: 60px 0;
+    padding: 70px 0 90px;
+    position: relative;
+    overflow: hidden;
+}
+
+.tutorial-detail-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    mask-image: radial-gradient(ellipse at top, #000 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at top, #000 30%, transparent 75%);
+}
+
+.tutorial-detail-section > .container {
+    position: relative;
+    z-index: 1;
 }
 
 .tutorial-detail-section h2 {
     text-align: center;
-    margin-bottom: 40px;
-    font-size: 2.2em;
+    margin-bottom: 50px;
+    font-size: 2.4em;
+    color: #ffffff;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    position: relative;
+    display: block;
+    padding-top: 24px;
+}
+
+.tutorial-detail-section h2::before {
+    content: '教學';
+    display: inline-block;
+    background: rgba(247,127,0,0.12);
     color: var(--primary-color);
+    border: 1px solid rgba(247,127,0,0.4);
+    padding: 5px 14px;
+    border-radius: 999px;
+    font-size: 0.4em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
 }
 
 .tutorial-detail-section h2::after {
-    margin: 10px auto 0; /* Center the underline */
+    content: '';
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    margin: 18px auto 0;
+    border-radius: 2px;
+    display: block;
 }
 
 .tutorial-detail-section h3 {
@@ -557,22 +509,59 @@ footer {
 }
 
 .tutorial-content {
-    max-width: 800px;
+    max-width: 820px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 40px 44px 48px;
+    background: linear-gradient(160deg, rgba(31,31,31,0.85), rgba(22,22,22,0.85));
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.45);
+    text-align: left;
+}
+
+.tutorial-content > p:first-of-type {
+    font-size: 1.12em;
+    line-height: 1.85;
+    color: #ffffff;
+    border-left: 4px solid var(--primary-color);
+    padding: 4px 0 4px 18px;
+    margin-bottom: 28px;
 }
 
 .tutorial-content h3 {
-    color: var(--secondary-color);
-    font-size: 1.6em;
-    margin-top: 30px;
-    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 1.45em;
+    margin-top: 42px;
+    margin-bottom: 18px;
+    padding-left: 14px;
+    border-left: 4px solid var(--secondary-color);
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.tutorial-content > h3:first-child,
+.tutorial-content > p:first-of-type + h3 {
+    margin-top: 16px;
 }
 
 .tutorial-content p {
-    margin-bottom: 20px;
-    font-size: 1.05em;
+    margin-bottom: 16px;
+    font-size: 1.02em;
     color: var(--text-color);
+    line-height: 1.85;
+}
+
+.tutorial-content a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px dashed rgba(247,127,0,0.4);
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.tutorial-content a:hover {
+    color: var(--button-hover-bg);
+    border-bottom-color: var(--button-hover-bg);
 }
 
 .tutorial-main-image {
@@ -587,40 +576,57 @@ footer {
 }
 
 .content-image {
+    display: block;
     max-width: 100%;
     width: auto;
     height: auto;
     max-height: 500px;
     object-fit: contain;
-
     background-color: transparent;
-    margin: 0px 0px 20px 0px;
+    margin: 18px auto 24px;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.content-image:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.55), 0 0 0 1px rgba(247,127,0,0.25);
 }
 
 .back-to-tutorials {
     margin-top: 50px;
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
-    padding: 15px 30px;
-    font-size: 1.1em;
+    padding: 14px 28px;
+    font-size: 1.05em;
+    box-shadow: 0 10px 24px rgba(247,127,0,0.3);
+}
+
+.tutorial-detail-section .back-to-tutorials {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .highlight-field {
     color: var(--text_highlight-color);
-    /* 例如，使用您定義的橙紅色主題色 */
-    font-weight: bold;
-    /* 您也可以考慮加粗文字 */
-    /* text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* 輕微的文字陰影增加立體感 */
+    font-weight: 700;
+    background: rgba(243,221,19,0.08);
+    padding: 1px 6px;
+    border-radius: 4px;
 }
 
 .highlight-field-blue {
     color: var(--text_highlight-color-blue);
-    /* 例如，使用您定義的橙紅色主題色 */
-    /* font-weight: bold; */
-    /* 您也可以考慮加粗文字 */
-    /* text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* 輕微的文字陰影增加立體感 */
+    font-weight: 600;
+    background: rgba(19,164,243,0.08);
+    padding: 1px 6px;
+    border-radius: 4px;
 }
 
 .image-row {
@@ -751,21 +757,6 @@ footer {
         margin-bottom: 30px;
     }
 
-    /* Features Section (Carousel) for small screens */
-    .carousel-container {
-        padding: 0 20px; /* Reduce padding on smaller screens */
-        max-width: 100%;
-    }
-    
-    .carousel-button {
-        display: none;
-    }
-
-    .carousel-indicators {
-        margin-top: 10px;
-            /* 調整與上方輪播的間距 */
-    }
-
     .download-options {
         flex-direction: column;
         align-items: center;
@@ -777,13 +768,16 @@ footer {
     }
 
     .tutorial-detail-section h2 {
-        font-size: 1.8em;
+        font-size: 1.85em;
     }
     .tutorial-content h3 {
-        font-size: 1.4em;
+        font-size: 1.25em;
     }
     .tutorial-content p {
-        font-size: 0.95em;
+        font-size: 0.98em;
+    }
+    .tutorial-content {
+        padding: 28px 22px 34px;
     }
 
     /* 響應式調整聯絡區塊的 Logo 和按鈕排列 */
@@ -814,14 +808,6 @@ footer {
         font-size: 1.8em;
     }
 
-    .feature-item h3 {
-        font-size: 1.5em;
-    }
-
-    .feature-item p {
-        font-size: 0.95em;
-    }
-
     .tutorial-grid {
         grid-template-columns: 1fr;
     }
@@ -832,10 +818,11 @@ footer {
     }
 
     .tutorial-detail-section {
-        padding: 40px 0;
+        padding: 50px 0 70px;
     }
     .tutorial-content {
-        padding: 0 15px;
+        padding: 22px 18px 28px;
+        border-radius: 12px;
     }
 
 }
