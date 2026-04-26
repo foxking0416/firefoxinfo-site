@@ -268,114 +268,300 @@ section h2::after {
 }
 
 /* Download Section */
-.download-section {
-    background-color: var(--dark-bg-color);
+.download-section-new {
+    background:
+        radial-gradient(ellipse at top, rgba(247,127,0,0.10), transparent 60%),
+        var(--dark-bg-color);
+    padding: 90px 0 100px;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
 }
 
-.download-options {
+.download-section-new::before {
+    content: '';
+    position: absolute;
+    bottom: -120px;
+    left: -120px;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(46,139,87,0.10), transparent 70%);
+    pointer-events: none;
+}
+
+.download-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.download-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(247,127,0,0.12);
+    color: var(--primary-color);
+    border: 1px solid rgba(247,127,0,0.4);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+}
+
+.download-section-new h2 {
+    color: #ffffff;
+    font-size: 2.4em;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.download-section-new h2::after {
+    margin: 14px auto 0;
+}
+
+.download-header .section-lead {
+    margin: 0 auto;
+}
+
+.download-cards {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto 40px;
+    align-items: stretch;
+    position: relative;
+    z-index: 1;
+}
+
+.download-card {
+    background: linear-gradient(160deg, #1f1f1f, #161616);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 36px 36px 32px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.4);
     display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
-.download-item {
-    background-color: var(--darker-bg-color);
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    text-align: center;
-    width: 300px;
+.download-card-primary {
+    background: linear-gradient(160deg, rgba(247,127,0,0.16), rgba(247,127,0,0.03)), linear-gradient(160deg, #1f1f1f, #161616);
+    border-color: rgba(247,127,0,0.4);
+    position: relative;
+    overflow: hidden;
 }
 
-.download-item h3 {
-    text-align: center;
-    /* 保持文字居中 */
-    margin-bottom: 10px;
-    /* 標題與下方內容的間距 */
-    margin-top: 10px;
-    /* 標題與上方圖標的間距 */
+.download-card-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), #ffb155);
 }
 
-/* 圖標包裹層的樣式 */
-.download-icon-wrapper {
-    text-align: center;
-    /* 讓內部的圖標居中 */
-    margin-bottom: 10px;
-    /* 圖標與下方標題的間距 */
-    font-size: 3em;
-    /* 調整單個圖標的整體大小 */
-    /* 或者針對每個圖標單獨設定大小 */
-}
-
-/* 下載項目中的 Font Awesome 圖標基本樣式 */
-.download-item .download-icon-wrapper .fa-brands {
-    /* 這裡可以設定圖標的預設顏色，或者在 h3 內個別設定 */
-    color: var(--light-text-color);
-    /* 預設顏色，可以改為主題色 */
-    transition: color 0.3s ease;
-    /* 增加顏色過渡效果 */
-}
-
-/* 針對特定圖標的顏色 */
-.download-item .download-icon-wrapper .fa-windows {
-    color: #0078D7;
-    /* Windows 藍色 */
-}
-
-.download-item .download-icon-wrapper .fa-apple {
-    color: #999;
-    /* 蘋果灰色 */
-}
-
-.download-item .download-icon-wrapper .fa-android {
-    color: #A4C639;
-    /* Android 綠色 */
-}
-
-/* 多圖標包裹層的樣式調整 */
-.download-icon-wrapper.multiple-icons {
+.download-card-head {
     display: flex;
-    /* 讓多個圖標在內部水平排列 */
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.download-icon-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: rgba(247,127,0,0.18);
+    color: var(--primary-color);
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-    /* 水平居中 */
-    gap: 15px;
-    /* 圖標之間的間距 */
-    font-size: 2.5em;
-    /* 降低多個圖標時的整體大小，避免過大 */
+    gap: 6px;
+    font-size: 1.7em;
+    flex-shrink: 0;
 }
 
-
-.download-item p {
-    color: var(--light-text-color);
-    margin-bottom: 25px;
-}
-
-.download-button, .disabled-button {
-    width: 100%;
-    padding: 15px 0;
-    font-size: 1.1em;
-    margin-top: auto; /* Push button to bottom if content varies */
-}
-
-.download-button {
-    background-color: var(--primary-color);
+.download-card-primary .download-icon-circle {
+    background: var(--primary-color);
     color: #fff;
-    border: none;
+    box-shadow: 0 12px 28px rgba(247,127,0,0.4);
 }
 
-.download-button:hover {
-    background-color: var(--button-hover-bg);
+.download-card-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.download-version-pill {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 3px 12px;
+    border-radius: 999px;
+    font-size: 0.78em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    width: fit-content;
+}
+
+.download-platform {
+    color: var(--light-text-color);
+    font-size: 0.95em;
+    font-weight: 500;
+}
+
+.download-card h3 {
+    color: #ffffff;
+    font-size: 1.55em;
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+
+.download-specs {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 26px;
+}
+
+.download-specs li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+    color: var(--text-color);
+    font-size: 0.98em;
+}
+
+.download-specs li i {
+    color: var(--secondary-color);
+    font-size: 0.95em;
+}
+
+.download-cta-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.download-cta-primary {
+    flex: 1;
+    min-width: 200px;
+    padding: 14px 22px;
+    font-size: 1.02em;
+    box-shadow: 0 10px 28px rgba(247,127,0,0.35);
+}
+
+.download-cta-primary i {
+    margin-right: 8px;
+}
+
+.download-cta-secondary {
+    padding: 14px 22px;
+    font-size: 1em;
+    color: #fff;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.18);
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+}
+
+.download-cta-secondary i {
+    margin-right: 8px;
+}
+
+.download-cta-secondary:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.35);
     transform: translateY(-2px);
 }
 
-.disabled-button {
-    background-color: var(--border-color);
+.download-source {
     color: var(--light-text-color);
-    cursor: not-allowed;
+    font-size: 0.88em;
+    margin: 0;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-Contact Section
+.download-source i {
+    color: var(--text-color);
+    margin-right: 4px;
+}
+
+.download-source a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.download-source a:hover {
+    color: var(--button-hover-bg);
+    text-decoration: underline;
+}
+
+.download-card-mobile {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.download-card-mobile .download-icon-circle {
+    margin: 6px auto 16px;
+    background: rgba(255,255,255,0.05);
+    color: var(--light-text-color);
+}
+
+.download-card-mobile h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.download-card-mobile p {
+    color: var(--light-text-color);
+    text-align: center;
+    margin: 0 0 18px;
+    font-size: 0.95em;
+}
+
+.download-coming-soon-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.06);
+    color: var(--light-text-color);
+    padding: 6px 16px;
+    border-radius: 999px;
+    border: 1px dashed rgba(255,255,255,0.18);
+    font-size: 0.88em;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .download-cards {
+        grid-template-columns: 1fr;
+    }
+    .download-section-new h2 {
+        font-size: 1.9em;
+    }
+    .download-card {
+        padding: 28px 24px 26px;
+    }
+    .download-card h3 {
+        font-size: 1.35em;
+    }
+    .download-cta-row {
+        flex-direction: column;
+    }
+    .download-cta-primary,
+    .download-cta-secondary {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Contact Section */
 .contact-section {
 	background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('images/background4.jpg') no-repeat center center/cover;
     /* background-color: var(--darker-bg-color); */
@@ -755,16 +941,6 @@ footer {
     section h2 {
         font-size: 2em;
         margin-bottom: 30px;
-    }
-
-    .download-options {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .download-item {
-        width: 90%;
-        max-width: 350px;
     }
 
     .tutorial-detail-section h2 {
