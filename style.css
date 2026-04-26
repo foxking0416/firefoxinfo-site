@@ -562,48 +562,217 @@ section h2::after {
 }
 
 /* Contact Section */
-.contact-section {
-	background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('images/background4.jpg') no-repeat center center/cover;
-    /* background-color: var(--darker-bg-color); */
+.contact-section-new {
+    background:
+        radial-gradient(ellipse at bottom, rgba(46,139,87,0.10), transparent 60%),
+        var(--darker-bg-color);
+    padding: 90px 0 100px;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
 }
 
-.contact-links {
+.contact-section-new::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    right: -120px;
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(247,127,0,0.10), transparent 70%);
+    pointer-events: none;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(46,139,87,0.14);
+    color: var(--secondary-color);
+    border: 1px solid rgba(46,139,87,0.4);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+}
+
+.contact-section-new h2 {
+    color: #ffffff;
+    font-size: 2.4em;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.contact-section-new h2::after {
+    margin: 14px auto 0;
+}
+
+.contact-header .section-lead {
+    margin: 0 auto;
+}
+
+.contact-body {
+    display: grid;
+    grid-template-columns: minmax(260px, 360px) 1fr;
+    gap: 50px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-brand {
+    text-align: center;
+    padding: 24px 12px;
+}
+
+.contact-brand-logo {
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+    margin-bottom: 18px;
+    filter: drop-shadow(0 16px 36px rgba(247,127,0,0.35));
+}
+
+.contact-brand-name {
+    color: #ffffff;
+    font-size: 1.6em;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+}
+
+.contact-brand-tagline {
+    color: var(--light-text-color);
+    font-size: 0.92em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.contact-cards {
     display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-card {
+    background: linear-gradient(160deg, #1f1f1f, #161616);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 32px 28px 28px;
+    text-decoration: none;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(247,127,0,0.4);
+    box-shadow: 0 22px 50px rgba(0,0,0,0.5);
+}
+
+.contact-card:hover::before {
+    opacity: 1;
+}
+
+.contact-icon-circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-    align-items: center; /* 讓 Logo 和按鈕垂直居中對齊 */
-    gap: 20px; /* 項目之間的間距 */
-    flex-wrap: wrap;
+    font-size: 1.5em;
+    margin-bottom: 18px;
 }
 
-/* 新增的 Logo 樣式 */
-.contact-logo {
-    width: 150px; /* 調整 Logo 的寬度，使其足夠大 */
-    height: auto; /* 保持 Logo 的長寬比 */
-    margin-right: 30px; /* Logo 和 Facebook 按鈕之間的間距 */
-    object-fit: contain; /* 確保圖片在指定尺寸內完整顯示 */
-    /* 您可以根據需要添加其他樣式，例如陰影或圓角 */
+.contact-icon-fb {
+    background: rgba(24,119,242,0.18);
+    color: #1877f2;
 }
 
-
-.social-button {
-    background-color: var(--secondary-color);
-    color: #fff;
-    padding: 12px 25px;
+.contact-icon-mail {
+    background: rgba(247,127,0,0.18);
+    color: var(--primary-color);
 }
 
-.social-button .fa-brands {
-    margin-right: 8px;
-    /* 圖標與文字之間的間距 */
-    font-size: 1.1em;
-    /* 調整圖標大小，使其與按鈕文字大小協調 */
-    /* 這裡可以設定 Facebook 圖標的顏色，或者在按鈕的整體樣式中繼承 */
-    color: white;
-    /* 讓圖標和文字都是白色，或者使用 Facebook 藍色 */
+.contact-icon-bug {
+    background: rgba(217,83,79,0.18);
+    color: #e07b78;
 }
 
-.social-button:hover {
-    background-color: var(--button-secondary-bg); /* Use defined hover color */
-    transform: translateY(-2px);
+.contact-card h3 {
+    color: #ffffff;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.contact-card p {
+    color: var(--light-text-color);
+    font-size: 0.95em;
+    line-height: 1.7;
+    margin: 0 0 18px;
+    flex-grow: 1;
+}
+
+.contact-card-link {
+    color: var(--primary-color);
+    font-size: 0.95em;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.25s ease;
+}
+
+.contact-card:hover .contact-card-link {
+    gap: 12px;
+}
+
+@media (max-width: 900px) {
+    .contact-body {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+    .contact-brand {
+        padding: 8px 12px 0;
+    }
+    .contact-brand-logo {
+        max-width: 160px;
+        margin-bottom: 12px;
+    }
+    .contact-brand-name {
+        font-size: 1.35em;
+    }
+    .contact-section-new h2 {
+        font-size: 1.9em;
+    }
 }
 
 /* Footer Styles */
@@ -956,15 +1125,6 @@ footer {
         padding: 28px 22px 34px;
     }
 
-    /* 響應式調整聯絡區塊的 Logo 和按鈕排列 */
-    .contact-links {
-        flex-direction: column; /* 在小螢幕上讓 Logo 和按鈕堆疊 */
-        gap: 15px; /* 調整堆疊時的間距 */
-    }
-    .contact-logo {
-        margin-right: 0; /* 堆疊時移除右側間距 */
-        margin-bottom: 15px; /* 在 Logo 下方添加間距 */
-    }
 }
 
 @media (max-width: 480px) {
@@ -986,11 +1146,6 @@ footer {
 
     .tutorial-grid {
         grid-template-columns: 1fr;
-    }
-
-    .social-button {
-        width: 80%;
-        margin: 5px auto;
     }
 
     .tutorial-detail-section {
