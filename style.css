@@ -1731,3 +1731,284 @@ footer {
         font-size: 0.88em;
     }
 }
+
+/* ============================================================
+   vs Excel comparison table
+   ============================================================ */
+.vs-excel-section {
+    background: linear-gradient(180deg, var(--dark-bg-color) 0%, var(--darker-bg-color) 100%);
+    text-align: center;
+    padding: 100px 0 110px;
+    position: relative;
+    overflow: hidden;
+}
+
+.vs-excel-section::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    left: -120px;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(46,139,87,0.10), transparent 70%);
+    pointer-events: none;
+}
+
+.vs-header {
+    margin-bottom: 50px;
+}
+
+.vs-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(247,127,0,0.12);
+    color: var(--primary-color);
+    border: 1px solid rgba(247,127,0,0.4);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+}
+
+.vs-excel-section h2 {
+    color: #ffffff;
+    font-size: 2.4em;
+    margin-bottom: 18px;
+    display: block;
+}
+
+.vs-excel-section h2::after {
+    margin: 14px auto 0;
+}
+
+.vs-header .section-lead {
+    margin: 0 auto;
+}
+
+.vs-table {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: linear-gradient(160deg, #1f1f1f, #161616);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.45);
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+.vs-table-head {
+    display: grid;
+    grid-template-columns: 1.1fr 1.4fr 1.4fr;
+    background: rgba(0,0,0,0.35);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.vs-th {
+    padding: 22px 24px;
+    font-size: 1.05em;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.vs-th-task {
+    color: var(--light-text-color);
+    font-size: 0.95em;
+    letter-spacing: 0.5px;
+}
+
+.vs-th-excel {
+    color: #c5c5c5;
+    border-left: 1px solid rgba(255,255,255,0.06);
+}
+
+.vs-th-excel i {
+    color: #1d6f42;
+    font-size: 1.2em;
+}
+
+.vs-th-sk {
+    color: #ffffff;
+    background: linear-gradient(120deg, rgba(247,127,0,0.18), rgba(247,127,0,0.05));
+    border-left: 1px solid rgba(247,127,0,0.25);
+}
+
+.vs-th-logo {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.vs-row {
+    display: grid;
+    grid-template-columns: 1.1fr 1.4fr 1.4fr;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    transition: background 0.25s ease;
+}
+
+.vs-row:first-of-type {
+    border-top: none;
+}
+
+.vs-row:hover {
+    background: rgba(255,255,255,0.02);
+}
+
+.vs-cell {
+    padding: 20px 24px;
+    color: var(--text-color);
+    font-size: 0.98em;
+    line-height: 1.55;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.vs-cell-task {
+    color: #ffffff;
+    font-weight: 600;
+    background: rgba(0,0,0,0.18);
+    flex-wrap: wrap;
+}
+
+.vs-cell-task > i {
+    color: var(--primary-color);
+    font-size: 1.05em;
+    width: 22px;
+    text-align: center;
+}
+
+.vs-cell-bad,
+.vs-cell-good {
+    border-left: 1px solid rgba(255,255,255,0.05);
+}
+
+.vs-cell-bad {
+    color: #b8b8b8;
+}
+
+.vs-cell-bad > i {
+    color: #d9534f;
+    font-size: 1em;
+    background: rgba(217,83,79,0.15);
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.vs-cell-good {
+    color: var(--text-color);
+    font-weight: 500;
+    background: linear-gradient(120deg, rgba(247,127,0,0.06), transparent 70%);
+    border-left-color: rgba(247,127,0,0.18);
+}
+
+.vs-cell-good > i {
+    color: var(--secondary-color);
+    background: rgba(46,139,87,0.18);
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+    flex-shrink: 0;
+}
+
+.vs-row-exclusive .vs-cell-task {
+    background: rgba(247,127,0,0.08);
+    color: var(--primary-color);
+}
+
+.vs-row-exclusive .vs-cell-task > i {
+    color: var(--primary-color);
+}
+
+.vs-row-exclusive .vs-cell-bad > i {
+    color: #999;
+    background: rgba(255,255,255,0.06);
+}
+
+.vs-exclusive-tag {
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 0.65em;
+    padding: 2px 9px;
+    border-radius: 999px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-left: auto;
+}
+
+.vs-footnote {
+    margin: 36px auto 0;
+    font-size: 1.05em;
+    color: var(--light-text-color);
+    max-width: 720px;
+}
+
+@media (max-width: 900px) {
+    .vs-excel-section {
+        padding: 70px 0 80px;
+    }
+    .vs-excel-section h2 {
+        font-size: 1.8em;
+    }
+    .vs-table-head {
+        display: none;
+    }
+    .vs-row {
+        grid-template-columns: 1fr;
+        padding: 14px 0 18px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .vs-row:first-of-type {
+        border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .vs-cell {
+        border-left: none !important;
+        padding: 12px 22px;
+        font-size: 0.95em;
+    }
+    .vs-cell-task {
+        background: rgba(0,0,0,0.3);
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        padding-top: 14px;
+        padding-bottom: 14px;
+        font-size: 1em;
+    }
+    .vs-cell-bad::before {
+        content: 'Excel／其他';
+        color: #888;
+        font-size: 0.78em;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        margin-right: 6px;
+    }
+    .vs-cell-good {
+        background: linear-gradient(120deg, rgba(247,127,0,0.10), transparent 80%);
+    }
+    .vs-cell-good::before {
+        content: 'StockKeeper';
+        color: var(--primary-color);
+        font-size: 0.78em;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        margin-right: 6px;
+    }
+    .vs-exclusive-tag {
+        margin-left: 8px;
+    }
+}
