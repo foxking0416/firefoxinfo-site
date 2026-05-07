@@ -4,4 +4,4 @@ Allow: /
 # /download/ 內為下載重新導向頁，本身無索引價值
 Disallow: /download/
 
-Sitemap: https://firefoxinfo.com/sitemap.xml
+Sitemap: https://www.firefoxinfo.com/sitemap.xml
