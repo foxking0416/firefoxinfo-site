@@ -51,32 +51,45 @@
     <main>
         <section class="tutorial-detail-section">
             <div class="container">
-                <h2>雲端模式登入與資料同步</h2>
+                <h2>啟動模式選擇：單機、雲端、雲端（本機儲存）</h2>
                 <div class="tutorial-content">
 
-                    <p>從 <span class="highlight-field">v3.0.0</span> 起，StockKeeper 正式支援雲端模式。
-                        啟動程式後會出現<span class="highlight-field-blue">啟動模式選擇視窗</span>，使用者可以自由選擇要使用
-                        <span class="highlight-field">單機模式</span>或<span class="highlight-field">Google 登入</span>進入雲端模式。</p>
-                    <img src="../images/Tutorial/雲端模式/Main.png" alt="啟動模式選擇" class="content-image">
+                    <p>StockKeeper 從 <span class="highlight-field">v3.0.0</span> 起支援雲端模式，
+                        <span class="highlight-field">v3.1.0</span> 再新增<span class="highlight-field">雲端模式（本機儲存）</span>，
+                        現在啟動程式時會出現<span class="highlight-field-blue">啟動模式選擇視窗</span>，
+                        共有三種模式可選。</p>
+                    <!-- <img src="../images/Tutorial/雲端模式/Main.png" alt="啟動模式選擇視窗" class="content-image"> -->
 
-                    <h3>1、選擇單機模式</h3>
-                    <p>若選擇<span class="highlight-field">單機模式</span>，將會與舊版本的操作方式完全相同，
-                        可以選擇<span class="highlight-field-blue">開啟暫存檔</span>、<span class="highlight-field-blue">開新檔案</span>，
-                        或<span class="highlight-field-blue">開啟舊檔</span>。</p>
-                    <img src="../images/Tutorial/雲端模式/單機模式.png" alt="單機模式選項" class="content-image">
+                    <h3>1、單機模式</h3>
+                    <p>與舊版完全相同的操作方式，<span class="highlight-field">不需登入</span>、
+                        <span class="highlight-field">資料完全保留在本機</span>。
+                        </p>
+                    <p>適合對隱私要求最高、且不需要進階統計功能的使用者。</p>
+                    <img src="../images/Tutorial/雲端模式/單機模式.png" alt="單機模式" class="content-image">
 
-                    <h3>2、使用 Google 登入雲端模式</h3>
-                    <p>選擇 <span class="highlight-field">Google 登入</span> 後，瀏覽器會開啟 Google 認證頁面，
-                        完成授權即可登入您的專屬雲端帳號。</p>
-                    <p>首次登入時，若程式偵測到本機已有單機檔案，會主動詢問是否要將舊資料<span class="highlight-field">自動匯入雲端</span>，
-                        讓你不必手動搬移、無痛轉移。</p>
+                    <h3>2、雲端模式（本機儲存）<span class="feature-badge" style="margin-left:6px;">v3.1.0 新增</span></h3>
+                    <p>使用 <span class="highlight-field">Google 帳號登入</span>，可以享有
+                        <span class="highlight-field">進階統計功能</span>，
+                        但<span class="highlight-field">交易資料仍然儲存在本機電腦</span>，
+                        <span class="highlight-field-blue">不會上傳到雲端資料庫</span>。</p>
+                    <p>適合在意資料隱私、又想使用進階分析功能的使用者 ── 兼顧兩邊。</p>
+                    <img src="../images/Tutorial/雲端模式/雲端模式_本機存檔.png" alt="雲端模式（本機儲存）" class="content-image">
 
-                    <h3>3、雲端模式的特性</h3>
-                    <p>雲端模式的操作體驗與單機版幾乎一致，差異如下：</p>
-                    <p>● 資料儲存在雲端伺服器，<span class="highlight-field">不同電腦登入同一個 Google 帳號</span>就能看到同一份資料。</p>
-                    <p>● 隨時可將雲端資料<span class="highlight-field">下載到本機備份</span>，資料不會被雲端版綁定。</p>
+                    <h3>3、雲端模式</h3>
+                    <p>使用 <span class="highlight-field">Google 帳號登入</span>後，交易資料會
+                        <span class="highlight-field">儲存在雲端伺服器</span>。
+                        瀏覽器會開啟 Google 認證頁面，完成授權即可登入您的專屬雲端帳號。</p>
+                    <p>● 不同電腦登入<span class="highlight-field">同一個 Google 帳號</span>即可看到同一份資料，多裝置同步。</p>
+                    <p>● 首次登入時，若偵測到本機有單機檔案，會主動詢問是否要<span class="highlight-field">自動匯入雲端</span>，無痛轉移。</p>
+                    <p>● 隨時可將雲端資料<span class="highlight-field">下載到本機備份</span>，資料不會被雲端版綁住。</p>
+                    <img src="../images/Tutorial/雲端模式/雲端模式.png" alt="雲端模式" class="content-image">
 
-                    <h3>4、版本更新提示</h3>
+                    <h3>4、三種模式比較</h3>
+                    <p>● <span class="highlight-field-blue">單機模式</span>：不需登入、本機儲存、僅基本功能。</p>
+                    <p>● <span class="highlight-field-blue">雲端模式（本機儲存）</span>：登入帳號、本機儲存、有進階統計功能。</p>
+                    <p>● <span class="highlight-field-blue">雲端模式</span>：登入帳號、雲端儲存、有進階統計功能、多裝置同步。</p>
+
+                    <h3>5、版本更新提示</h3>
                     <p>從 v3.0.0 起，當有新版本釋出時，程式會主動跳出<span class="highlight-field">發現新版本</span>視窗，
                         點擊<span class="highlight-field-blue">前往下載</span>即可直接前往最新版下載頁面，
                         不再需要自行到網站確認。</p>
@@ -85,7 +98,7 @@
                     <p>使用者也可以隨時從<span class="highlight-field-blue">關於</span>視窗確認目前版本與最新版本資訊。</p>
                     <img src="../images/Tutorial/雲端模式/關於.png" alt="關於視窗" class="content-image">
 
-                    <h3>5、關於雲端版營運</h3>
+                    <h3>6、關於雲端版營運</h3>
                     <p>雲端版的爬蟲、資料庫、伺服器、數位認證每月需要支付數千元的營運成本，
                         因此後續會逐步推出付費方案，讓有需求的使用者可以更穩定地使用雲端服務。
                         <span class="highlight-field">單機版仍會持續維護</span>，使用者可依需求選擇適合自己的模式。</p>

@@ -13,10 +13,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.firefoxinfo.com/updates/releases/release-v3.1.0.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.firefoxinfo.com/updates/releases/release-v3.0.0.html</loc>
     <lastmod>2026-05-04</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.firefoxinfo.com/updates/releases/release-v2.8.0.html</loc>

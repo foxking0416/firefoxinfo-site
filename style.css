@@ -906,7 +906,7 @@ footer {
     line-height: 1.85;
 }
 
-.tutorial-content a {
+.tutorial-content a:not(.button) {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 600;
@@ -914,9 +914,14 @@ footer {
     transition: color 0.25s ease, border-color 0.25s ease;
 }
 
-.tutorial-content a:hover {
+.tutorial-content a:not(.button):hover {
     color: var(--button-hover-bg);
     border-bottom-color: var(--button-hover-bg);
+}
+
+.tutorial-content a.button {
+    color: #fff;
+    border-bottom: none;
 }
 
 .tutorial-main-image {
@@ -950,6 +955,8 @@ footer {
 }
 
 .back-to-tutorials {
+    background-color: var(--primary-color);
+    color: #fff;
     margin-top: 50px;
     display: inline-flex;
     align-items: center;
@@ -966,6 +973,12 @@ footer {
     display: flex;
     margin-left: auto;
     margin-right: auto;
+}
+
+.back-to-tutorials:hover {
+    background-color: var(--button-hover-bg);
+    color: #fff;
+    transform: translateY(-2px);
 }
 
 .highlight-field {
