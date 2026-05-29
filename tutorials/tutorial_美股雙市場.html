@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教學：台股 + 美股雙市場記帳 - StockKeeper</title>
+    <meta name="description" content="StockKeeper 雙市場記帳教學：新增帳戶時選擇台股或美股，兩種市場各自獨立帳戶。美股支援綠漲紅跌、自動隱藏不適用欄位、Excel/CSV 匯入、全市場收盤價自動更新，雲端模式更可自動帶入分割與股利。">
+    <link rel="canonical" href="https://www.firefoxinfo.com/tutorials/tutorial_美股雙市場.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="火狐資訊 StockKeeper">
+    <meta property="og:title" content="教學：台股 + 美股雙市場記帳 - StockKeeper">
+    <meta property="og:description" content="新增帳戶時選擇台股或美股，兩種市場各自獨立帳戶、互不干擾。美股股價每個交易日自動更新。">
+    <meta property="og:url" content="https://www.firefoxinfo.com/tutorials/tutorial_美股雙市場.html">
+    <meta property="og:image" content="https://www.firefoxinfo.com/images/Tutorial/美股雙市場/市場選擇.png">
+    <meta property="og:locale" content="zh_TW">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="教學：台股 + 美股雙市場記帳 - StockKeeper">
+    <meta name="twitter:description" content="新增帳戶時選擇台股或美股，兩種市場各自獨立帳戶、互不干擾。">
+    <meta name="twitter:image" content="https://www.firefoxinfo.com/images/Tutorial/美股雙市場/市場選擇.png">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../FoxInfo.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="../FoxInfo.ico">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <img src="../images/FoxInfo_Big.png" alt="火狐資訊 Logo" class="logo">
+            <h1>火狐資訊 - StockKeeper</h1>
+            <button class="hamburger-menu-toggle" aria-label="Toggle navigation">
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+            </button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="../index.html#intro">回首頁</a></li>
+                    <li><a href="../index.html#features">程式特點</a></li>
+                    <li><a href="../index.html#tutorials">教學</a></li>
+                    <li><a href="../index.html#download">下載</a></li>
+                    <li><a href="../index.html#contact">聯絡方式</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="tutorial-detail-section">
+            <div class="container">
+                <h2>台股 + 美股雙市場記帳</h2>
+                <div class="tutorial-content">
+
+                    <p>從 <span class="highlight-field">v3.2.0</span> 起，StockKeeper 正式從只支援台股，
+                        擴充到<span class="highlight-field">台股 + 美股雙市場記帳</span>。
+                        兩種市場各自<span class="highlight-field">獨立帳戶、互不干擾</span>，
+                        並針對美股的交易慣例做了完整調整。</p>
+
+                    <h3>1、新增帳戶時選擇市場（台股 / 美股）</h3>
+                    <p>新增帳戶時可選擇<span class="highlight-field">「台股 / 美股」</span>市場，
+                        帳戶分頁會以前綴區分（<span class="highlight-field-blue">🇹🇼 TW</span> /
+                        <span class="highlight-field-blue">🇺🇸 US</span>），一眼分辨。
+                        市場一旦選定即<span class="highlight-field">不可切換</span>，避免資料混淆。</p>
+                    <img src="../images/Tutorial/美股雙市場/市場選擇.png" alt="新增帳戶時選擇台股或美股市場" class="content-image">
+
+                    <h3>2、漲跌顏色：美股綠漲紅跌、台股紅漲綠跌</h3>
+                    <p>美股帳戶預設採用美股慣例：<span class="highlight-field">綠漲紅跌</span>；
+                        台股則維持<span class="highlight-field">紅漲綠跌</span>。
+                        兩者都可以依帳戶<span class="highlight-field-blue">獨立自訂漲跌顏色</span>，
+                        符合你習慣的看盤色系。</p>
+                    <img src="../images/Tutorial/美股雙市場/各項計算設定.png" alt="開啟各項計算設定" class="content-image">
+                    <img src="../images/Tutorial/美股雙市場/漲跌顏色.png" alt="美股綠漲紅跌、台股紅漲綠跌，可自訂" class="content-image">
+
+                    <h3>3、美股不適用的欄位會自動隱藏</h3>
+                    <p>美股沒有的概念會<span class="highlight-field">自動隱藏</span>，介面更乾淨、不會誤解，包含：</p>
+                    <p>● <span class="highlight-field-blue">交易稅</span>、
+                        <span class="highlight-field-blue">二代健保補充保費</span>、
+                        <span class="highlight-field-blue">股票股利</span>、
+                        <span class="highlight-field-blue">減資</span>、
+                        <span class="highlight-field-blue">損益平衡價</span> 等欄位 / 功能。</p>
+                    <p>● <span class="highlight-field">手續費可不填</span> ── 多數美股券商為 $0 佣金。</p>
+
+                    <h3>4、匯入美股券商對帳單（Excel / CSV）</h3>
+                    <p>美股帳戶同樣可以匯入券商對帳單，<span class="highlight-field">自由對應欄位</span>
+                        （日期 / 種類 / 代號 / 數量 / 單價 / 手續費）。</p>
+                    <p>支援的交易種類：<span class="highlight-field-blue">買進</span>、
+                        <span class="highlight-field-blue">賣出</span>、
+                        <span class="highlight-field-blue">定期定額買進</span>；
+                        其他類型（股息 / 利息 / 提款等）會<span class="highlight-field">自動略過</span>。</p>
+                    <img src="../images/Tutorial/美股雙市場/美股匯入對帳單視窗.png" alt="美股匯入對帳單視窗" class="content-image">
+                    <p><a href="tutorial_如何匯入Excel對帳單.html" class="highlight-field">→ 查看對帳單匯入詳細教學</a></p>
+
+                    <h3>5、美股股價自動更新</h3>
+                    <p>程式啟動後會自動取得<span class="highlight-field">全市場最新收盤價</span>，
+                        涵蓋 <span class="highlight-field-blue">NYSE / NASDAQ / AMEX</span> 及 ETF，
+                        合計<span class="highlight-field">逾 1 萬檔</span>。</p>
+                    <p>每個交易日美股<span class="highlight-field">收盤後自動更新</span>，
+                        庫存總表隨時顯示最新市值與損益，不必自己手動查價。</p>
+                    <img src="../images/Tutorial/美股雙市場/庫存總表顯示美股收盤價.png" alt="庫存總表顯示美股收盤價" class="content-image">
+
+                    <h3>6、分割與股利自動帶入（雲端模式）</h3>
+                    <p>在<span class="highlight-field">雲端模式</span>下，美股的<span class="highlight-field">分割</span>與
+                        <span class="highlight-field">股利</span>會自動帶入，與台股一樣省心。</p>
+                    <p>由於美股相關資料量過於龐大、無法即時讓使用者自行爬蟲，
+                        <span class="highlight-field-blue">單機模式不支援美股的自動帶入</span>，
+                        這部分需透過雲端模式取得。</p>
+                    <img src="../images/Tutorial/美股雙市場/單機模式.png" alt="單機模式說明" class="content-image">
+                    <p><a href="tutorial_雲端模式登入.html" class="highlight-field">→ 查看三種啟動模式詳細教學</a></p>
+
+                </div>
+                <a href="../index.html#tutorials" class="button primary-button back-to-tutorials">返回教學列表</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 火狐資訊. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

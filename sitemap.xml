@@ -43,6 +43,12 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://www.firefoxinfo.com/tutorials/tutorial_%E7%BE%8E%E8%82%A1%E9%9B%99%E5%B8%82%E5%A0%B4.html</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.firefoxinfo.com/tutorials/tutorial_%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%BA%AF.html</loc>
     <lastmod>2026-05-04</lastmod>
     <changefreq>yearly</changefreq>
