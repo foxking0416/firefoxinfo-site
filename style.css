@@ -2358,7 +2358,7 @@ html {
         var(--darker-bg-color);
     padding: 70px 0 90px;
     position: relative;
-    overflow: hidden;
+    /* 不使用 overflow: hidden，會讓子層 position: sticky 失效 */
 }
 
 .changelog-main::before {
@@ -2415,7 +2415,8 @@ html {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 200px;
     gap: 48px;
-    align-items: start;
+    /* 不設 align-items: start，讓 .changelog-toc 撐到與內容同高，
+       裡面的 .toc-sticky 才有足夠空間黏住整個捲動範圍 */
 }
 
 /* ----- Main column ----- */
@@ -2431,7 +2432,7 @@ html {
     border-radius: 16px;
     padding: 36px 40px 30px;
     box-shadow: 0 18px 50px rgba(0,0,0,0.35);
-    scroll-margin-top: 90px;  /* offset for sticky header */
+    scroll-margin-top: 110px;  /* offset for sticky header */
     position: relative;
 }
 
@@ -2554,7 +2555,7 @@ html {
 
 .toc-sticky {
     position: sticky;
-    top: 90px;
+    top: 150px;
     background: linear-gradient(160deg, rgba(31,31,31,0.9), rgba(22,22,22,0.9));
     border: 1px solid rgba(255,255,255,0.06);
     border-radius: 12px;
