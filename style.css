@@ -2343,3 +2343,331 @@ footer {
         margin-left: 8px;
     }
 }
+
+/* ============================================================
+   Changelog (single-page consolidated release notes)
+   ============================================================ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.changelog-main {
+    background:
+        radial-gradient(ellipse at top, rgba(247,127,0,0.06), transparent 60%),
+        var(--darker-bg-color);
+    padding: 70px 0 90px;
+    position: relative;
+    overflow: hidden;
+}
+
+.changelog-main::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    mask-image: radial-gradient(ellipse at top, #000 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse at top, #000 30%, transparent 80%);
+}
+
+.changelog-main > .container {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+}
+
+.changelog-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.changelog-header h2 {
+    font-size: 2.4em;
+    color: #ffffff;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 14px;
+}
+
+.changelog-header h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    margin: 14px auto 0;
+    border-radius: 2px;
+}
+
+.changelog-intro {
+    color: var(--light-text-color);
+    font-size: 1.05em;
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.changelog-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 200px;
+    gap: 48px;
+    align-items: start;
+}
+
+/* ----- Main column ----- */
+.changelog-content {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.version-section {
+    background: linear-gradient(160deg, rgba(31,31,31,0.85), rgba(22,22,22,0.85));
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 36px 40px 30px;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+    scroll-margin-top: 90px;  /* offset for sticky header */
+    position: relative;
+}
+
+.version-section:first-child {
+    border-color: rgba(247,127,0,0.4);
+    box-shadow: 0 24px 60px rgba(247,127,0,0.08), 0 18px 50px rgba(0,0,0,0.35);
+}
+
+.version-head {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.version-pill {
+    background: var(--primary-color);
+    color: #fff;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 999px;
+    font-size: 0.95em;
+    letter-spacing: 0.5px;
+}
+
+.version-section .version-date {
+    color: var(--light-text-color);
+    font-size: 0.92em;
+}
+
+.version-tag {
+    background: var(--secondary-color);
+    color: #fff;
+    font-size: 0.78em;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+.version-tag.is-latest {
+    background: var(--secondary-color);
+}
+
+.version-title {
+    color: #ffffff;
+    font-size: 1.7em;
+    font-weight: 800;
+    margin: 0 0 16px;
+    line-height: 1.35;
+}
+
+.version-section > p {
+    color: var(--text-color);
+    font-size: 1.02em;
+    line-height: 1.85;
+    margin-bottom: 16px;
+}
+
+.version-section > p:first-of-type {
+    color: #ffffff;
+    border-left: 4px solid var(--primary-color);
+    padding: 4px 0 4px 18px;
+    margin-bottom: 24px;
+    font-size: 1.05em;
+}
+
+.version-section h4 {
+    color: #ffffff;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: 32px 0 14px;
+    padding-left: 12px;
+    border-left: 4px solid var(--secondary-color);
+    line-height: 1.4;
+}
+
+.version-section .content-image {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    max-height: 420px;
+    object-fit: contain;
+    margin: 14px auto 18px;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+.version-section a:not(.button) {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px dashed rgba(247,127,0,0.4);
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.version-section a:not(.button):hover {
+    color: var(--button-hover-bg);
+    border-bottom-color: var(--button-hover-bg);
+}
+
+.version-section .bugfix-block {
+    margin-top: 32px;
+}
+
+.version-section .bugfix-block h4 {
+    margin: 0 0 16px;
+    padding-left: 0;
+    border-left: none;
+    color: var(--secondary-color);
+    font-size: 1.15em;
+}
+
+/* ----- TOC (right sidebar) ----- */
+.changelog-toc {
+    position: relative;
+}
+
+.toc-sticky {
+    position: sticky;
+    top: 90px;
+    background: linear-gradient(160deg, rgba(31,31,31,0.9), rgba(22,22,22,0.9));
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 18px 16px 14px;
+}
+
+.toc-title {
+    color: var(--light-text-color);
+    font-size: 0.78em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 12px;
+    padding-left: 10px;
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.toc-list a {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: var(--light-text-color);
+    text-decoration: none;
+    font-size: 0.95em;
+    border-left: 2px solid transparent;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.toc-list a:hover {
+    background: rgba(255,255,255,0.04);
+    color: #ffffff;
+}
+
+.toc-list a.active {
+    background: rgba(247,127,0,0.10);
+    color: #ffffff;
+    border-left-color: var(--primary-color);
+}
+
+.toc-version {
+    font-weight: 700;
+}
+
+.toc-date {
+    font-size: 0.78em;
+    color: var(--light-text-color);
+    opacity: 0.7;
+}
+
+.toc-list a.active .toc-date {
+    opacity: 0.9;
+}
+
+.changelog-content .back-to-tutorials {
+    margin-top: 40px;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 900px) {
+    .changelog-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .changelog-toc {
+        order: -1;
+    }
+    .toc-sticky {
+        position: relative;
+        top: auto;
+        padding: 14px 14px 10px;
+    }
+    .toc-title {
+        display: none;
+    }
+    .toc-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+    .toc-list a {
+        padding: 8px 12px;
+        border-left: none;
+        border-bottom: 2px solid transparent;
+        gap: 6px;
+    }
+    .toc-list a.active {
+        border-left-color: transparent;
+        border-bottom-color: var(--primary-color);
+    }
+    .toc-date {
+        display: none;
+    }
+    .version-section {
+        padding: 28px 24px 24px;
+    }
+    .version-title {
+        font-size: 1.4em;
+    }
+    .version-section h4 {
+        font-size: 1.05em;
+    }
+    .changelog-header h2 {
+        font-size: 1.9em;
+    }
+}

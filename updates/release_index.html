@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>版本更新紀錄 - StockKeeper</title>
-  <meta name="description" content="StockKeeper 各版本完整更新紀錄，從 v3.2.0 台股 + 美股雙市場記帳、v3.1.0 雲端模式（本機儲存）與走勢圖框選，到 v3.0.0 雲端模式與歷史回溯，歷代功能補強與問題修正一次掌握。">
+  <meta name="description" content="StockKeeper 各版本完整更新紀錄，從 v3.2.0 台股 + 美股雙市場、v3.1.0 雲端模式（本機儲存）與走勢圖框選、v3.0.0 雲端模式與歷史回溯，到歷代功能補強與問題修正一次掌握。">
   <link rel="canonical" href="https://www.firefoxinfo.com/updates/release_index.html">
 
   <meta property="og:type" content="website">
@@ -46,85 +46,295 @@
       </div>
     </header>
 
-  <main class="release-index">
-    <section>
-      <div class="container">
+  <main class="changelog-main">
+    <div class="container">
+      <div class="changelog-header">
         <h2>版本更新紀錄</h2>
-        <p class="release-index-intro">每一個版本都是為了讓你的投資紀錄更輕鬆、更精準。點擊任一版本可查看完整的更新內容與功能說明。</p>
-
-        <div class="release-list">
-          <a href="releases/release-v3.2.0.html" class="release-list-card is-latest">
-            <div class="release-list-meta">
-              <span class="release-version-pill">v3.2.0</span>
-              <span class="release-date">2026 / 05</span>
-              <span class="release-tag">最新</span>
-            </div>
-            <h3>台股 + 美股雙市場記帳正式上線</h3>
-            <p>
-              從只支援台股正式擴充到
-              <span class="highlight-field">台股 + 美股雙市場</span>，
-              兩種市場各自獨立帳戶。美股支援
-              <span class="highlight-field">綠漲紅跌</span>、
-              <span class="highlight-field">全市場收盤價自動更新</span>，
-              並自動隱藏不適用欄位。
-            </p>
-            <span class="release-list-link">查看完整更新內容 →</span>
-          </a>
-
-          <a href="releases/release-v3.1.0.html" class="release-list-card">
-            <div class="release-list-meta">
-              <span class="release-version-pill">v3.1.0</span>
-              <span class="release-date">2026 / 05</span>
-            </div>
-            <h3>進階功能與匯入彈性大升級</h3>
-            <p>
-              新增
-              <span class="highlight-field">雲端模式（本機儲存）</span>、
-              <span class="highlight-field">走勢圖框選日期區間</span>，
-              對帳單匯入新支援
-              <span class="highlight-field">xls / csv</span> 格式，
-              時序列表新增<span class="highlight-field">區間獲利</span>與<span class="highlight-field">應收付</span>欄位。
-            </p>
-            <span class="release-list-link">查看完整更新內容 →</span>
-          </a>
-
-          <a href="releases/release-v3.0.0.html" class="release-list-card">
-            <div class="release-list-meta">
-              <span class="release-version-pill">v3.0.0</span>
-              <span class="release-date">2026 / 04</span>
-            </div>
-            <h3>雲端模式上線 & 三大新功能</h3>
-            <p>
-              雲端模式（Google 帳號登入）正式上線；新增
-              <span class="highlight-field">庫存損益走勢圖表</span>、
-              <span class="highlight-field">歷史回溯</span>、
-              <span class="highlight-field">時序列表（TWR / XIRR）</span>，
-              並修正卡 90% 等多項老問題。
-            </p>
-            <span class="release-list-link">查看完整更新內容 →</span>
-          </a>
-
-          <a href="releases/release-v2.8.0.html" class="release-list-card">
-            <div class="release-list-meta">
-              <span class="release-version-pill">v2.8.0</span>
-              <span class="release-date">2026 / 01</span>
-            </div>
-            <h3>功能補強 & 易用性提升</h3>
-            <p>
-              本次更新重點包含
-              <span class="highlight-field">交易彈性調整</span>、
-              <span class="highlight-field">UI 操作優化</span>，
-              並修正多項使用者回報的計算問題。
-            </p>
-            <span class="release-list-link">查看完整更新內容 →</span>
-          </a>
-        </div>
-
-        <a href="../index.html#intro" class="button back-to-tutorials">返回首頁</a>
+        <p class="changelog-intro">每一版的新功能、調整、與修正一次看完。點擊右側目錄可快速跳轉到任一版本。</p>
       </div>
-    </section>
-  </main>
 
+      <div class="changelog-layout">
+
+        <article class="changelog-content">
+
+          <!-- ========== v3.2.0 ========== -->
+          <section id="v3-2-0" class="version-section">
+            <div class="version-head">
+              <span class="version-pill">v3.2.0</span>
+              <span class="version-date">2026 / 05</span>
+              <span class="version-tag is-latest">最新</span>
+            </div>
+            <h3 class="version-title">台股 + 美股雙市場記帳正式上線</h3>
+            <p>v3.2.0 是 StockKeeper 的一個重要里程碑 ── 從原本只支援台股，正式擴充到
+              <span class="highlight-field">台股 + 美股雙市場記帳</span>。
+              兩種市場各自<span class="highlight-field">獨立帳戶、互不干擾</span>，
+              並針對美股的交易慣例做了完整調整。
+            </p>
+
+            <h4>1、新增美股帳戶，台美各自獨立</h4>
+            <p>新增帳戶時可選擇<span class="highlight-field">「台股 / 美股」</span>市場，
+              帳戶分頁會以前綴區分（<span class="highlight-field-blue">🇹🇼 TW</span> /
+              <span class="highlight-field-blue">🇺🇸 US</span>），一眼分辨。
+              市場選定後即<span class="highlight-field">不可切換</span>，避免資料混淆。</p>
+            <img src="../images/Tutorial/美股雙市場/市場選擇.png" alt="新增帳戶時選擇台股或美股市場" class="content-image">
+            <p>美股帳戶預設採用美股慣例：<span class="highlight-field">綠漲紅跌</span>；
+              台股則維持<span class="highlight-field">紅漲綠跌</span>，
+              兩者都可以依帳戶<span class="highlight-field-blue">獨立自訂漲跌顏色</span>。</p>
+            <img src="../images/Tutorial/美股雙市場/各項計算設定.png" alt="開啟各項計算設定" class="content-image">
+            <img src="../images/Tutorial/美股雙市場/漲跌顏色.png" alt="美股綠漲紅跌、台股紅漲綠跌，可自訂" class="content-image">
+
+            <h4>2、自動隱藏美股不適用的欄位與功能</h4>
+            <p>美股沒有的概念會<span class="highlight-field">自動隱藏</span>，介面更乾淨，包含：</p>
+            <p>● <span class="highlight-field-blue">交易稅</span>、
+              <span class="highlight-field-blue">二代健保補充保費</span>、
+              <span class="highlight-field-blue">股票股利</span>、
+              <span class="highlight-field-blue">減資</span>、
+              <span class="highlight-field-blue">損益平衡價</span> 等欄位 / 功能。</p>
+            <p>● <span class="highlight-field">手續費可不填</span> ── 多數美股券商為 $0 佣金。</p>
+
+            <h4>3、美股一樣支援券商對帳單匯入（Excel / CSV）</h4>
+            <p>美股帳戶同樣可以匯入券商對帳單，<span class="highlight-field">自由對應欄位</span>
+              （日期 / 種類 / 代號 / 數量 / 單價 / 手續費）。</p>
+            <p>支援的交易種類：<span class="highlight-field-blue">買進</span>、
+              <span class="highlight-field-blue">賣出</span>、
+              <span class="highlight-field-blue">定期定額買進</span>；
+              其他類型（股息 / 利息 / 提款等）會<span class="highlight-field">自動略過</span>。</p>
+            <img src="../images/Tutorial/美股雙市場/美股匯入對帳單視窗.png" alt="美股匯入對帳單視窗" class="content-image">
+            <p><a href="../tutorials/tutorial_如何匯入Excel對帳單.html" class="highlight-field">→ 對帳單匯入教學</a></p>
+
+            <h4>4、美股股價自動更新</h4>
+            <p>程式啟動後會自動取得<span class="highlight-field">全市場最新收盤價</span>，
+              涵蓋 <span class="highlight-field-blue">NYSE / NASDAQ / AMEX</span> 及 ETF，
+              合計<span class="highlight-field">逾 1 萬檔</span>。
+              每個交易日美股<span class="highlight-field">收盤後自動更新</span>，
+              庫存總表隨時顯示最新市值與損益。</p>
+            <img src="../images/Tutorial/美股雙市場/庫存總表顯示美股收盤價.png" alt="庫存總表顯示美股收盤價" class="content-image">
+
+            <h4>5、美股的分割與股利自動帶入（雲端模式）</h4>
+            <p>在<span class="highlight-field">雲端模式</span>下，美股的<span class="highlight-field">分割</span>與
+              <span class="highlight-field">股利</span>會自動帶入，與台股一樣省心。
+              由於美股相關資料量過於龐大、無法即時讓使用者自行爬蟲，
+              <span class="highlight-field-blue">單機模式不支援美股的自動帶入</span>，
+              這部分需透過雲端模式取得。</p>
+            <img src="../images/Tutorial/美股雙市場/單機模式.png" alt="單機模式說明" class="content-image">
+            <p><a href="../tutorials/tutorial_美股雙市場.html" class="highlight-field">→ 美股雙市場詳細教學</a></p>
+
+            <div class="bugfix-block">
+              <h4>修正與優化</h4>
+              <div class="bugfix-item">
+                <span class="bugfix-icon">✔</span>
+                <span>多項 UI 細節調整與穩定性修正。</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- ========== v3.1.0 ========== -->
+          <section id="v3-1-0" class="version-section">
+            <div class="version-head">
+              <span class="version-pill">v3.1.0</span>
+              <span class="version-date">2026 / 05</span>
+            </div>
+            <h3 class="version-title">進階功能與匯入彈性大升級</h3>
+            <p>v3.1.0 的主軸是<span class="highlight-field">使用彈性與進階分析</span>。新增的<span class="highlight-field">雲端模式（本機儲存）</span>讓使用者可以登入帳號使用進階統計功能，卻把交易資料留在自己電腦裡；<span class="highlight-field">走勢圖框選日期</span>與<span class="highlight-field">時序列表新欄位</span>讓區間績效檢視更直覺；<span class="highlight-field">Excel 對帳單匯入</span>也擴充支援 <span class="highlight-field-blue">xls</span> 與 <span class="highlight-field-blue">csv</span> 格式。</p>
+
+            <h4>1、新增雲端模式（本機儲存）</h4>
+            <p>啟動程式時的<span class="highlight-field-blue">啟動模式選擇視窗</span>新增第三個選項 ── <span class="highlight-field">雲端模式（本機儲存）</span>。
+              這個模式讓使用者可以<span class="highlight-field">登入帳號使用進階統計功能</span>，
+              但交易資料<span class="highlight-field">仍保存在本機電腦</span>，
+              <span class="highlight-field-blue">不會上傳到雲端資料庫</span>。
+              適合在意資料隱私、又想使用雲端版進階功能的使用者。</p>
+            <img src="../images/Tutorial/雲端模式/雲端模式_本機存檔.png" alt="雲端模式（本機儲存）選項" class="content-image">
+            <p><a href="../tutorials/tutorial_雲端模式登入.html" class="highlight-field">→ 三種啟動模式詳細教學</a></p>
+
+            <h4>2、Excel 對帳單匯入支援 xls 與 csv 格式</h4>
+            <p>過去匯入對帳單只支援 <span class="highlight-field-blue">xlsx</span> 格式，本次擴充新增 <span class="highlight-field">xls</span> 與 <span class="highlight-field">csv</span> 兩種格式，讓更多券商下載下來的對帳單可以直接匯入。</p>
+            <img src="../images/Tutorial/如何匯入Excel對帳單/匯入對帳單_v3_1_0.png" alt="匯入對帳單支援 xls 與 csv" class="content-image">
+            <img src="../images/Tutorial/如何匯入Excel對帳單/匯入對帳單_v3_1_0_2.png" alt="檔案格式選擇" class="content-image">
+            <p><a href="../tutorials/tutorial_如何匯入Excel對帳單.html" class="highlight-field">→ Excel 對帳單匯入教學</a></p>
+
+            <h4>3、走勢圖可框選日期區間，直接開啟時序列表</h4>
+            <p>在<span class="highlight-field">帳戶持股走勢圖</span>上，現在可以<span class="highlight-field">用滑鼠框選一段日期區間</span>，
+              程式會以該區間直接<span class="highlight-field-blue">開啟時序列表</span>，立即看到這段期間的所有交易與 TWR / XIRR 報酬率。
+              過去要「先看圖、再切回去手動輸入日期區間到時序列表」的兩段操作，現在一個框選動作就完成。</p>
+            <img src="../images/Tutorial/庫存損益走勢圖表/框選日期.png" alt="走勢圖上框選日期區間" class="content-image">
+            <p><a href="../tutorials/tutorial_庫存損益走勢圖表.html" class="highlight-field">→ 走勢圖表詳細教學</a></p>
+
+            <h4>4、時序列表新增「區間獲利」與「應收付」欄位</h4>
+            <p>時序列表新增兩個欄位：</p>
+            <p>● <span class="highlight-field">區間獲利</span>：該段期間的實際損益金額，直接看到區間內賺了多少元，不必另外換算。</p>
+            <p>● <span class="highlight-field">應收付</span>：把該區間內所有交易的應收應付加總，一眼看出區間內的<span class="highlight-field-blue">資金實際進出</span>。</p>
+            <img src="../images/Tutorial/時序列表/時序列表新功能.png" alt="時序列表新增區間獲利與應收付" class="content-image">
+            <p><a href="../tutorials/tutorial_時序列表.html" class="highlight-field">→ 時序列表詳細教學</a></p>
+
+            <div class="bugfix-block">
+              <h4>修正與優化</h4>
+              <div class="bugfix-item">
+                <span class="bugfix-icon">✔</span>
+                <span>多項 UI 細節調整與穩定性修正。</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- ========== v3.0.0 ========== -->
+          <section id="v3-0-0" class="version-section">
+            <div class="version-head">
+              <span class="version-pill">v3.0.0</span>
+              <span class="version-date">2026 / 04</span>
+            </div>
+            <h3 class="version-title">雲端模式上線 & 三大新功能</h3>
+            <p>v3.0.0 是 StockKeeper 推出以來最大幅度的一次更新，主軸是<span class="highlight-field">雲端模式正式上線</span>，並新增三項長期被使用者敲碗的功能：<span class="highlight-field">庫存損益走勢圖表</span>、<span class="highlight-field">歷史回溯</span>、<span class="highlight-field">時序列表（含 TWR / XIRR）</span>。另外也修復了多個老問題，使用體驗更穩定。</p>
+
+            <h4>1、雲端模式正式上線</h4>
+            <p>過去 StockKeeper 只能在單機環境使用，本次更新加入<span class="highlight-field">雲端模式</span>，支援以 <span class="highlight-field">Google 帳號一鍵登入</span>，首次使用時可自動將原本的單機檔案匯入雲端，無痛轉移。
+              雲端版本的操作體驗與單機版幾乎一致（僅鎖定<span class="highlight-field-blue">復原 / 取消復原</span>功能），
+              資料隨時可<span class="highlight-field">下載備份</span>，不會被雲端版綁住。</p>
+            <p><a href="../tutorials/tutorial_雲端模式登入.html" class="highlight-field">→ 雲端模式詳細教學</a></p>
+
+            <h4>2、新功能：庫存損益走勢圖表</h4>
+            <p>許多人看著庫存淨值不斷增加，卻分不清楚到底是<span class="highlight-field">本金投入變多</span>，還是<span class="highlight-field">真的有賺到錢</span>。
+              新增的<span class="highlight-field">庫存損益走勢圖表</span>會把<span class="highlight-field-blue">庫存淨值</span>與<span class="highlight-field-blue">累計損益</span>畫在同一張圖上，讓你一眼就看出兩者的差距與趨勢，並支援<span class="highlight-field">水平 / 垂直自由縮放</span>，以及<span class="highlight-field">匯出 PNG / JPG</span>留存。</p>
+            <p><a href="../tutorials/tutorial_庫存損益走勢圖表.html" class="highlight-field">→ 走勢圖表詳細教學</a></p>
+
+            <h4>3、新功能：歷史回溯</h4>
+            <p>想知道<span class="highlight-field">某一年的某一天，自己當時持有哪些股票、損益是多少</span>嗎？
+              新版只要選定一個<span class="highlight-field">回溯日期</span>，主畫面就會立即呈現該日的實際持股明細、收盤價、未實現損益、已實現損益等完整狀態，回溯期間可隨時<span class="highlight-field">解除回溯</span>回到當前。</p>
+            <p><a href="../tutorials/tutorial_歷史回溯.html" class="highlight-field">→ 歷史回溯詳細教學</a></p>
+
+            <h4>4、新功能：時序列表（TWR / XIRR）</h4>
+            <p>新增<span class="highlight-field">時序列表</span>，可自訂<span class="highlight-field-blue">開始日期</span>與<span class="highlight-field-blue">結束日期</span>，列出該區間內所有交易明細，並自動計算這段期間的<span class="highlight-field">時間加權報酬率（TWR）</span>與<span class="highlight-field">年化報酬率（XIRR）</span>。
+              這對於檢視<span class="highlight-field-blue">某一年</span>、<span class="highlight-field-blue">某一季</span>，或<span class="highlight-field-blue">特定投資策略期間</span>的真實績效非常有幫助。</p>
+            <p><a href="../tutorials/tutorial_時序列表.html" class="highlight-field">→ 時序列表詳細教學</a></p>
+
+            <div class="bugfix-block">
+              <h4>修正與優化</h4>
+              <div class="bugfix-item">
+                <span class="bugfix-icon">✔</span>
+                <span>修正部分使用者反映的<span class="highlight-field">程式卡在 90%</span>無法繼續的老問題：股利相關資訊改由伺服器端集中下載，避免本地端爬蟲不穩定的狀況。</span>
+              </div>
+              <div class="bugfix-item">
+                <span class="bugfix-icon">✔</span>
+                <span>新增<span class="highlight-field">版本更新提示</span>：當有新版本釋出時，程式會主動通知使用者下載，不再需要手動到網站確認。</span>
+              </div>
+              <div class="bugfix-item">
+                <span class="bugfix-icon">✔</span>
+                <span>多項 UI 細節調整與穩定性修正。</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- ========== v2.8.0 ========== -->
+          <section id="v2-8-0" class="version-section">
+            <div class="version-head">
+              <span class="version-pill">v2.8.0</span>
+              <span class="version-date">2026 / 01</span>
+            </div>
+            <h3 class="version-title">功能補強 & 易用性提升</h3>
+            <p>本次 v2.8.0 更新主要回應使用者回饋，針對 <span class="highlight-field">交易彈性</span>、<span class="highlight-field">UI 易用性</span> 與 <span class="highlight-field">計算正確性</span> 進行補強與優化。</p>
+
+            <h4>1、手續費折扣方式新增『事後退佣』</h4>
+            <p>劵商交易手續費折扣有兩種方式：<span class="highlight-field">立即折扣</span>與<span class="highlight-field">事後退佣</span>。雖然折扣方式不影響實際累計損益的數值，但會影響『#現股總成本』跟『#未實現損益』所呈現的數字。
+              StockKeeper 之前只有提供<span class="highlight-field">立即折扣</span>的計算模式，此次更新讓使用者可以自行決定要選擇哪種模式。</p>
+
+            <h4>2、增資認購成本計算方式新增『計入現股總成本』</h4>
+            <p>StockKeeper 之前對增資認購的交易只計入<span class="highlight-field">累計總成本</span>，而未將其計入<span class="highlight-field">現股總成本</span>（參考元大證劵 App 的計算方式）。但近期發現部分劵商（如華南永昌）會將增資認購的股票計入現股總成本。
+              此次更新讓使用者可以自行決定是否要將增資認購成本計入現股總成本。</p>
+
+            <h4>3、未實現損益計算方式新增『不預扣手續費及交易稅』</h4>
+            <p>此次更新讓使用者可以自行決定是否要在未實現損益計算中<span class="highlight-field">預扣手續費及交易稅</span>。</p>
+
+            <h4>4、賣出成本新增『平均價賣出』</h4>
+            <p>台股交易一般都是以<span class="highlight-field">先買先賣</span>為損益計算方式。但若是公司法人戶需要做會計帳，則在賣出時會需要以<span class="highlight-field">平均價</span>作為成本。
+              此次更新新增此功能，讓使用者可以根據需求選擇適合的成本計算方式。</p>
+
+            <h4>5、交易列表新增『垂直捲動』方式</h4>
+            <p>過往 StockKeeper 的交易列表是水平呈現，因此無法使用滑鼠滾輪來捲動。此次更新新增了垂直捲動方式，讓使用者可以更方便地瀏覽交易列表。</p>
+          </section>
+
+          <!-- ========== v2.7.0 ========== -->
+          <section id="v2-7-0" class="version-section">
+            <div class="version-head">
+              <span class="version-pill">v2.7.0</span>
+              <span class="version-date">2025 / 12</span>
+            </div>
+            <h3 class="version-title">交易彈性、UI 易用性與計算正確性大補強</h3>
+            <p>本次 v2.7.0 更新主要回應使用者回饋，針對 <span class="highlight-field">交易彈性</span>、<span class="highlight-field">UI 易用性</span> 與 <span class="highlight-field">計算正確性</span> 進行補強與優化。</p>
+
+            <h4>1、分割 / 合併 / 減資紀錄設定全面開放</h4>
+            <p>StockKeeper 會自動帶入股利、減資、分割、合併等資料，過去僅提供股利的控制介面。本次更新將所有相關設定<span class="highlight-field">全面開放 UI</span>，讓使用者可以自行決定是否要自動帶入各類資料。</p>
+
+            <h4>2、共用按鈕列（小螢幕更友善）</h4>
+            <p>將「自動帶入股利 / 減資 / 分割合併、匯出、刪除」整合為<span class="highlight-field">共用按鈕</span>並移至畫面前方。若偏好舊版配置，可從「顯示 → 使用個別按鈕」切換回原樣。</p>
+
+            <h4>3、新增交易時保留股票列表排序</h4>
+            <p>新增交易後，股票列表將<span class="highlight-field">保留原有排序條件</span>，不再因刷新資料而重置排序。</p>
+
+            <h4>4、UI 字型大小調整（大 / 中 / 小）</h4>
+            <p>可依個人需求調整字型大小。<br>※ 切換後需重新啟動程式才會生效。</p>
+
+            <h4>5、交易列表欄寬可調整並自動記憶</h4>
+            <p>交易列表欄寬可手動拖拉調整，設定會被記憶，不需每次重新設定。</p>
+
+            <h4>6、重新下載資料功能</h4>
+            <p>當資料出現不完整時，可使用「重新下載資料」功能，從政府網站重新爬取資料。</p>
+
+            <h4>7、匯入對帳單功能補強</h4>
+            <p>新增支援僅有<span class="highlight-field">股票代碼</span>或<span class="highlight-field">股票名稱</span>的匯入模式。</p>
+
+            <h4>8、當沖交易架構重整</h4>
+            <p>新版將整筆買賣交易定義為一筆當沖交易，同時設定買價與賣價，可正確顯示當沖買與賣。舊有當沖紀錄可保留，或刪除後以新版方式重新建立。</p>
+
+            <h4>9、股票右鍵快速查詢</h4>
+            <p>在股票列表中按右鍵，可快速連結至 <span class="highlight-field">GoodInfo</span> 或 <span class="highlight-field">Yahoo Finance</span> 查詢進階資訊。</p>
+
+            <h4>10、F1 快速開啟教學</h4>
+            <p>滑鼠移至帶有 ⓘ 的功能上，按下 <span class="highlight-field">F1</span> 即可開啟對應教學頁。</p>
+
+            <h4>11、支援 0 元成本交易</h4>
+            <p>允許建立成本為 0 元的交易紀錄，以因應無法回溯歷史成本的情境。</p>
+
+            <h4>12、股價上下鍵符合實際跳動檔位</h4>
+            <p>調整股價時，會依實際台股與 ETF 跳動檔位變動，而非固定 0.1 元。</p>
+
+            <h4>13、新增交易時預設帶入目前股價</h4>
+            <p>新增交易紀錄時，預設填入目前股價作為交易價格。</p>
+
+            <div class="bugfix-block">
+              <h4>🐞 計算 Bug 修正</h4>
+              <div class="bugfix-item">
+                <span class="bugfix-icon">✔</span>
+                <span>修正無現金股利時補充保費無法計算的問題</span>
+              </div>
+              <div class="bugfix-item">
+                <span class="bugfix-icon">✔</span>
+                <span>現金減資補上匯費計算</span>
+              </div>
+              <div class="bugfix-item">
+                <span class="bugfix-icon">✔</span>
+                <span>修正非 10 元面額股票配股計算錯誤</span>
+              </div>
+            </div>
+          </section>
+
+          <a href="../index.html#intro" class="button back-to-tutorials">返回首頁</a>
+
+        </article>
+
+        <aside class="changelog-toc" aria-label="版本目錄">
+          <div class="toc-sticky">
+            <h4 class="toc-title">版本</h4>
+            <ul class="toc-list">
+              <li><a href="#v3-2-0"><span class="toc-version">v3.2.0</span><span class="toc-date">2026/05</span></a></li>
+              <li><a href="#v3-1-0"><span class="toc-version">v3.1.0</span><span class="toc-date">2026/05</span></a></li>
+              <li><a href="#v3-0-0"><span class="toc-version">v3.0.0</span><span class="toc-date">2026/04</span></a></li>
+              <li><a href="#v2-8-0"><span class="toc-version">v2.8.0</span><span class="toc-date">2026/01</span></a></li>
+              <li><a href="#v2-7-0"><span class="toc-version">v2.7.0</span><span class="toc-date">2025/12</span></a></li>
+            </ul>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
 
   <footer>
     <div class="container">
@@ -133,6 +343,31 @@
   </footer>
 
   <script src="../script.js"></script>
-</body>
+  <script>
+    // Changelog TOC active-state highlight
+    document.addEventListener('DOMContentLoaded', () => {
+      const tocLinks = document.querySelectorAll('.toc-list a');
+      const sections = document.querySelectorAll('.version-section');
+      if (!tocLinks.length || !sections.length) return;
 
+      const byId = new Map();
+      tocLinks.forEach(a => byId.set(a.getAttribute('href').slice(1), a));
+
+      const setActive = (id) => {
+        tocLinks.forEach(a => a.classList.remove('active'));
+        const link = byId.get(id);
+        if (link) link.classList.add('active');
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        const visible = entries
+          .filter(e => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (visible.length) setActive(visible[0].target.id);
+      }, { rootMargin: '-30% 0px -55% 0px', threshold: [0, 0.25, 0.5, 1] });
+
+      sections.forEach(s => observer.observe(s));
+    });
+  </script>
+</body>
 </html>
