@@ -40,7 +40,7 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "StockKeeper",
-    "operatingSystem": "Windows 10, Windows 11",
+    "operatingSystem": "Windows 10, Windows 11, macOS",
     "applicationCategory": "FinanceApplication",
     "description": "全自動化的台股 / 美股投資紀錄工具：自動帶入股利、自動處理減資與分割合併，提供歷史回溯、損益走勢圖表與 TWR / XIRR 績效分析。",
     "softwareVersion": "3.2.1",
@@ -104,7 +104,8 @@
               <a href="#v3-showcase" class="button hero-cta-secondary"><i class="fa-solid fa-circle-play"></i> 看獨家新功能</a>
             </div>
             <div class="hero-trust">
-              <span><i class="fa-brands fa-windows"></i> Windows 10 / 11</span>
+              <span><i class="fa-brands fa-windows"></i> Windows</span>
+              <span><i class="fa-brands fa-apple"></i> macOS</span>
               <span><i class="fa-solid fa-rotate"></i> 資料每天自動更新</span>
             </div>
           </div>
@@ -487,41 +488,58 @@
           <p class="section-lead">完整繁體中文，下載開啟即可開始記錄你的台股 / 美股投資 ── 單機版沒有使用期限。</p>
         </div>
 
-        <div class="download-cards">
-          <div class="download-card download-card-primary">
-            <div class="download-card-head">
-              <div class="download-icon-circle"><i class="fa-brands fa-windows"></i></div>
-              <div class="download-card-meta">
-                <span class="download-version-pill">v3.2.1</span>
-                <span class="download-platform">Windows 桌面版</span>
-              </div>
-            </div>
-            <h3>StockKeeper_v3.2.1</h3>
-            <ul class="download-specs">
-              <li><i class="fa-solid fa-circle-check"></i> 支援 Windows 10 / 11（64-bit）</li>
-              <li><i class="fa-solid fa-circle-check"></i> 解壓縮即用，不需安裝</li>
-              <li><i class="fa-solid fa-circle-check"></i> 三種啟動模式自由切換（單機 / 雲端本機儲存 / 雲端）</li>
-            </ul>
-            <div class="download-cta-row">
-              <a href="https://www.firefoxinfo.com/download/latest.html" class="button primary-button download-cta-primary">
-                <i class="fa-solid fa-download"></i> 下載 Windows 版
-              </a>
-              <a href="updates/release_index.html#v3-2-1" class="button download-cta-secondary">
+        <div class="download-cards" id="download-cards">
+          <div class="download-card download-card-primary download-single">
+
+            <div class="download-single-head">
+              <h3>StockKeeper_v3.2.1</h3>
+              <a href="updates/release_index.html#v3-2-1" class="button download-cta-secondary download-single-update-link">
                 <i class="fa-solid fa-list-check"></i> 查看 v3.2.1 更新內容
               </a>
             </div>
+
+            <ul class="download-specs">
+              <li><i class="fa-solid fa-circle-check"></i> 支援 Windows 10 / 11（64-bit）/ macOS（Intel · Apple Silicon 通用）</li>
+              <li><i class="fa-solid fa-circle-check"></i> 解壓縮即用，不需安裝</li>
+            </ul>
+
+            <ul class="download-platforms">
+              <li class="download-platform-row" data-platform="windows">
+                <div class="download-platform-icon"><i class="fa-brands fa-windows"></i></div>
+                <a class="download-platform-cta"
+                   href="https://www.firefoxinfo.com/download/latest.html"
+                   data-active-label="下載 Windows 版"
+                   data-disabled-label="請用 Windows 電腦下載">
+                  <i class="fa-solid fa-download"></i>
+                  <span class="download-platform-label">下載 Windows 版</span>
+                </a>
+                <span class="download-version-pill">v3.2.1</span>
+              </li>
+
+              <li class="download-platform-row" data-platform="mac">
+                <div class="download-platform-icon"><i class="fa-brands fa-apple"></i></div>
+                <a class="download-platform-cta"
+                   href="https://www.firefoxinfo.com/download/latest-mac.html"
+                   data-active-label="下載 Mac 版"
+                   data-disabled-label="請用 Mac 電腦下載">
+                  <i class="fa-solid fa-download"></i>
+                  <span class="download-platform-label">下載 Mac 版</span>
+                </a>
+                <span class="download-version-pill">v3.2.1</span>
+              </li>
+
+              <li class="download-platform-row download-platform-mobile">
+                <div class="download-platform-icon"><i class="fa-brands fa-apple"></i><i class="fa-brands fa-android"></i></div>
+                <span class="download-platform-text">行動裝置版本開發中，敬請期待。</span>
+              </li>
+            </ul>
+
             <p class="download-source">
               <i class="fa-brands fa-github"></i> 釋出於
               <a href="https://github.com/foxking0416/stockkeeperrelease/releases" target="_blank" rel="noopener">GitHub Release</a>
               ── 透明公開，可確認檔案真實性
             </p>
-          </div>
 
-          <div class="download-card download-card-mobile">
-            <div class="download-icon-circle"><i class="fa-brands fa-apple"></i><i class="fa-brands fa-android"></i></div>
-            <h3>iOS / Android</h3>
-            <p>行動裝置版本開發中，敬請期待。</p>
-            <span class="download-coming-soon-tag">Coming soon</span>
           </div>
         </div>
 
@@ -570,6 +588,50 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- 下載區：依使用者作業系統啟用對應的下載按鈕，其餘以 disabled 提示 -->
+  <script>
+    (function () {
+      const rows = document.querySelectorAll('.download-platform-row[data-platform]');
+      if (!rows.length) return;
+
+      // OS 偵測（優先用 userAgentData，缺則回退 userAgent + maxTouchPoints）
+      const ua = navigator.userAgent || '';
+      const platform = (navigator.userAgentData && navigator.userAgentData.platform) || '';
+      const isIPad = /iPad/.test(ua) || (/Mac/.test(ua) && navigator.maxTouchPoints > 1);
+      const isIPhone = /iPhone|iPod/.test(ua);
+      const isAndroid = /Android/i.test(ua);
+      const isMobile = isIPad || isIPhone || isAndroid;
+      const isMac = /Mac/i.test(platform) || (/Mac/.test(ua) && !isMobile);
+
+      let activePlatform = null;
+      if (!isMobile) activePlatform = isMac ? 'mac' : 'windows';
+
+      rows.forEach(row => {
+        const cta = row.querySelector('.download-platform-cta');
+        const label = cta.querySelector('.download-platform-label');
+        const active = (row.dataset.platform === activePlatform);
+
+        if (active) {
+          cta.classList.remove('is-disabled');
+          cta.removeAttribute('aria-disabled');
+          if (cta.dataset.savedHref) {
+            cta.href = cta.dataset.savedHref;
+            delete cta.dataset.savedHref;
+          }
+          label.textContent = cta.dataset.activeLabel;
+        } else {
+          cta.classList.add('is-disabled');
+          cta.setAttribute('aria-disabled', 'true');
+          if (cta.hasAttribute('href') && !cta.dataset.savedHref) {
+            cta.dataset.savedHref = cta.getAttribute('href');
+          }
+          cta.removeAttribute('href');
+          label.textContent = cta.dataset.disabledLabel;
+        }
+      });
+    })();
+  </script>
 </body>
 
 </html>
