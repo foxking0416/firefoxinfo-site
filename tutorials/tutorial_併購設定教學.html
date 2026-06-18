@@ -3,8 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>教學：併購設定 - StockKeeper</title>
-    <link rel="stylesheet" href="../style.css"> 
+    <title>教學：併購設定（自動帶入與手動設定）- StockKeeper</title>
+    <meta name="description" content="StockKeeper 併購設定教學：v3.3.0 起雲端模式會自動帶入 2009 年起的歷史併購資料，支援多家公司合而為一、連續併購、控股轉型等情境。本頁同時說明手動設定併購條件的流程與計算原理。">
+    <link rel="canonical" href="https://www.firefoxinfo.com/tutorials/tutorial_併購設定教學.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="火狐資訊 StockKeeper">
+    <meta property="og:title" content="教學：併購設定（自動帶入與手動設定）- StockKeeper">
+    <meta property="og:description" content="v3.3.0 起雲端模式自動帶入歷史併購資料，支援多家公司合而為一、連續併購、控股轉型。本頁同時說明手動設定流程與計算原理。">
+    <meta property="og:url" content="https://www.firefoxinfo.com/tutorials/tutorial_併購設定教學.html">
+    <meta property="og:image" content="https://www.firefoxinfo.com/images/Tutorial/併購設定/自動帶入併購資料1.png">
+    <meta property="og:locale" content="zh_TW">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="教學：併購設定 - StockKeeper">
+    <meta name="twitter:description" content="v3.3.0 起雲端模式自動帶入歷史併購資料，本頁同時說明手動設定流程與計算原理。">
+    <meta name="twitter:image" content="https://www.firefoxinfo.com/images/Tutorial/併購設定/自動帶入併購資料1.png">
+
+    <link rel="stylesheet" href="../style.css">
     <link rel="icon" href="../FoxInfo.svg" type="image/svg+xml">
     <link rel="shortcut icon" href="../FoxInfo.ico">
 </head>
@@ -33,41 +49,88 @@
     <main>
         <section class="tutorial-detail-section">
             <div class="container">
-                <h2>如何設定併購條件</h2>
+                <h2>併購設定（自動帶入與手動設定）</h2>
                 <div class="tutorial-content">
-                    <h3>步驟一：開啟併購設定</h3>
+
+                    <p>StockKeeper 從 <span class="highlight-field">v3.3.0</span> 起，
+                        <span class="highlight-field">雲端模式</span>會自動帶入 2009 年起的歷史併購資料，
+                        多數情況下使用者不需要再手動設定。
+                        如果是單機模式、或想覆寫自動帶入的內容，本頁也說明手動設定的流程。</p>
+
+                    <h3>1、雲端模式自動帶入 <span class="feature-badge" style="margin-left:6px;">v3.3.0 新增</span></h3>
+                    <p>啟動<span class="highlight-field">雲端模式</span>後，併購設定視窗會自動顯示
+                        <span class="highlight-field">2009 年起的歷史併購資料</span>。
+                        每一筆會以「<span class="highlight-field-blue">自動</span>」標示來源，方便辨識。</p>
+                    <img src="../images/Tutorial/併購設定/自動帶入併購資料1.png" alt="雲端模式自動帶入歷史併購資料" class="content-image">
+
+                    <p>支援的併購情境包含：</p>
+
+                    <p>● <span class="highlight-field">多家公司合而為一</span>：例如
+                        <span class="highlight-field-blue">3514 昱晶</span>與
+                        <span class="highlight-field-blue">3561 昇陽光電</span>合併為
+                        <span class="highlight-field-blue">3576 聯合再生</span>。</p>
+                    <img src="../images/Tutorial/併購設定/自動帶入併購資料2.png" alt="多家公司合而為一（昱晶 + 昇陽光電 → 聯合再生）" class="content-image">
+
+                    <p>● <span class="highlight-field">連續併購串接</span>：例如
+                        <span class="highlight-field-blue">2456 奇力新</span>先併購
+                        <span class="highlight-field-blue">3068 美磊科技</span>，之後
+                        <span class="highlight-field-blue">2327 國巨*</span> 又併購
+                        <span class="highlight-field-blue">2456 奇力新</span>。</p>
+                    <img src="../images/Tutorial/併購設定/自動帶入併購資料3.png" alt="連續併購串接（奇力新 → 國巨）" class="content-image">
+                    <img src="../images/Tutorial/併購設定/自動帶入併購資料4.png" alt="連續併購串接細節" class="content-image">
+
+                    <p>● <span class="highlight-field">控股公司轉型</span>：有些公司只是單純轉型為控股公司、但股票代碼有更換，這類也會自動處理，例如
+                        <span class="highlight-field-blue">6251 定穎</span> 轉為
+                        <span class="highlight-field-blue">3715 定穎投控</span>。</p>
+
+                    <p>● <span class="highlight-field">Hover 提示</span>：滑鼠移到「<span class="highlight-field-blue">併購換股</span>」或「<span class="highlight-field-blue">併購下市</span>」欄位上時，會顯示是從哪支股票轉換而來、或要轉換到哪支股票。</p>
+                    <img src="../images/Tutorial/併購設定/自動帶入併購資料5.png" alt="併購換股欄位的 Hover 提示" class="content-image">
+                    <img src="../images/Tutorial/併購設定/自動帶入併購資料6.png" alt="併購下市欄位的 Hover 提示" class="content-image">
+
+                    <p><span class="highlight-field-blue">提醒：</span>自動帶入的併購資料為開發者從相關新聞整理取得，若發現錯誤，歡迎<a href="../index.html#contact">回報</a>。</p>
+
+                    <h3>2、調整或停用自動帶入的內容</h3>
+                    <p>自動帶入後仍保留完整彈性：</p>
+                    <p>● <span class="highlight-field">取消套用</span>：即使有自動帶入的併購資料，仍可選擇「<span class="highlight-field-blue">不套用</span>」，
+                        程式就不會使用這筆併購資料。</p>
+                    <p>● <span class="highlight-field">手動覆寫</span>：覺得自動帶入的條件不正確時，可直接手動輸入新的併購條件，
+                        系統會以<span class="highlight-field">手動輸入為主</span>。</p>
+
+                    <h3>3、手動設定併購（單機模式或自訂時使用）</h3>
+                    <p>單機模式不會自動帶入併購資料，需要使用者自行輸入。
+                        雲端模式則用在<span class="highlight-field">覆寫</span>自動帶入的內容、或補上自動資料未涵蓋的併購時。</p>
+
+                    <h4>步驟一：開啟併購設定</h4>
                     <p>點選工具列的「設定」並選擇「公司併購設定」：</p>
                     <img src="../images/Tutorial/併購設定/併購設定1.png" alt="開啟併購設定的按鈕" class="content-image">
-                    <h3>步驟二：檢視及編輯已存在的併購，或是新增併購</h3>
+
+                    <h4>步驟二：檢視及編輯已存在的併購，或新增併購</h4>
                     <p>開啟併購設定功能後，會看到已經存在的併購資料，從這邊可以<span class="highlight-field">編輯</span>或<span class="highlight-field">刪除</span>現有的併購資料，也可以<span class="highlight-field">新增</span>新的併購資料。</p>
-                    <p>P.S. 程式預設有先把「台新-新光」的併購資料設定好，方便使用者參考。</p>
-                    <img src="../images/Tutorial/併購設定/併購設定2.png" alt="調整顯示欄位的dialog" class="content-image">
-                    <p></p>
+                    <img src="../images/Tutorial/併購設定/併購設定2.png" alt="併購設定視窗" class="content-image">
+
                     <p>設定併購條件時，至少要從『普通股』、『特別股』、『現金』裡面選擇一個，不然就不予通過。</p>
                     <div class="image-row">
-                        <img src="../images/Tutorial/併購設定/併購設定3.png" alt="開啟併購設定的按鈕" class="content-image">
+                        <img src="../images/Tutorial/併購設定/併購設定3.png" alt="新增併購條件" class="content-image">
                         <img src="../images/Tutorial/併購設定/併購設定4.png" alt="併購設定資料列表" class="content-image">
                     </div>
-                    <p></p>
-                    <p>併購設定後，會自己產生存續股及相對應的資料出來。這樣就完成啦！</p>
-                    <img src="../images/Tutorial/併購設定/併購設定5.png" alt="調整顯示欄位的dialog" class="content-image">
-                    <h3>計算參考</h3>
-                    <p>被併購消滅的股票，他的<span class="highlight-field">現股成本(劵商App顯示成本)</span>會被挪進存續的股票裡，但若是存續股票不只一支(例如 2887 台新金及2887I 台新辛種特別股)，那麼現股成本只會被挪進主要股票，不會挪進特別股裡。</p>
+
+                    <p>併購設定後，會自己產生存續股及相對應的資料出來。</p>
+                    <img src="../images/Tutorial/併購設定/併購設定5.png" alt="併購設定完成的結果" class="content-image">
+
+                    <h3>4、計算參考</h3>
+                    <p>被併購消滅的股票，他的<span class="highlight-field">現股成本（劵商 App 顯示成本）</span>會被挪進存續的股票裡，但若是存續股票不只一支（例如 2887 台新金及 2887I 台新辛種特別股），那麼現股成本只會被挪進主要股票，不會挪進特別股裡。</p>
                     <p>被併購消滅的股票，他的<span class="highlight-field">累計損益</span>會繼續被保留在原始這支股票裡。因為併購時也有可能沒有換股，單純只是現金溢價收購。</p>
 
                     <br>
-                    <br>
-                    <p>下面用修改過的併購條件來解釋計算原理(台新新光合併實際上沒有現金，但這邊多增加1元現金來說明有現金時的併購狀況)</p>
-                    <img src="../images/Tutorial/併購設定/併購設定6.png" alt="調整顯示欄位的dialog" class="content-image">
-                    <img src="../images/Tutorial/併購設定/併購設定7.png" alt="調整顯示欄位的dialog" class="content-image">
-                    <img src="../images/Tutorial/併購設定/併購設定8.png" alt="調整顯示欄位的dialog" class="content-image">
-                    <img src="../images/Tutorial/併購設定/併購設定9.png" alt="調整顯示欄位的dialog" class="content-image">
-                    <p>被併購股票的累計損益計算： -10020(第一次買進) +10947 (第一次賣出) – 10020 (第二次買進) + 1000 (併購獲得現金) = -8093</p>
-                    <p>但相對的，台新金的累計損益就變成： 10987(市值) – 20(手續費) – 32(交易稅) – 0(累計成本) = 10935</p>
-                    <p>然後台新辛特的累計損益則是： 1594(市值) – 20(手續費) – 4(交易稅) – 0(累計成本) = 1570</p>
+                    <p>下面用修改過的併購條件來解釋計算原理（台新新光合併實際上沒有現金，但這邊多增加 1 元現金來說明有現金時的併購狀況）：</p>
+                    <img src="../images/Tutorial/併購設定/併購設定6.png" alt="計算示範 1" class="content-image">
+                    <img src="../images/Tutorial/併購設定/併購設定7.png" alt="計算示範 2" class="content-image">
+                    <img src="../images/Tutorial/併購設定/併購設定8.png" alt="計算示範 3" class="content-image">
+                    <img src="../images/Tutorial/併購設定/併購設定9.png" alt="計算示範 4" class="content-image">
+                    <p>被併購股票的累計損益計算：–10,020（第一次買進）+10,947（第一次賣出）–10,020（第二次買進）+1,000（併購獲得現金）= –8,093</p>
+                    <p>但相對的，台新金的累計損益就變成：10,987（市值）– 20（手續費）– 32（交易稅）– 0（累計成本）= 10,935</p>
+                    <p>然後台新辛特的累計損益則是：1,594（市值）– 20（手續費）– 4（交易稅）– 0（累計成本）= 1,570</p>
 
-                    <h3>後續規劃</h3>
-                    <p>因為併購資訊並沒有統一發布的表格可以爬蟲，因此目前需要使用者手動輸入相關資料。若未來StockKeeper有機會發展到有Server端的話，將會考慮自動化這個流程。</p>
                 </div>
                 <a href="../index.html#tutorials" class="button primary-button back-to-tutorials">返回教學列表</a>
             </div>
