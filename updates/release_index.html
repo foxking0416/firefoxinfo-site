@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>版本更新紀錄 - StockKeeper</title>
-  <meta name="description" content="StockKeeper 各版本完整更新紀錄，從 v3.2.1 小數股數與預扣稅、v3.2.0 台股 + 美股雙市場、v3.1.0 雲端模式（本機儲存）與走勢圖框選、v3.0.0 雲端模式與歷史回溯，到歷代功能補強與問題修正一次掌握。">
+  <meta name="description" content="StockKeeper 各版本完整更新紀錄，從 v3.3.0 併購自動帶入與外觀自訂、v3.2.1 小數股數與預扣稅、v3.2.0 台股 + 美股雙市場、v3.1.0 雲端模式（本機儲存）與走勢圖框選、v3.0.0 雲端模式與歷史回溯，到歷代功能補強與問題修正一次掌握。">
   <link rel="canonical" href="https://www.firefoxinfo.com/updates/release_index.html">
 
   <meta property="og:type" content="website">
@@ -57,12 +57,85 @@
 
         <article class="changelog-content">
 
+          <!-- ========== v3.3.0 ========== -->
+          <section id="v3-3-0" class="version-section">
+            <div class="version-head">
+              <span class="version-pill">v3.3.0</span>
+              <span class="version-date">2026 / 06</span>
+              <span class="version-tag is-latest">最新</span>
+            </div>
+            <h3 class="version-title">併購自動帶入、交易備註、外觀自訂</h3>
+            <p>v3.3.0 把幾個過去需要使用者自己動手的繁瑣設定自動化或開放彈性：
+              <span class="highlight-field">併購歷史資料</span>在雲端模式下會自動帶入、
+              交易紀錄可以加上<span class="highlight-field">備註</span>、
+              外觀與交易顏色都能自訂。</p>
+
+            <h4>1、併購功能再進化（雲端模式自動帶入）</h4>
+            <p>過去手上持股若因併購而換股，需要自行輸入併購條件。
+              從 v3.3.0 開始，<span class="highlight-field">雲端模式</span>預設會
+              <span class="highlight-field">自動帶入歷史併購資料</span>（涵蓋 2009 年至今）。</p>
+            <img src="../images/Tutorial/併購設定/自動帶入併購資料1.png" alt="雲端模式自動帶入歷史併購資料" class="content-image">
+
+            <p>自動帶入後仍保留完整彈性，可以處理常見的各種併購情境：</p>
+            <p>● <span class="highlight-field">自動帶入的併購資料可選擇取消套用</span>：即使有自動帶入的併購資料，使用者依然可選擇不要套用。</p>
+            <p>● <span class="highlight-field">自動帶入後仍可手動覆寫</span>：若覺得自動帶入的併購資料不正確，可自行手動輸入，系統會以手動輸入為主。</p>
+            <p>● <span class="highlight-field">多家公司合而為一</span>：例如 <span class="highlight-field-blue">3514 昱晶</span>與<span class="highlight-field-blue">3561 昇陽光電</span>合併為 <span class="highlight-field-blue">3576 聯合再生</span>。</p>
+            <img src="../images/Tutorial/併購設定/自動帶入併購資料2.png" alt="多家公司合而為一（昱晶 + 昇陽光電 → 聯合再生）" class="content-image">
+
+            <p>● <span class="highlight-field">連續併購串接</span>：例如 <span class="highlight-field-blue">2456 奇力新</span>先併購 <span class="highlight-field-blue">3068 美磊科技</span>，之後 <span class="highlight-field-blue">2327 國巨*</span> 又併購 <span class="highlight-field-blue">2456 奇力新</span>。</p>
+            <img src="../images/Tutorial/併購設定/自動帶入併購資料3.png" alt="連續併購串接（奇力新 → 國巨）" class="content-image">
+            <img src="../images/Tutorial/併購設定/自動帶入併購資料4.png" alt="連續併購串接細節" class="content-image">
+
+            <p>● <span class="highlight-field">控股公司轉型</span>：有些公司只是單純轉型為控股公司，但股票代碼有更換，也會自動處理。例如 <span class="highlight-field-blue">6251 定穎</span> 轉為 <span class="highlight-field-blue">3715 定穎投控</span>。</p>
+
+            <p>● <span class="highlight-field">Hover 提示</span>：滑鼠移到「<span class="highlight-field-blue">併購換股</span>」或「<span class="highlight-field-blue">併購下市</span>」欄位上時，會顯示是從哪支股票轉換而來、或要轉換到哪支股票。</p>
+            <img src="../images/Tutorial/併購設定/自動帶入併購資料5.png" alt="併購換股欄位的提示" class="content-image">
+            <img src="../images/Tutorial/併購設定/自動帶入併購資料6.png" alt="併購下市欄位的提示" class="content-image">
+
+            <p><span class="highlight-field-blue">提醒：</span>這些併購資料為開發者從相關新聞整理取得,若發現錯誤,歡迎<a href="../../index.html#contact">回報</a>。</p>
+
+            <h4>2、交易紀錄可加入備註</h4>
+            <p>各式交易紀錄只要是<span class="highlight-field">使用者自行輸入</span>的（非自動帶入的股利等資料），都可以加上備註。
+              有備註的欄位會顯示<span class="highlight-field-blue">圖示</span>方便辨認,
+              滑鼠移到欄位上會直接顯示備註內容。</p>
+            <img src="../images/release/v3.3.0/備註1.png" alt="交易備註輸入" class="content-image">
+            <img src="../images/release/v3.3.0/備註2.png" alt="備註圖示與 Hover 提示" class="content-image">
+
+            <h4>3、自訂外觀與交易種類顏色</h4>
+            <p>v3.3.0 起，可以將外觀切換為較具<span class="highlight-field">現代感的版面</span>；
+              若覺得不習慣，也可以隨時切回<span class="highlight-field-blue">傳統版面</span>。</p>
+            <img src="../images/release/v3.3.0/自訂外觀1.png" alt="切換外觀設定" class="content-image">
+            <img src="../images/release/v3.3.0/自訂外觀2.png" alt="現代感版面範例" class="content-image">
+            <img src="../images/release/v3.3.0/自訂外觀3.png" alt="傳統版面範例" class="content-image">
+            <img src="../images/release/v3.3.0/自訂外觀4.png" alt="外觀切換結果" class="content-image">
+            <img src="../images/release/v3.3.0/調整Layout.png" alt="調整 Layout" class="content-image">
+
+            <p>各項交易（買進 / 賣出 / 股利等）的<span class="highlight-field">代表顏色</span>也可以自訂，符合個人習慣。</p>
+            <img src="../images/release/v3.3.0/自訂交易種類顏色1.png" alt="自訂交易種類顏色 - 設定" class="content-image">
+            <img src="../images/release/v3.3.0/自訂交易種類顏色2.png" alt="自訂交易種類顏色 - 結果" class="content-image">
+
+            <h4>4、交易欄位雙擊即可進入編輯視窗</h4>
+            <p>過去要編輯交易紀錄，必須點到 <span class="highlight-field-blue">Edit</span> 欄位才能開啟編輯視窗。
+              現在直接<span class="highlight-field">雙擊任一交易欄位</span>就會進入編輯，省一個動作。</p>
+
+            <div class="bugfix-block">
+              <h4>修正與優化</h4>
+              <div class="bugfix-item">
+                <span class="bugfix-icon">✔</span>
+                <span>修正<span class="highlight-field">美股 NRA 排除清單</span>：股名過長導致刪除鈕消失。</span>
+              </div>
+              <div class="bugfix-item">
+                <span class="bugfix-icon">✔</span>
+                <span>修正<span class="highlight-field">美股自動帶入股利</span>：手動微調失效的問題。</span>
+              </div>
+            </div>
+          </section>
+
           <!-- ========== v3.2.1 ========== -->
           <section id="v3-2-1" class="version-section">
             <div class="version-head">
               <span class="version-pill">v3.2.1</span>
               <span class="version-date">2026 / 06</span>
-              <span class="version-tag is-latest">最新</span>
             </div>
             <h3 class="version-title">零碎股交易與預扣稅設定</h3>
             <h4>1、現股交易支援小數股數</h4>
@@ -349,6 +422,7 @@
           <div class="toc-sticky">
             <h4 class="toc-title">版本</h4>
             <ul class="toc-list">
+              <li><a href="#v3-3-0"><span class="toc-version">v3.3.0</span><span class="toc-date">2026/06</span></a></li>
               <li><a href="#v3-2-1"><span class="toc-version">v3.2.1</span><span class="toc-date">2026/06</span></a></li>
               <li><a href="#v3-2-0"><span class="toc-version">v3.2.0</span><span class="toc-date">2026/05</span></a></li>
               <li><a href="#v3-1-0"><span class="toc-version">v3.1.0</span><span class="toc-date">2026/05</span></a></li>
