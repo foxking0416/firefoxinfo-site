@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>版本更新紀錄 - StockKeeper</title>
-  <meta name="description" content="StockKeeper 各版本完整更新紀錄，從 v3.3.1 問題修正、v3.3.0 併購自動帶入與外觀自訂、v3.2.1 小數股數與預扣稅、v3.2.0 台股 + 美股雙市場、v3.1.0 雲端模式（本機儲存）與走勢圖框選、v3.0.0 雲端模式與歷史回溯，到歷代功能補強與問題修正一次掌握。">
+  <meta name="description" content="StockKeeper 各版本完整更新紀錄，從 v3.3.0 併購自動帶入與外觀自訂、v3.2.1 小數股數與預扣稅、v3.2.0 台股 + 美股雙市場、v3.1.0 雲端模式（本機儲存）與走勢圖框選、v3.0.0 雲端模式與歷史回溯，到歷代功能補強與問題修正一次掌握。">
   <link rel="canonical" href="https://www.firefoxinfo.com/updates/release_index.html">
 
   <meta property="og:type" content="website">
@@ -57,32 +57,12 @@
 
         <article class="changelog-content">
 
-          <!-- ========== v3.3.1 ========== -->
-          <section id="v3-3-1" class="version-section">
-            <div class="version-head">
-              <span class="version-pill">v3.3.1</span>
-              <span class="version-date">2026 / 07</span>
-              <span class="version-tag is-latest">最新</span>
-            </div>
-            <h3 class="version-title">問題修正與介面調整</h3>
-            <p>v3.3.1 修正了 4 個使用者回報的問題（含一個重要的偶發閃退），並補上兩個介面上的小改善。</p>
-
-            <h4>🐛 問題修正</h4>
-            <p>● <span class="highlight-field">切換帳戶分頁時偶發閃退（重要）</span>：在新增或刪除帳戶後切換分頁時，程式有時會無預警關閉、也沒有錯誤訊息，此版已修正。</p>
-            <p>● <span class="highlight-field">庫存表用鍵盤上下鍵選股，下方明細沒跟著換</span>：在庫存清單用鍵盤方向鍵移動選取的股票時，下方交易明細表現在會即時跟著切換（先前只有滑鼠點選才會更新）。</p>
-            <p>● <span class="highlight-field">定期定額交易視窗 Tab 鍵順序錯亂</span>：在「定期定額交易」輸入視窗按 Tab 鍵時，「<span class="highlight-field-blue">每股金額</span>」欄不再被跳到最後，順序恢復正常。</p>
-            <p>● <span class="highlight-field">匯入對帳單：關鍵字含多餘空白導致匯入失敗</span>：匯入券商對帳單時，若交易類別關鍵字（如「現股買進」）前後多了空白，以往會比對失敗；現在會自動忽略多餘空白。</p>
-
-            <h4>🎨 介面優化</h4>
-            <p>● <span class="highlight-field">匯入對帳單視窗可縮小 + 自動捲軸</span>（台股 / 美股）：「匯入對帳單」視窗現在可縮到更小以適應小螢幕，內容超出時自動出現捲軸，「<span class="highlight-field-blue">確認 / 取消</span>」按鈕永遠固定可見。</p>
-            <p>● <span class="highlight-field">還原「隱藏交易明細表」按鈕</span>：主畫面重新加回「隱藏 / 顯示下方交易明細表」按鈕。點擊隱藏時下方會收起、上方庫存表佔滿整個畫面；再點一次即還原原本高度。</p>
-          </section>
-
           <!-- ========== v3.3.0 ========== -->
           <section id="v3-3-0" class="version-section">
             <div class="version-head">
               <span class="version-pill">v3.3.0</span>
               <span class="version-date">2026 / 06</span>
+              <span class="version-tag is-latest">最新</span>
             </div>
             <h3 class="version-title">併購自動帶入、交易備註、外觀自訂</h3>
             <p>v3.3.0 把幾個過去需要使用者自己動手的繁瑣設定自動化或開放彈性：
@@ -442,7 +422,6 @@
           <div class="toc-sticky">
             <h4 class="toc-title">版本</h4>
             <ul class="toc-list">
-              <li><a href="#v3-3-1"><span class="toc-version">v3.3.1</span><span class="toc-date">2026/07</span></a></li>
               <li><a href="#v3-3-0"><span class="toc-version">v3.3.0</span><span class="toc-date">2026/06</span></a></li>
               <li><a href="#v3-2-1"><span class="toc-version">v3.2.1</span><span class="toc-date">2026/06</span></a></li>
               <li><a href="#v3-2-0"><span class="toc-version">v3.2.0</span><span class="toc-date">2026/05</span></a></li>
