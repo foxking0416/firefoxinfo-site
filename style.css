@@ -2670,6 +2670,11 @@ html {
     line-height: 1.4;
 }
 
+/* 大標題強調色（黃）── 用在 h4 內部想突出的部分文字（例如標題名稱） */
+.version-section h4 .h4-hl {
+    color: var(--text_highlight-color);
+}
+
 .version-section .content-image {
     display: block;
     max-width: 100%;
