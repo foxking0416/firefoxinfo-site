@@ -654,6 +654,45 @@ section h2::after {
     display: none;
 }
 
+/* 「推薦」小徽章（在按鈕內、標題右側） */
+.download-platform-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.25);
+    color: #ffffff;
+    font-size: 0.72em;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+    letter-spacing: 1px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+/* 次要按鈕樣式（同一平台的替代下載，例如 Windows 免安裝版） */
+.download-platform-cta.is-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1.5px solid var(--primary-color);
+    box-shadow: none;
+    font-weight: 700;
+}
+
+.download-platform-cta.is-secondary:hover {
+    background: rgba(247,127,0,0.10);
+    color: var(--primary-color);
+}
+
+.download-platform-cta.is-secondary.is-disabled {
+    background: rgba(255,255,255,0.04);
+    color: var(--light-text-color);
+    border: 1px dashed rgba(255,255,255,0.16);
+}
+
+/* disabled 狀態下不顯示推薦徽章 */
+.download-platform-cta.is-disabled .download-platform-badge {
+    display: none;
+}
+
 .download-platform-mobile {
     grid-template-columns: 50px 1fr auto;
     opacity: 0.85;
