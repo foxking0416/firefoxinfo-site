@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice" role="img" aria-label="回測工具">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1f1f1f"/>
+      <stop offset="1" stop-color="#070707"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.42" r="0.55">
+      <stop offset="0" stop-color="#f77f00" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#f77f00" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="600" height="360" fill="url(#bg)"/>
+  <rect width="600" height="360" fill="url(#glow)"/>
+
+  <!-- faint grid -->
+  <g stroke="#2a2a2a" stroke-width="0.6" opacity="0.45">
+    <line x1="0" y1="60" x2="600" y2="60"/>
+    <line x1="0" y1="120" x2="600" y2="120"/>
+    <line x1="0" y1="180" x2="600" y2="180"/>
+    <line x1="0" y1="240" x2="600" y2="240"/>
+    <line x1="0" y1="300" x2="600" y2="300"/>
+    <line x1="100" y1="0" x2="100" y2="360"/>
+    <line x1="200" y1="0" x2="200" y2="360"/>
+    <line x1="300" y1="0" x2="300" y2="360"/>
+    <line x1="400" y1="0" x2="400" y2="360"/>
+    <line x1="500" y1="0" x2="500" y2="360"/>
+  </g>
+
+  <!-- Chart area: x 80~520, y 60~220 -->
+  <!-- Axes -->
+  <line x1="80" y1="220" x2="520" y2="220" stroke="#555" stroke-width="1"/>
+  <line x1="80" y1="60" x2="80" y2="220" stroke="#555" stroke-width="1"/>
+
+  <!-- Orange line: linear investment (steady) -->
+  <polyline points="80,215 140,205 200,195 260,185 320,175 380,167 440,159 500,151 520,148"
+            fill="none" stroke="#f77f00" stroke-width="2.5" opacity="0.9"/>
+
+  <!-- Green line: profit (wavy, ends high) -->
+  <polyline points="80,215 130,212 180,208 220,200 260,190 300,175 340,158 380,140 420,120 460,100 500,85 520,80"
+            fill="none" stroke="#2e8b57" stroke-width="2.5" opacity="0.9"/>
+
+  <!-- Blue line: cumulative value (highest, wavy) -->
+  <polyline points="80,213 130,205 180,195 220,182 260,165 300,145 340,125 380,105 420,85 460,72 500,62 520,58"
+            fill="none" stroke="#5aa9ff" stroke-width="2.5"/>
+
+  <!-- Legend dots at top-left -->
+  <g font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600">
+    <g transform="translate(96, 78)">
+      <circle cx="0" cy="0" r="4" fill="#5aa9ff"/>
+      <text x="10" y="4" fill="#cccccc">淨值</text>
+    </g>
+    <g transform="translate(158, 78)">
+      <circle cx="0" cy="0" r="4" fill="#2e8b57"/>
+      <text x="10" y="4" fill="#cccccc">損益</text>
+    </g>
+    <g transform="translate(220, 78)">
+      <circle cx="0" cy="0" r="4" fill="#f77f00"/>
+      <text x="10" y="4" fill="#cccccc">投入</text>
+    </g>
+  </g>
+
+  <!-- title -->
+  <text x="300" y="290" font-family="'Microsoft JhengHei', 'PingFang TC', 'Heiti TC', 'Noto Sans TC', sans-serif" font-size="32" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="3">回測工具</text>
+  <line x1="270" y1="306" x2="330" y2="306" stroke="#f77f00" stroke-width="3" stroke-linecap="round"/>
+  <text x="300" y="332" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#888888" text-anchor="middle" letter-spacing="4">BACKTEST  ·  TOOL</text>
+</svg>
