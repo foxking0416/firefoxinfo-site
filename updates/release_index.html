@@ -57,12 +57,67 @@
 
         <article class="changelog-content">
 
+          <!-- ========== v3.5.0 ========== -->
+          <section id="v3-5-0" class="version-section">
+            <div class="version-head">
+              <span class="version-pill">v3.5.0</span>
+              <span class="version-date">2026 / 09</span>
+              <span class="version-tag is-latest">最新</span>
+            </div>
+            <h3 class="version-title">回測工具、指定賣出批次</h3>
+            <p>本版兩大新功能：
+              一是<span class="highlight-field">回測工具</span>，用真實歷史股價與配息模擬定期定額的結果，同一張表可以橫向比較多組策略；
+              二是<span class="highlight-field">指定賣出批次</span>，賣出時可以手動挑要出清哪些買進批次，不再只能被動先買先賣。
+              另外一個小改善：未實現損益預扣手續費也支援折扣設定了。</p>
+
+            <h4>1、⭐ 全新功能：<span class="h4-hl">回測工具</span></h4>
+            <p>每次看到財經粉專講「每月定期定額 0050 累積多少退休金」，你有沒有動念想自己算算看，卻苦於沒有數據？
+              或者，想找出比 0050 更適合定期定額的股票？
+              StockKeeper 用<span class="highlight-field">真實歷史股價與配息</span>，模擬你如果從某一天開始、用某種方式定期投入，今天的結果會是什麼。</p>
+
+            <p>● <strong>台股 & 美股都能跑，而且算得「細」</strong>：不是把股價相乘就算了。<span class="highlight-field-blue">除權配股</span>、<span class="highlight-field-blue">股票分割 / 反分割</span>、<span class="highlight-field-blue">減資（無償與現金減資）</span>都照實模擬；台股整股 / 零股最低手續費、折扣，美股費率制手續費都能設定。台股的<span class="highlight-field-blue">二代健保補充保費</span>（門檻、年度費率、KY 股排除）也會扣。</p>
+
+            <p>● <strong>美股支援美金 & 台幣扣款</strong>：可用美金扣款，也可每月扣台幣，程式自動用<span class="highlight-field-blue">央行匯率</span>換成美金再買進。回測結果同時給你<span class="highlight-field-blue">台幣報酬率</span>與<span class="highlight-field-blue">美金報酬率</span>，兩者的差距就是匯率吃掉（或賺到）多少。</p>
+
+            <p>● <strong>一次比較多組策略</strong>：同一張表<span class="highlight-field-blue">一檔一欄</span>，同一檔股票可以用不同投入方式加入多次，直接橫向對比。欄位可以拖拉調整順序。</p>
+
+            <p>● <strong>多種投入方式</strong>可自由組合，遇非交易日自動順延：</p>
+            <p>&emsp;&emsp;└ <strong>起始投入</strong>：期初單筆</p>
+            <p>&emsp;&emsp;└ <strong>每月</strong>：指定幾號</p>
+            <p>&emsp;&emsp;└ <strong>每週 / 每兩週</strong>：指定星期幾</p>
+            <p>&emsp;&emsp;└ <strong>每個交易日</strong>：每個交易日都買</p>
+            <p>&emsp;&emsp;└ <strong>指定日期</strong>：單次，指定某一天</p>
+            <p>&emsp;&emsp;└ <span class="highlight-field-blue">上帝視角</span>：每個月都買在當月最低點（<em>對照組</em>）</p>
+            <p>&emsp;&emsp;└ <span class="highlight-field-blue">地獄倒楣鬼</span>：每個月都買在當月最高點（<em>對照組</em>）</p>
+            <p>&emsp;&emsp;多條規則可以疊加，例如「每月 5 號 1 萬 <strong>+</strong> 每季追加 5 萬」。</p>
+
+            <p>● <strong>雲端存策略</strong>：回測條件可以存在雲端，可存多組具名設定。</p>
+
+            <p>● <strong>結果多面向</strong>：除了「<span class="highlight-field-blue">績效指標摘要</span>」，也可以點開「<span class="highlight-field-blue">逐筆交易明細</span>」細看每一筆交易資料，或開啟「<span class="highlight-field-blue">走勢圖表</span>」觀察投入與獲利曲線。全部可匯出成 <span class="highlight-field-blue">Excel</span> 或 <span class="highlight-field-blue">PDF</span>。</p>
+
+            <p><span class="highlight-field">使用須知：</span></p>
+            <p>● 需以<span class="highlight-field-blue">雲端模式</span>登入（歷史股價來自雲端資料庫）</p>
+            <p>● 歷史資料自 <span class="highlight-field-blue">2008 年</span>起</p>
+            <p>● 「上帝視角 / 地獄倒楣鬼」是<span class="highlight-field-blue">事後才知道</span>的價位，用途是報酬率上下限的對照組，<strong>不是可執行的策略</strong></p>
+            <p>● 匯率採<span class="highlight-field-blue">中央銀行收盤中價</span>，未計入銀行換匯價差</p>
+
+            <h4>2、⭐ 全新功能：<span class="h4-hl">指定賣出批次</span></h4>
+            <p>同一檔股票，你可能在不同時間、不同價格分批買進。一般記帳軟體賣出時只能用<span class="highlight-field-blue">先買先賣（FIFO）</span>自動扣庫存。
+              StockKeeper的「指定賣出批次」讓你手動指定這次要賣出的是哪些買進批次 —— 依<span class="highlight-field-blue">買進日期 + 買進價格</span>挑選，還能決定每個批次各賣幾股。</p>
+
+            <p>● 在新增「<strong>普通賣出</strong>」時，點旁邊的小按鈕開啟「<span class="highlight-field-blue">指定賣出批次</span>」。</p>
+            <p>● 系統列出賣出日之前仍有庫存的所有買進批次（買進日期、每股買價、可用股數）。</p>
+            <p>● 在各批次填入本次要賣出的股數；<span class="highlight-field-blue">沒有指定的股數會自動以先買先賣扣除</span>。</p>
+
+            <h4>3、💰 <span class="h4-hl">未實現損益預扣手續費：支援折扣</span></h4>
+            <p>● 計算未實現損益時的<span class="highlight-field-blue">預扣手續費</span>現在會套用<span class="highlight-field-blue">手續費折扣</span>設定，讓帳面損益更貼近實際賣出後會拿到的金額。</p>
+          </section>
+
           <!-- ========== v3.4.1 ========== -->
           <section id="v3-4-1" class="version-section">
             <div class="version-head">
               <span class="version-pill">v3.4.1</span>
               <span class="version-date">2026 / 09</span>
-              <span class="version-tag is-latest">最新</span>
             </div>
             <h3 class="version-title">效能優化與問題修正</h3>
             <p>v3.4.1 針對<span class="highlight-field">啟動效能</span>與<span class="highlight-field">大量交易紀錄的顯示效能</span>做了優化，並修正一個排序後切換分頁的閃退問題。</p>
