@@ -114,4 +114,16 @@
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.firefoxinfo.com/tutorials/tutorial_%E8%9E%8D%E8%B3%87%E4%BA%A4%E6%98%93.html</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.firefoxinfo.com/tutorials/tutorial_%E8%82%A1%E7%A5%A8%E8%B3%AA%E6%8A%BC.html</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
