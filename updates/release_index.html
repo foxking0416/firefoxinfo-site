@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>版本更新紀錄 - StockKeeper</title>
-  <meta name="description" content="StockKeeper 各版本完整更新紀錄，從 v3.5.0 回測工具與指定賣出批次、v3.4.1 效能優化與問題修正、v3.4.0 股票質押記帳與股利匯費區間、v3.3.1 問題修正、v3.3.0 併購自動帶入與外觀自訂、v3.2.1 小數股數與預扣稅、v3.2.0 台股 + 美股雙市場、v3.1.0 雲端模式（本機儲存）與走勢圖框選、v3.0.0 雲端模式與歷史回溯，到歷代功能補強與問題修正一次掌握。">
+  <meta name="description" content="StockKeeper 各版本完整更新紀錄，從 v3.6.0 融資交易記帳、v3.5.0 回測工具與指定賣出批次、v3.4.1 效能優化與問題修正、v3.4.0 股票質押記帳與股利匯費區間、v3.3.1 問題修正、v3.3.0 併購自動帶入與外觀自訂、v3.2.1 小數股數與預扣稅、v3.2.0 台股 + 美股雙市場、v3.1.0 雲端模式（本機儲存）與走勢圖框選、v3.0.0 雲端模式與歷史回溯，到歷代功能補強與問題修正一次掌握。">
   <link rel="canonical" href="https://www.firefoxinfo.com/updates/release_index.html">
 
   <meta property="og:type" content="website">
@@ -57,12 +57,50 @@
 
         <article class="changelog-content">
 
+          <!-- ========== v3.6.0 ========== -->
+          <section id="v3-6-0" class="version-section">
+            <div class="version-head">
+              <span class="version-pill">v3.6.0</span>
+              <span class="version-date">2026 / 10</span>
+              <span class="version-tag is-latest">最新</span>
+            </div>
+            <h3 class="version-title">融資交易記帳</h3>
+            <p>本版最大亮點是全新的「<span class="highlight-field">融資交易記帳</span>」：融資買進、融資賣出、現金償還、融資利息與維持率全部可以記錄，
+              報酬率也會把融資部位一併算進去。
+              另外回測工具新增每年調升投入金額，並有幾個介面小改善。</p>
+
+            <h4>1、⭐ 全新功能：<span class="h4-hl">融資交易記帳</span></h4>
+            <p>有在使用融資的投資人，現在可以完整記錄融資交易，損益與報酬率也會反映槓桿的真實結果。</p>
+
+            <p>● <strong>融資買進 / 融資賣出</strong>：在「股票交易」視窗勾選「<span class="highlight-field-blue">融資買進</span>」即可記錄，可用融資成數或自備款輸入；融資賣出時自動計算償還融資金額與融資利息。</p>
+
+            <p>● <strong>融資現償</strong>：以現金償還融資，該批股票轉為現股，可指定要償還哪幾批。</p>
+
+            <p>● <strong>利息與維持率一目了然</strong>：總表新增「<span class="highlight-field-blue">累計融資利息</span>」與「<span class="highlight-field-blue">融資維持率</span>」；交易明細會顯示每筆融資賣出 / 現償的融資利息。</p>
+
+            <p>● <strong>融資利率可設時間區間</strong>：帳戶可依時間區間設定不同的融資年利率，利息自動分段計算。</p>
+
+            <p>● <strong>匯入對帳單</strong>：支援匯入融資買進 / 融資賣出。</p>
+
+            <h4>2、📈 <span class="h4-hl">回測工具：每年調升投入金額</span></h4>
+            <p>● 定期投入可設定<span class="highlight-field-blue">每年調升比例</span>（例如配合通膨或加薪，每年多投入 3%），模擬更貼近真實的長期投入。</p>
+
+            <h4>3、🎨 <span class="h4-hl">介面</span></h4>
+            <p>● <strong>交易種類顏色提示</strong>：在「股票交易」視窗選取「買進 / 賣出 / 當沖」時，選項會套用與交易明細表相同的底色，一眼確認自己選的是哪一種。</p>
+            <p>● <strong>退佣表頭</strong>：手續費設為「事後退還」的帳戶，交易明細表頭改為「<span class="highlight-field-blue">手續費(退佣) / 交易稅</span>」，括號內數字為之後會退還的手續費。</p>
+            <p>● <strong>欄位名稱</strong>：庫存表「現股總成本」改為「<span class="highlight-field-blue">持有成本</span>」、「現股平均成本」改為「<span class="highlight-field-blue">持有均價</span>」。</p>
+
+
+            <h4>🐛 <span class="h4-hl">問題修正</span></h4>
+            <p>● <strong>macOS 閃退</strong>：修正在 macOS 27 上開啟程式閃退的問題，以及 Mac 版安裝包缺少部分元件的問題。</p>
+            <p>● <strong>自動更新卡住</strong>：雲端模式自動更新時，不會再停在「保留登入」的詢問畫面。</p>
+          </section>
+
           <!-- ========== v3.5.0 ========== -->
           <section id="v3-5-0" class="version-section">
             <div class="version-head">
               <span class="version-pill">v3.5.0</span>
               <span class="version-date">2026 / 09</span>
-              <span class="version-tag is-latest">最新</span>
             </div>
             <h3 class="version-title">回測工具、指定賣出批次</h3>
             <p>本版兩大新功能：
@@ -558,6 +596,7 @@
           <div class="toc-sticky">
             <h4 class="toc-title">版本</h4>
             <ul class="toc-list">
+              <li><a href="#v3-6-0"><span class="toc-version">v3.6.0</span><span class="toc-date">2026/10</span></a></li>
               <li><a href="#v3-5-0"><span class="toc-version">v3.5.0</span><span class="toc-date">2026/09</span></a></li>
               <li><a href="#v3-4-1"><span class="toc-version">v3.4.1</span><span class="toc-date">2026/09</span></a></li>
               <li><a href="#v3-4-0"><span class="toc-version">v3.4.0</span><span class="toc-date">2026/09</span></a></li>
