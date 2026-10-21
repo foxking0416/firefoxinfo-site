@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>教學：股票質押記帳 - StockKeeper</title>
-    <meta name="description" content="StockKeeper 股票質押記帳教學：擔保品、借款、還款、利息、撥券費一站記錄，自動計算整戶維持率與可貸額度，質押成本也能納入損益與報酬率。">
+    <meta name="description" content="StockKeeper 股票質押記帳教學：擔保品、借款、還款、利息、撥券費一站記錄，自動計算整戶維持率與剩餘可借額度（含授信額度上限），質押成本也能納入損益與報酬率。">
     <link rel="canonical" href="https://www.firefoxinfo.com/tutorials/tutorial_股票質押.html">
 
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="火狐資訊 StockKeeper">
     <meta property="og:title" content="教學：股票質押記帳 - StockKeeper">
-    <meta property="og:description" content="擔保品、借款、還款、利息、撥券費一站記錄，自動計算整戶維持率與可貸額度。">
+    <meta property="og:description" content="擔保品、借款、還款、利息、撥券費一站記錄，自動計算整戶維持率與剩餘可借額度（含授信額度上限）。">
     <meta property="og:url" content="https://www.firefoxinfo.com/tutorials/tutorial_股票質押.html">
     <meta property="og:image" content="https://www.firefoxinfo.com/images/Tutorial/股票質押/Main.png">
     <meta property="og:locale" content="zh_TW">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="教學：股票質押記帳 - StockKeeper">
-    <meta name="twitter:description" content="擔保品、借款、還款、利息、撥券費一站記錄，自動計算整戶維持率與可貸額度。">
+    <meta name="twitter:description" content="擔保品、借款、還款、利息、撥券費一站記錄，自動計算整戶維持率與剩餘可借額度（含授信額度上限）。">
     <meta name="twitter:image" content="https://www.firefoxinfo.com/images/Tutorial/股票質押/Main.png">
 
     <link rel="stylesheet" href="../style.css">
@@ -56,59 +56,68 @@
 
                     <p>把手上的股票拿去券商質押借錢，需要追蹤的東西很多：哪些股票撥券了、借了多少、利息多少、維持率還夠不夠。<br>
                         StockKeeper 的「<span class="highlight-field">質押</span>」功能把<span class="highlight-field-blue">擔保品、借款、還款、利息、撥券費</span>集中在同一個地方記錄，
-                        並自動計算<span class="highlight-field-blue">整戶維持率</span>與<span class="highlight-field-blue">可貸額度</span>。</p>
+                        並自動計算<span class="highlight-field-blue">整戶維持率</span>與<span class="highlight-field-blue">剩餘可借額度</span>。</p>
 
                     <h3>1、開啟質押分頁</h3>
-                    <p>每個台股帳戶左側都有「<span class="highlight-field">質押</span>」分頁，分成上方的<span class="highlight-field-blue">擔保品</span>與下方的<span class="highlight-field-blue">借款</span>兩個區塊。
+                    <p>每個台股帳戶左側都有「<span class="highlight-field">質押</span>」分頁，最上方是<span class="highlight-field-blue">授信額度</span>，下面分成<span class="highlight-field-blue">擔保品</span>與<span class="highlight-field-blue">借款</span>兩個區塊。
                         點選某一筆借款，右側會顯示這筆借款的<span class="highlight-field-blue">借款明細</span>（撥款、逐月利息、還款）。</p>
                     <img src="../images/Tutorial/股票質押/質押分頁.png" alt="質押分頁：擔保品、借款與借款明細" class="content-image">
                     <p>● 質押為台股專屬功能，美股帳戶不會顯示這個分頁。</p>
 
-                    <h3>2、匯入擔保品（撥券）</h3>
+                    <h3>2、設定授信額度</h3>
+                    <p>向券商申請股票質押（不限用途款項借貸）時，券商會核定一個<span class="highlight-field">授信額度</span>。
+                        這是借款的上限 ── <span class="highlight-field-blue">就算匯入再多擔保品，借款總額也不會超過這個額度</span>。</p>
+                    <p>在質押分頁最上方的「<span class="highlight-field">授信額度</span>」欄位輸入券商核定的金額即可，輸入後按 Enter 或離開欄位就會自動儲存。
+                        沒有填寫時顯示「未設定」，剩餘可借額度只會依擔保品計算。</p>
+                    <img src="../images/Tutorial/股票質押/授信額度.png" alt="質押分頁上方的授信額度欄位" class="content-image">
+
+                    <h3>3、匯入擔保品（撥券）</h3>
                     <p>點「<span class="highlight-field">匯入擔保品</span>」，選擇要撥券的股票並填入：</p>
                     <p>● <strong>擔保張數</strong>：上限會自動設為這檔股票還能質押的張數。</p>
                     <p>● <strong>可貸成數</strong>：依券商規定，例如 0.6。</p>
                     <p>● <strong>撥券日、撥券費</strong>：撥券費預設 1 元/張，可以自行調整。</p>
                     <img src="../images/Tutorial/股票質押/匯入擔保品.png" alt="匯入擔保品視窗" class="content-image">
                     <p>擔保品表會顯示每檔的<span class="highlight-field-blue">擔保品市值</span>與<span class="highlight-field-blue">可貸額度</span>（市值 × 可貸成數），
-                        總表的庫存也會標記「<span class="highlight-field-blue">質押 N 張</span>」。</p>
+                        區塊上方的摘要則顯示全部擔保品加總的「<span class="highlight-field-blue">擔保品可貸額度</span>」；總表的庫存也會標記「<span class="highlight-field-blue">質押 N 張</span>」。</p>
 
-                    <h3>3、新增借款</h3>
+                    <h3>4、新增借款</h3>
                     <p>點「<span class="highlight-field">新增借款</span>」，填入借款日、借款金額、借款利率與最後償還日（預設為借款日的一年半後）。</p>
-                    <p>視窗會顯示「<span class="highlight-field-blue">目前可借額度</span>」＝ 整戶擔保品可貸額度 − 其他借款。
+                    <p>視窗會顯示「<span class="highlight-field-blue">目前可借額度</span>」＝ 授信額度與擔保品可貸額度取較小者 − 其他借款。
                         借款金額超過時會提醒，確認後仍可以繼續（例如當初借款時股價較高）。</p>
                     <img src="../images/Tutorial/股票質押/新增借款.png" alt="新增借款視窗與目前可借額度" class="content-image">
 
-                    <h3>4、利息自動逐月計算</h3>
+                    <h3>5、利息自動逐月計算</h3>
                     <p>借款利息依<span class="highlight-field-blue">剩餘本金 × 年利率 ÷ 365 × 天數</span>逐月計算，顯示在借款明細中。
                         如果和券商實際扣的利息有出入，可以點利息那一列的<span class="highlight-field-blue">編輯</span>，手動覆寫該月的實際金額。</p>
 
-                    <h3>5、現金償還</h3>
+                    <h3>6、現金償還</h3>
                     <p>點「<span class="highlight-field">現金償還</span>」，選擇要償還的借款、償還日期與金額，也可以勾選「<span class="highlight-field-blue">全額償還</span>」。
                         先在借款表點選一筆借款再按「現金償還」，視窗會自動選好那一筆。</p>
                     <img src="../images/Tutorial/股票質押/現金償還.png" alt="現金償還視窗" class="content-image">
                     <p>借款表會分別顯示<span class="highlight-field-blue">原始借款金額</span>與<span class="highlight-field-blue">剩餘借款金額</span>；還清後狀態會變成「已還清」，
                         可以勾選「<span class="highlight-field-blue">隱藏已還清</span>」只看進行中的借款。</p>
 
-                    <h3>6、退券</h3>
+                    <h3>7、退券</h3>
                     <p>點「<span class="highlight-field">退券</span>」，選擇股票與退券張數，退回的張數就能正常賣出。
-                        退券後如果整戶可貸額度低於已借總金額，程式會先提醒。</p>
+                        退券後如果擔保品可貸額度低於已借總金額，程式會先提醒。</p>
                     <img src="../images/Tutorial/股票質押/退券.png" alt="退券視窗" class="content-image">
 
-                    <h3>7、撥券明細</h3>
+                    <h3>8、撥券明細</h3>
                     <p>撥券費屬於已付出的成本，退券時不會退還。點「<span class="highlight-field">撥券明細</span>」可以查看、新增、編輯或刪除每一次撥券的紀錄，
                         撥券費為 0 元的撥券也會記錄。</p>
                     <img src="../images/Tutorial/股票質押/撥券明細.png" alt="撥券明細視窗" class="content-image">
 
-                    <h3>8、整戶維持率怎麼算？</h3>
+                    <h3>9、維持率與可借額度怎麼算？</h3>
                     <p>借款不需要逐筆綁定擔保品，而是由<span class="highlight-field">整戶</span>擔保品一起支撐所有借款：</p>
                     <p>● <strong>整戶維持率</strong> ＝ 擔保品市值合計 ÷ 已借總金額 × 100%</p>
-                    <p>● <strong>整戶可貸額度</strong> ＝ Σ（擔保品市值 × 可貸成數）</p>
-                    <p>● <strong>剩餘可借額度</strong> ＝ 整戶可貸額度 − 已借總金額</p>
+                    <p>● <strong>擔保品可貸額度</strong> ＝ Σ（擔保品市值 × 可貸成數）</p>
+                    <p>● <strong>剩餘可借額度</strong> ＝ 授信額度與擔保品可貸額度<span class="highlight-field-blue">取較小者</span> − 已借總金額（未設定授信額度時只看擔保品）</p>
+                    <p>擔保品可貸額度會隨<span class="highlight-field-blue">股價每天變動</span>，授信額度則是固定的：
+                        股價高時，可借金額由授信額度決定；股價跌時，則由擔保品決定。</p>
                     <p><span class="highlight-field">小提醒：</span>券商 App 通常以<span class="highlight-field-blue">前一個交易日的收盤價</span>計算維持率，
                         StockKeeper 則以<span class="highlight-field-blue">最新收盤價</span>計算，同一天兩邊的數字可能略有不同。</p>
 
-                    <h3>9、質押成本納入損益與報酬率</h3>
+                    <h3>10、質押成本納入損益與報酬率</h3>
                     <p>在「<span class="highlight-field">各項計算設定</span>」勾選「<span class="highlight-field-blue">成本及損益納入質押利息與撥券費</span>」（預設勾選），
                         質押的利息與撥券費就會計入帳戶的總成本、總損益與年化報酬率，帳戶摘要也會顯示「<span class="highlight-field-blue">累計質押成本</span>」。</p>
 
