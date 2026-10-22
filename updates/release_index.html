@@ -4,11 +4,39 @@
   <meta charset="UTF-8">
   <title>版本更新紀錄 - StockKeeper</title>
   <link rel="canonical" href="https://www.firefoxinfo.com/StockKeeper/updates/release_index.html">
-  <meta http-equiv="refresh" content="0; url=/StockKeeper/updates/release_index.html">
-  <script>window.location.replace("/StockKeeper/updates/release_index.html");</script>
+  <!-- 轉址時保留 #vX-X-X（舊版程式的「更新內容」連結會帶版本 anchor） -->
+  <script>window.location.replace("/StockKeeper/updates/release_index.html" + window.location.hash);</script>
+  <noscript><meta http-equiv="refresh" content="0; url=/StockKeeper/updates/release_index.html"></noscript>
   <link rel="icon" href="/FoxInfo.svg" type="image/svg+xml">
 </head>
 <body>
   <p>版本更新紀錄已搬至 <a href="/StockKeeper/updates/release_index.html">新位置</a>。</p>
+
+  <!--
+    ===================================================================
+    ⚠️  每次發佈新版，請在下方 <div hidden> 內補一行 <span id="vX-X-X"></span>
+    ===================================================================
+    用途：舊版 StockKeeper 的更新檢查（VersionChecker）會 GET 這個舊網址，
+          做純 HTML scan 確認有 id="vX-X-X" 才顯示「更新內容」連結
+          （它不執行 JS、不 follow redirect）。
+    漏做：新版使用者仍會被通知有新版本，但無法看到「更新內容」連結。
+    詳見：updates/README.md 的 Step 4。
+    格式：id 使用「-」分隔（例 v3-6-0），與 StockKeeper/updates/release_index.html
+          裡 <section id="..."> 的格式完全一致。
+  -->
+  <div hidden>
+    <span id="v3-6-0"></span>
+    <span id="v3-5-0"></span>
+    <span id="v3-4-1"></span>
+    <span id="v3-4-0"></span>
+    <span id="v3-3-1"></span>
+    <span id="v3-3-0"></span>
+    <span id="v3-2-1"></span>
+    <span id="v3-2-0"></span>
+    <span id="v3-1-0"></span>
+    <span id="v3-0-0"></span>
+    <span id="v2-8-0"></span>
+    <span id="v2-7-0"></span>
+  </div>
 </body>
 </html>

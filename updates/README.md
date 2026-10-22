@@ -25,6 +25,12 @@
 1. 在 `/StockKeeper/updates/release_index.html` 增加新版本的 `<section id="vX-X-X">` 內容
 2. 在 `/StockKeeper/updates/releases/` 建立對應的 `release-vX.X.X.html`（StockKeeper 內部用的轉址頁，refresh 到 `../release_index.html#vX-X-X`）
 3. **同時在本資料夾 `/updates/releases/` 建立同名轉址頁**（給舊連結用，refresh 到 `/StockKeeper/updates/release_index.html#vX-X-X`）
+4. **在本資料夾 `/updates/release_index.html` 的隱藏區塊補上 `<span id="vX-X-X"></span>`**（必做）
+
+> 第 4 步的原因：已安裝的舊版 StockKeeper（網址搬家前的版本）檢查更新時，會 GET 舊網址
+> `/updates/release_index.html`，並確認頁面內有 `id="vX-X-X"` 才顯示「更新內容」連結
+> （程式抓網頁時不會執行轉址）。漏了這步，舊版使用者就看不到新版的更新內容連結。
+> 該頁轉址時也會保留 `#vX-X-X`，點進去會直接跳到該版段落。
 
 本資料夾轉址頁的 template（照抄其他現有檔案就好）：
 
