@@ -1685,6 +1685,20 @@ footer {
     text-align: left;
 }
 
+.hero-slogan {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: var(--light-text-color);
+    letter-spacing: 1px;
+    margin: 0 0 18px;
+    line-height: 1.5;
+}
+
+.hero-slogan-accent {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
 .hero-eyebrow {
     display: inline-flex;
     align-items: center;

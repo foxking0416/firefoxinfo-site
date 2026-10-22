@@ -81,11 +81,24 @@
       margin-right: 14px;
       letter-spacing: 4px;
     }
+    .hero-slogan {
+      margin: 28px auto 0;
+      font-size: 1.25em;
+      font-weight: 500;
+      color: var(--text-color);
+      letter-spacing: 1px;
+      line-height: 1.6;
+    }
+    .hero-slogan .accent {
+      color: var(--primary-color);
+      font-weight: 700;
+    }
     @media (max-width: 700px) {
       .hero { padding: 56px 0 48px; }
       .hero-logo { width: 160px; height: 160px; margin-bottom: 20px; }
       .hero h1 { font-size: 2.2em; }
       .hero h1 .en { font-size: 0.7em; letter-spacing: 3px; }
+      .hero-slogan { font-size: 1.02em; margin-top: 20px; }
     }
 
     /* ========== Products ========== */
@@ -230,6 +243,7 @@
     <div class="container">
       <img src="FoxInfo.svg" alt="火狐資訊 Logo" class="hero-logo">
       <h1><span class="en">FoxInfo</span>火狐資訊</h1>
+      <p class="hero-slogan">人少事多的時代，把時間留給<span class="accent">更值得的事</span></p>
     </div>
   </section>
 
