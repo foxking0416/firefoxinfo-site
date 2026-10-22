@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教學：追加工期與不計工期條件 - 工期計算工具</title>
+    <meta name="description" content="工期計算工具教學：記錄追加工期（起始日、天數、理由、核定日期），以及設定雨、豪雨、颱風、停電等天候與人為因素要不計工期 1 天、0.5 天或照計。">
+    <link rel="canonical" href="https://www.firefoxinfo.com/ScheduleCalculator/tutorials/tutorial_追加工期與不計工期條件.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="火狐資訊 工期計算工具">
+    <meta property="og:title" content="教學：追加工期與不計工期條件 - 工期計算工具">
+    <meta property="og:description" content="工期計算工具教學：記錄追加工期（起始日、天數、理由、核定日期），以及設定雨、豪雨、颱風、停電等天候與人為因素要不計工期 1 天、0.5 天或照計。">
+    <meta property="og:url" content="https://www.firefoxinfo.com/ScheduleCalculator/tutorials/tutorial_追加工期與不計工期條件.html">
+    <meta property="og:image" content="https://www.firefoxinfo.com/ScheduleCalculator/images/Tutorial/追加工期與不計工期條件/Main.png">
+    <meta property="og:locale" content="zh_TW">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="教學：追加工期與不計工期條件 - 工期計算工具">
+    <meta name="twitter:description" content="工期計算工具教學：記錄追加工期（起始日、天數、理由、核定日期），以及設定雨、豪雨、颱風、停電等天候與人為因素要不計工期 1 天、0.5 天或照計。">
+    <meta name="twitter:image" content="https://www.firefoxinfo.com/ScheduleCalculator/images/Tutorial/追加工期與不計工期條件/Main.png">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../FoxInfo.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="../FoxInfo.ico">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo-link" title="回到火狐資訊首頁"><img src="../images/FoxInfo_Big.png" alt="火狐資訊 Logo" class="logo"></a>
+            <h1><a href="/" class="brand-parent" title="回到火狐資訊首頁">火狐資訊</a> - 工期計算工具</h1>
+            <button class="hamburger-menu-toggle" aria-label="Toggle navigation">
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+            </button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="../index.html#intro">回首頁</a></li>
+                    <li><a href="../index.html#features">程式特點</a></li>
+                    <li><a href="../index.html#tutorials">教學</a></li>
+                    <li><a href="../index.html#download">下載</a></li>
+                    <li><a href="../index.html#contact">聯絡方式</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="tutorial-detail-section">
+            <div class="container">
+                <h2>追加工期與不計工期條件</h2>
+                <div class="tutorial-content">
+                    <p>這兩項設定都在<span class="highlight-field-blue">編輯工程</span>的<span class="highlight-field">追加工期與天氣及人為因素不計工期條件</span>區塊，每個工程各自一份，
+                        跟編輯工程一起按<span class="highlight-field-blue">確認</span>才會存檔。</p>
+
+                    <h3>1、追加工期</h3>
+                    <p>按<span class="highlight-field-blue">追加工期</span>，列出這個工程所有的追加工期；按<span class="highlight-field-blue">新增</span>輸入：</p>
+                    <div class="table-scroll"><table class="rule-table">
+                        <tr><th>追加起始日</th><td>從哪一天開始追加（不能早於開工日）。</td></tr>
+                        <tr><th>追加天數</th><td>追加的工期天數，依工程的工期條件計算（工作天就是工作天數）。</td></tr>
+                        <tr><th>理由</th><td>例如「第一次設計變更」。</td></tr>
+                        <tr><th>核定日期</th><td>可以先不填，等核定後再補上。</td></tr>
+                    </table></div>
+                    <img src="../images/Tutorial/追加工期與不計工期條件/追加工期.png" alt="追加工期" class="content-image">
+                    <p>存檔後，主視窗的<span class="highlight-field">含追加工期完工日</span>與<span class="highlight-field">變動完工日</span>都會把追加工期算進去；
+                        日報表也會在追加起始日那一天顯示「今日開始追加工期」，並累計到「累計追加工期」。</p>
+
+                    <h3>2、天氣及人為因素不計工期條件</h3>
+                    <p>契約通常會規定哪些天候與人為因素可以不計工期。按<span class="highlight-field-blue">天氣及人為因素不計工期條件</span>，
+                        上午、下午分開設定每一種因素：</p>
+                    <p>● <span class="highlight-field">不計工期 1 天</span>　● <span class="highlight-field">不計工期 0.5 天</span>　● <span class="highlight-field">照計工期</span></p>
+                    <img src="../images/Tutorial/追加工期與不計工期條件/不計工期條件.png" alt="天氣及人為因素不計工期條件" class="content-image">
+                    <p>天候因素有<span class="highlight-field">下雨、豪雨、颱風、酷熱、泥濘、其他</span>；人為因素有<span class="highlight-field">停電、其他</span>。
+                        預設值是：</p>
+                    <div class="table-scroll"><table class="rule-table">
+                        <tr><th></th><th>上午</th><th>下午</th></tr>
+                        <tr><td>下雨、酷熱、泥濘</td><td>照計工期</td><td>照計工期</td></tr>
+                        <tr><td>豪雨、颱風</td><td>不計 1 天</td><td>不計 0.5 天</td></tr>
+                        <tr><td>天候其他</td><td>不計 0.5 天</td><td>不計 0.5 天</td></tr>
+                        <tr><td>停電</td><td>不計 1 天</td><td>不計 0.5 天</td></tr>
+                        <tr><td>人為其他</td><td>不計 0.5 天</td><td>不計 0.5 天</td></tr>
+                    </table></div>
+                    <p>請依契約規定調整；按<span class="highlight-field-blue">回復預設值</span>可以還原成上表。
+                        計算方式：同一個半天同時有天候與人為因素時取較多的那一個，上午加下午最多不計 1 天；
+                        日報勾選<span class="highlight-field">停工</span>時整天不計。本來就不計入工期的日子（例如週休日、國定假日）不會重複扣。</p>
+                    <div class="note-box">
+                        <p>● 工期條件是<span class="highlight-field-blue">日曆天</span>時，天候因素預設全部照計工期（主視窗顯示「天氣不扣工期」）。</p>
+                        <p>● <span class="highlight-field-blue">限期完工</span>不扣任何工期，這個設定會停用。</p>
+                    </div>
+                    <p>設定好之後，每天在日報表填上天氣與人為因素，程式就會依這裡的條件扣除工期，請見<a href="tutorial_日報表.html">日報表與變動完工日</a>。</p>
+                </div>
+                <a href="../index.html#tutorials" class="button primary-button back-to-tutorials">返回教學列表</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 火狐資訊. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

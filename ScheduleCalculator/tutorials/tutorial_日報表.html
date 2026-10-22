@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教學：日報表與變動完工日 - 工期計算工具</title>
+    <meta name="description" content="工期計算工具教學：每天填寫停工與上下午天氣、人為因素，氣象站雨量自動帶入，變動完工日即時重算。">
+    <link rel="canonical" href="https://www.firefoxinfo.com/ScheduleCalculator/tutorials/tutorial_日報表.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="火狐資訊 工期計算工具">
+    <meta property="og:title" content="教學：日報表與變動完工日 - 工期計算工具">
+    <meta property="og:description" content="工期計算工具教學：每天填寫停工與上下午天氣、人為因素，氣象站雨量自動帶入，變動完工日即時重算。">
+    <meta property="og:url" content="https://www.firefoxinfo.com/ScheduleCalculator/tutorials/tutorial_日報表.html">
+    <meta property="og:image" content="https://www.firefoxinfo.com/ScheduleCalculator/images/Tutorial/日報表/Main.png">
+    <meta property="og:locale" content="zh_TW">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="教學：日報表與變動完工日 - 工期計算工具">
+    <meta name="twitter:description" content="工期計算工具教學：每天填寫停工與上下午天氣、人為因素，氣象站雨量自動帶入，變動完工日即時重算。">
+    <meta name="twitter:image" content="https://www.firefoxinfo.com/ScheduleCalculator/images/Tutorial/日報表/Main.png">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../FoxInfo.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="../FoxInfo.ico">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo-link" title="回到火狐資訊首頁"><img src="../images/FoxInfo_Big.png" alt="火狐資訊 Logo" class="logo"></a>
+            <h1><a href="/" class="brand-parent" title="回到火狐資訊首頁">火狐資訊</a> - 工期計算工具</h1>
+            <button class="hamburger-menu-toggle" aria-label="Toggle navigation">
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+            </button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="../index.html#intro">回首頁</a></li>
+                    <li><a href="../index.html#features">程式特點</a></li>
+                    <li><a href="../index.html#tutorials">教學</a></li>
+                    <li><a href="../index.html#download">下載</a></li>
+                    <li><a href="../index.html#contact">聯絡方式</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="tutorial-detail-section">
+            <div class="container">
+                <h2>日報表與變動完工日</h2>
+                <div class="tutorial-content">
+                    <p>日報表只需要填工期相關的五個欄位：<span class="highlight-field">停工</span>、<span class="highlight-field">上午天氣</span>、<span class="highlight-field">下午天氣</span>、<span class="highlight-field">上午人為</span>、<span class="highlight-field">下午人為</span>。
+                        填完立即依<a href="tutorial_追加工期與不計工期條件.html">不計工期條件</a>重新計算變動完工日。</p>
+
+                    <h3>1、日報表列表</h3>
+                    <p>在主視窗按<span class="highlight-field-blue">日報表</span>，列出<span class="highlight-field">開工日到今天</span>的每一天（日報已經填到更後面時，就列到最後一筆）。</p>
+                    <img src="../images/Tutorial/日報表/日報表列表.png" alt="日報表列表" class="content-image">
+                    <p>● <span class="highlight-field">灰底「無資料」</span>的是還沒填的日子，一眼就知道漏了哪幾天。</p>
+                    <p>● 按該列的 <span class="highlight-field-blue">+</span> 或<span class="highlight-field">雙擊</span>一列就能填寫；已填的日子按<span class="highlight-field-blue">編輯</span>修改，或按<span class="highlight-field-blue">刪除</span>。</p>
+                    <p>● <span class="highlight-field-blue">新增其他日期的日報</span>：自己選日期填寫，預設是最後一筆日報的隔天。</p>
+                    <p>● <span class="highlight-field">顯示順序</span>可以選由新到舊或由舊到新。</p>
+                    <p>每一列右邊是當天的計算結果：今日不計、今日開始追加工期、累計追加工期、開工迄今使用工期、
+                        開工迄今剩餘工期、開工迄今不計工期、開工迄今使用日曆天數。天氣與人為因素的底色可以在
+                        <span class="highlight-field-blue">設定 → 晴雨表顏色</span>調整。</p>
+
+                    <h3>2、填寫一天的日報</h3>
+                    <img src="../images/Tutorial/日報表/單日日報.png" alt="單日日報" class="content-image">
+                    <p>勾選<span class="highlight-field">今日停工</span>，或選擇上下午的天氣（晴、雨、豪雨、颱風、酷熱、泥濘、其他）與人為因素（無、停電、其他）。
+                        下方的<span class="highlight-field">計算結果</span>會即時顯示這一天輸入之後的累計工期與變動完工日，確認無誤再按<span class="highlight-field-blue">確認</span>。</p>
+                    <div class="note-box"><p>按<span class="highlight-field-blue">確認</span>只會存這一天的日報；取消則這一天維持原樣。</p></div>
+
+                    <h3>3、氣象站雨量自動帶入</h3>
+                    <p>在<span class="highlight-field-blue">編輯工程</span>的<span class="highlight-field">雨量</span>區塊選擇工地附近的<span class="highlight-field">氣象站</span>（按<span class="highlight-field-blue">氣象站資料</span>可查看各站的縣市、地址與海拔，雙擊即可選用）。
+                        之後打開日報表時，會自動下載這個氣象站每天的雨量，顯示在<span class="highlight-field">雨量 (mm)</span>欄。</p>
+                    <p>再勾選<span class="highlight-field-blue">自動套用雨量標準</span>並設定門檻（預設<span class="highlight-field">雨 ≥ 10 mm</span>、<span class="highlight-field">豪雨 ≥ 80 mm</span>）：</p>
+                    <p>● 列表的<span class="highlight-field">自動套用雨量標準</span>欄會顯示依雨量判斷的天氣。</p>
+                    <p>● 填寫<span class="highlight-field">還沒有日報的日子</span>時，上下午天氣會依雨量<span class="highlight-field">預先帶入</span>「雨」或「豪雨」，並提示當天雨量；你仍可以自己修改。</p>
+                    <p>已經填過的日報不會被雨量改掉。</p>
+
+                    <h3>4、變動完工日</h3>
+                    <p>回到主視窗，<span class="highlight-field">計算結果</span>會顯示最後一筆日報的日期與天數，以及依日報表算出的<span class="highlight-field">變動完工日</span>與變動後總日曆天。</p>
+                    <img src="../images/Tutorial/日報表/主視窗.png" alt="主視窗的變動完工日" class="content-image">
+                    <p>變動完工日算到最後一筆日報為止；之後還沒發生的日子，都當作照計工期。</p>
+
+                    <h3>5、從日報表輸出</h3>
+                    <p>日報表下方可以輸出<span class="highlight-field-blue">晴雨表</span>（含工期計算表）與<span class="highlight-field-blue">日報總表</span>（Excel，欄位與列表相同），
+                        請見<a href="tutorial_輸出報表.html">輸出預計完工表與晴雨表</a>。</p>
+                </div>
+                <a href="../index.html#tutorials" class="button primary-button back-to-tutorials">返回教學列表</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 火狐資訊. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

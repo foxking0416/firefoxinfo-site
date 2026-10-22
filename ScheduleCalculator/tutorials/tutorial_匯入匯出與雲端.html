@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教學：匯入匯出與雲端模式 - 工期計算工具</title>
+    <meta name="description" content="工期計算工具教學：匯出工程備份、搬到另一台電腦，單機模式與雲端模式的差別，以及把單機的工程搬上雲端。">
+    <link rel="canonical" href="https://www.firefoxinfo.com/ScheduleCalculator/tutorials/tutorial_匯入匯出與雲端.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="火狐資訊 工期計算工具">
+    <meta property="og:title" content="教學：匯入匯出與雲端模式 - 工期計算工具">
+    <meta property="og:description" content="工期計算工具教學：匯出工程備份、搬到另一台電腦，單機模式與雲端模式的差別，以及把單機的工程搬上雲端。">
+    <meta property="og:url" content="https://www.firefoxinfo.com/ScheduleCalculator/tutorials/tutorial_匯入匯出與雲端.html">
+    <meta property="og:image" content="https://www.firefoxinfo.com/ScheduleCalculator/images/Tutorial/匯入匯出與雲端/Main.png">
+    <meta property="og:locale" content="zh_TW">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="教學：匯入匯出與雲端模式 - 工期計算工具">
+    <meta name="twitter:description" content="工期計算工具教學：匯出工程備份、搬到另一台電腦，單機模式與雲端模式的差別，以及把單機的工程搬上雲端。">
+    <meta name="twitter:image" content="https://www.firefoxinfo.com/ScheduleCalculator/images/Tutorial/匯入匯出與雲端/Main.png">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../FoxInfo.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="../FoxInfo.ico">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo-link" title="回到火狐資訊首頁"><img src="../images/FoxInfo_Big.png" alt="火狐資訊 Logo" class="logo"></a>
+            <h1><a href="/" class="brand-parent" title="回到火狐資訊首頁">火狐資訊</a> - 工期計算工具</h1>
+            <button class="hamburger-menu-toggle" aria-label="Toggle navigation">
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+            </button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="../index.html#intro">回首頁</a></li>
+                    <li><a href="../index.html#features">程式特點</a></li>
+                    <li><a href="../index.html#tutorials">教學</a></li>
+                    <li><a href="../index.html#download">下載</a></li>
+                    <li><a href="../index.html#contact">聯絡方式</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="tutorial-detail-section">
+            <div class="container">
+                <h2>匯入匯出與雲端模式</h2>
+                <div class="tutorial-content">
+                    <p>工程資料可以匯出成檔案備份，或搬到另一台電腦；也可以改用雲端模式，讓多台電腦使用同一份資料。</p>
+
+                    <h3>1、單機模式與雲端模式</h3>
+                    <img src="../images/Tutorial/匯入匯出與雲端/啟動模式.png" alt="啟動模式選擇" class="content-image">
+                    <div class="table-scroll"><table class="rule-table">
+                        <tr><th></th><th>單機模式</th><th>雲端模式</th></tr>
+                        <tr><td>登入</td><td>不需要</td><td>Google 帳號</td></tr>
+                        <tr><td>資料存放</td><td>這台電腦</td><td>雲端（每個帳號只看得到自己的工程）</td></tr>
+                        <tr><td>網路</td><td>不需要（帶入國定假日與下載雨量時才會連網）</td><td>需要</td></tr>
+                        <tr><td>多台電腦</td><td>用匯出／匯入搬資料</td><td>登入同一個帳號就能繼續使用</td></tr>
+                    </table></div>
+                    <p>選擇雲端模式時，瀏覽器會開啟 Google 登入頁面，完成授權後回到程式即可使用。之後開啟程式會自動登入。</p>
+                    <p>第一次登入雲端、而雲端帳號還沒有任何工程時，如果這台電腦的單機模式有工程，程式會詢問<span class="highlight-field">要不要上傳到雲端</span>；
+                        單機的資料會保留，之後切回單機模式還看得到。</p>
+
+                    <h3>2、檔案選單</h3>
+                    <img src="../images/Tutorial/匯入匯出與雲端/檔案選單.png" alt="檔案選單" class="content-image">
+                    <div class="table-scroll"><table class="rule-table">
+                        <tr><th>匯入工程</th><td>匯入之前匯出的工程檔，可以是「全部工程」或「單一工程」的檔案，程式會自動判斷。</td></tr>
+                        <tr><th>匯出全部工程</th><td>所有工程（含日報表）存成一個 .json 檔，適合備份或搬到另一台電腦。</td></tr>
+                        <tr><th>匯出目前工程</th><td>只匯出目前選的工程，例如交給同事接手。</td></tr>
+                        <tr><th>登出／切換模式</th><td>程式會結束，下次啟動重新選擇單機或雲端模式（雲端模式會登出這台電腦）。資料不會被刪除。</td></tr>
+                    </table></div>
+
+                    <h3>3、匯入時工程編號重複</h3>
+                    <p>匯入的工程如果和現有工程的編號相同，會顯示兩邊的工程名稱與日報天數，讓你選擇：</p>
+                    <p>● <span class="highlight-field-blue">略過</span>：保留現有的，不匯入這個工程。</p>
+                    <p>● <span class="highlight-field-blue">覆蓋現有的</span>：用匯入的取代現有的。</p>
+                    <p>● <span class="highlight-field-blue">兩者都保留</span>：匯入的工程編號後面加上「(2)」。</p>
+                    <p>勾選<span class="highlight-field">之後重複的工程都這樣處理</span>，就不會每個工程都問一次。</p>
+
+                    <h3>4、把單機的工程搬上雲端</h3>
+                    <p>在雲端模式選<span class="highlight-field-blue">檔案 → 匯入工程</span>時，開啟的位置就是<span class="highlight-field">這台電腦單機資料存放的資料夾</span>，
+                        直接選 <span class="highlight-field">Projects.json</span> 就能把單機模式的所有工程匯入雲端帳號。</p>
+                    <div class="note-box">
+                        <p>單機模式的資料存在 <code>%LOCALAPPDATA%\FoxInfo\ScheduleCalculator\Projects.json</code>，
+                            每次存檔都會另外保留一份 .bak 備份；主檔損壞時程式會自動改讀備份。</p>
+                    </div>
+
+                    <h3>5、版本更新</h3>
+                    <p>程式啟動後會在背景檢查新版本，有新版時會跳出通知；也可以從<span class="highlight-field-blue">說明 → 檢查更新</span>手動檢查。</p>
+                    <p>● <span class="highlight-field">Windows 安裝版</span>：按下更新後自動下載、安裝並重新啟動程式。</p>
+                    <p>● <span class="highlight-field">免安裝版</span>：下載新版的 zip 檔，解壓後取代舊的程式資料夾。</p>
+                    <p><span class="highlight-field-blue">說明 → 關於</span>可以看到目前的版本；有新版本時，版本號旁邊會出現「最新版本」連結。</p>
+                </div>
+                <a href="../index.html#tutorials" class="button primary-button back-to-tutorials">返回教學列表</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 火狐資訊. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

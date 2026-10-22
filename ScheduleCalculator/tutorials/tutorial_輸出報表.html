@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教學：輸出預計完工表與晴雨表 - 工期計算工具</title>
+    <meta name="description" content="工期計算工具教學：輸出預計完工表、晴雨表＋工期計算表、日報總表（Excel / PDF），並自訂晴雨表圖示顏色。">
+    <link rel="canonical" href="https://www.firefoxinfo.com/ScheduleCalculator/tutorials/tutorial_輸出報表.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="火狐資訊 工期計算工具">
+    <meta property="og:title" content="教學：輸出預計完工表與晴雨表 - 工期計算工具">
+    <meta property="og:description" content="工期計算工具教學：輸出預計完工表、晴雨表＋工期計算表、日報總表（Excel / PDF），並自訂晴雨表圖示顏色。">
+    <meta property="og:url" content="https://www.firefoxinfo.com/ScheduleCalculator/tutorials/tutorial_輸出報表.html">
+    <meta property="og:image" content="https://www.firefoxinfo.com/ScheduleCalculator/images/Tutorial/輸出報表/Main.png">
+    <meta property="og:locale" content="zh_TW">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="教學：輸出預計完工表與晴雨表 - 工期計算工具">
+    <meta name="twitter:description" content="工期計算工具教學：輸出預計完工表、晴雨表＋工期計算表、日報總表（Excel / PDF），並自訂晴雨表圖示顏色。">
+    <meta name="twitter:image" content="https://www.firefoxinfo.com/ScheduleCalculator/images/Tutorial/輸出報表/Main.png">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../FoxInfo.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="../FoxInfo.ico">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo-link" title="回到火狐資訊首頁"><img src="../images/FoxInfo_Big.png" alt="火狐資訊 Logo" class="logo"></a>
+            <h1><a href="/" class="brand-parent" title="回到火狐資訊首頁">火狐資訊</a> - 工期計算工具</h1>
+            <button class="hamburger-menu-toggle" aria-label="Toggle navigation">
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+            </button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="../index.html#intro">回首頁</a></li>
+                    <li><a href="../index.html#features">程式特點</a></li>
+                    <li><a href="../index.html#tutorials">教學</a></li>
+                    <li><a href="../index.html#download">下載</a></li>
+                    <li><a href="../index.html#contact">聯絡方式</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="tutorial-detail-section">
+            <div class="container">
+                <h2>輸出預計完工表與晴雨表</h2>
+                <div class="tutorial-content">
+                    <p>工期計算工具可以輸出三種報表：<span class="highlight-field">預計完工表</span>、<span class="highlight-field">晴雨表＋工期計算表</span>、<span class="highlight-field">日報總表</span>。
+                        電腦有安裝 <span class="highlight-field">Microsoft Excel</span> 時，預計完工表與晴雨表可以選擇存成 <span class="highlight-field">PDF</span> 或 Excel；沒有 Excel 時只能存成 Excel 檔。</p>
+
+                    <div class="table-scroll"><table class="rule-table">
+                        <tr><th>報表</th><th>從哪裡輸出</th><th>格式</th></tr>
+                        <tr><td>預計完工表</td><td>主視窗右下角<span class="highlight-field-blue">輸出預計完工表</span></td><td>PDF / Excel</td></tr>
+                        <tr><td>晴雨表＋工期計算表</td><td>日報表視窗<span class="highlight-field-blue">輸出晴雨表</span></td><td>PDF / Excel</td></tr>
+                        <tr><td>日報總表</td><td>日報表視窗<span class="highlight-field-blue">輸出總表</span></td><td>Excel</td></tr>
+                    </table></div>
+
+                    <h3>1、預計完工表</h3>
+                    <p>依開工日、契約工期、假日與追加工期，把整個工期畫成每年一張的月曆，每天下方標出累計的工期天數，
+                        並標示開工日與完工日。輸出前可以選擇<span class="highlight-field">週末用三角形或顏色標記</span>：</p>
+                    <img src="../images/Tutorial/輸出報表/預計完工表選項.png" alt="預計完工表選項" class="content-image">
+                    <img src="../images/Tutorial/輸出報表/預計完工表.png" alt="預計完工表" class="content-image">
+
+                    <h3>2、晴雨表＋工期計算表</h3>
+                    <p>依日報表畫出每天上午、下午的天氣與人為因素圖示，右半邊是每個月的<span class="highlight-field">工期計算表</span>
+                        （當月天數、例假日、各種不計工期的天數、累計使用工期等），下方附有開工日、契約工期、追加工期與各完工日。</p>
+                    <img src="../images/Tutorial/輸出報表/晴雨表與工期計算表.png" alt="晴雨表與工期計算表" class="content-image">
+                    <p>輸出前可以選擇兩種版面，以及週末的標記方式：</p>
+                    <img src="../images/Tutorial/輸出報表/晴雨表選項.png" alt="晴雨表選項" class="content-image">
+                    <p>● <span class="highlight-field-blue">日期另列一行</span>：天氣圖示與日期分開兩行，每月 4 列。</p>
+                    <img src="../images/Tutorial/輸出報表/晴雨表_日期另列一行.png" alt="日期另列一行" class="content-image">
+                    <p>● <span class="highlight-field-blue">日期印在圖示上</span>：日期直接印在天氣圖示上，每月 3 列，版面較精簡。</p>
+                    <img src="../images/Tutorial/輸出報表/晴雨表_日期印在圖示上.png" alt="日期印在圖示上" class="content-image">
+
+                    <h3>3、日報總表</h3>
+                    <p>一天一列的 Excel 表，欄位與日報表列表相同（日期、節日、停工、雨量、天氣、人為因素，以及各項累計工期），
+                        還沒填日報的日子以灰底「無資料」標示。排列順序與日報表列表目前的顯示順序相同。</p>
+
+                    <h3>4、存檔</h3>
+                    <p>選好選項後會開啟存檔視窗，預設檔名是「工程編號 工程名稱_報表名稱」，存檔類型可選 PDF 或 Excel；
+                        程式會記住你上次選的資料夾與檔案類型。輸出完成後按<span class="highlight-field-blue">開啟檔案</span>就能直接打開。</p>
+                    <div class="note-box"><p>如果檔案正在 Excel 或 PDF 閱讀器裡開著，會無法覆蓋，請先關閉再輸出一次。</p></div>
+
+                    <h3>5、自訂圖示顏色</h3>
+                    <p><span class="highlight-field-blue">設定 → 晴雨表顏色</span>可以調整每一種天氣、人為因素、停工，以及開工日、契約完工日、變動完工日等標記的顏色。
+                        晴雨表、預計完工表與日報表列表的底色都會套用；這台電腦的所有工程共用同一組顏色，按<span class="highlight-field-blue">回復預設值</span>可以還原。</p>
+                    <img src="../images/Tutorial/輸出報表/晴雨表顏色.png" alt="晴雨表顏色" class="content-image">
+                </div>
+                <a href="../index.html#tutorials" class="button primary-button back-to-tutorials">返回教學列表</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 火狐資訊. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教學：開始使用：選擇模式、認識主視窗、建立第一個工程 - 工期計算工具</title>
+    <meta name="description" content="工期計算工具入門：第一次啟動選擇單機或雲端模式，認識主視窗與工程總表，建立第一個工程。">
+    <link rel="canonical" href="https://www.firefoxinfo.com/ScheduleCalculator/tutorials/tutorial_開始使用.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="火狐資訊 工期計算工具">
+    <meta property="og:title" content="教學：開始使用：選擇模式、認識主視窗、建立第一個工程 - 工期計算工具">
+    <meta property="og:description" content="工期計算工具入門：第一次啟動選擇單機或雲端模式，認識主視窗與工程總表，建立第一個工程。">
+    <meta property="og:url" content="https://www.firefoxinfo.com/ScheduleCalculator/tutorials/tutorial_開始使用.html">
+    <meta property="og:image" content="https://www.firefoxinfo.com/ScheduleCalculator/images/Tutorial/開始使用/Main.png">
+    <meta property="og:locale" content="zh_TW">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="教學：開始使用：選擇模式、認識主視窗、建立第一個工程 - 工期計算工具">
+    <meta name="twitter:description" content="工期計算工具入門：第一次啟動選擇單機或雲端模式，認識主視窗與工程總表，建立第一個工程。">
+    <meta name="twitter:image" content="https://www.firefoxinfo.com/ScheduleCalculator/images/Tutorial/開始使用/Main.png">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../FoxInfo.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="../FoxInfo.ico">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo-link" title="回到火狐資訊首頁"><img src="../images/FoxInfo_Big.png" alt="火狐資訊 Logo" class="logo"></a>
+            <h1><a href="/" class="brand-parent" title="回到火狐資訊首頁">火狐資訊</a> - 工期計算工具</h1>
+            <button class="hamburger-menu-toggle" aria-label="Toggle navigation">
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+            </button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="../index.html#intro">回首頁</a></li>
+                    <li><a href="../index.html#features">程式特點</a></li>
+                    <li><a href="../index.html#tutorials">教學</a></li>
+                    <li><a href="../index.html#download">下載</a></li>
+                    <li><a href="../index.html#contact">聯絡方式</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="tutorial-detail-section">
+            <div class="container">
+                <h2>開始使用：選擇模式、認識主視窗、建立第一個工程</h2>
+                <div class="tutorial-content">
+                    <p>工期計算工具可以同時管理多個工程。每個工程有自己的工期條件、假日、追加工期與日報表，
+                        主視窗上方選好<span class="highlight-field">目前工程</span>，下方就顯示這個工程的資料與計算結果。</p>
+
+                    <h3>1、第一次啟動：選擇資料要存在哪裡</h3>
+                    <p>第一次開啟程式時，會詢問工程資料要存在哪裡：</p>
+                    <p>● <span class="highlight-field-blue">單機模式</span>：資料存在這台電腦，<span class="highlight-field">不需要登入，也不需要網路</span>。</p>
+                    <p>● <span class="highlight-field-blue">雲端模式</span>：用 <span class="highlight-field">Google 帳號</span>登入，資料存在雲端，換一台電腦登入同一個帳號就能繼續使用；需要網路。</p>
+                    <img src="../images/Tutorial/開始使用/啟動模式.png" alt="啟動模式選擇" class="content-image">
+                    <p>選過之後程式會記住，下次直接開啟。想換模式時，從<span class="highlight-field-blue">檔案 → 登出／切換模式</span>，程式結束後下次啟動會再詢問一次。
+                        兩種模式的差別與搬移資料的方法，請見<a href="tutorial_匯入匯出與雲端.html">匯入匯出與雲端模式</a>。</p>
+
+                    <h3>2、主視窗</h3>
+                    <img src="../images/Tutorial/開始使用/主視窗.png" alt="主視窗" class="content-image">
+                    <p>● 最上方<span class="highlight-field-blue">目前工程</span>：切換要看的工程；旁邊是<span class="highlight-field-blue">工程總表</span>與<span class="highlight-field-blue">新增工程</span>。</p>
+                    <p>● <span class="highlight-field">工程資料</span>：工期條件、開工日期、契約工期、國定假日、追加工期、不計工期條件、氣象站與雨量標準。
+                        要修改請按<span class="highlight-field-blue">編輯工程</span>；主視窗本身只顯示，不會不小心改到資料。</p>
+                    <p>● <span class="highlight-field">計算結果</span>：</p>
+                    <div class="table-scroll"><table class="rule-table">
+                        <tr><th>契約完工日</th><td>只依契約工期、工期條件與假日算出的完工日（不含追加工期）。</td></tr>
+                        <tr><th>含追加工期完工日</th><td>契約完工日再加上所有追加工期。</td></tr>
+                        <tr><th>最後一筆日報</th><td>目前填到哪一天、共填了幾天。</td></tr>
+                        <tr><th>變動完工日</th><td>含追加工期，再依日報表扣掉不計工期的天數（算到最後一筆日報為止）。</td></tr>
+                    </table></div>
+                    <p>右下角<span class="highlight-field-blue">輸出預計完工表</span>可以輸出整個工期的月曆表，請見<a href="tutorial_輸出報表.html">輸出預計完工表與晴雨表</a>。</p>
+
+                    <h3>3、建立第一個工程</h3>
+                    <p>按<span class="highlight-field-blue">新增工程</span>，輸入<span class="highlight-field">工程編號</span>（必填，不能和其他工程重複）與工程名稱，
+                        再選擇工期條件、開工日期與契約工期，下方會即時顯示契約完工日。</p>
+                    <img src="../images/Tutorial/開始使用/新增工程.png" alt="新增工程" class="content-image">
+                    <p>新工程預設是<span class="highlight-field">工作天（週休二日）</span>、開工日為今天，並已<span class="highlight-field">帶入國定假日與補班日</span>。
+                        各種工期條件的差別請見<a href="tutorial_工期條件.html">工期條件與國定假日</a>。</p>
+                    <div class="note-box"><p>所有設定都是按<span class="highlight-field-blue">確認</span>才一起存檔；按<span class="highlight-field-blue">取消</span>的話，這次在視窗裡做的修改（包括假日、追加工期、不計工期條件）全部不會存。</p></div>
+
+                    <h3>4、工程總表</h3>
+                    <p>按主視窗的<span class="highlight-field-blue">工程總表</span>，列出所有工程的編號、名稱、開工日期、工期條件、契約工期與契約完工日。</p>
+                    <img src="../images/Tutorial/開始使用/工程總表.png" alt="工程總表" class="content-image">
+                    <p>● 上方<span class="highlight-field">搜尋</span>可輸入工程編號或名稱篩選。</p>
+                    <p>● 點欄位標題可以排序；工程編號會依數字大小自然排序（例如 2 排在 10 前面）。</p>
+                    <p>● 每一列右邊可以<span class="highlight-field-blue">編輯</span>或<span class="highlight-field-blue">刪除</span>工程；<span class="highlight-field">雙擊一列</span>就切換成目前工程。</p>
+                </div>
+                <a href="../index.html#tutorials" class="button primary-button back-to-tutorials">返回教學列表</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 火狐資訊. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

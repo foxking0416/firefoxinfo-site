@@ -23,7 +23,13 @@
 │       ├── release_index.html  所有版本的 changelog（新 release 編輯這）
 │       └── releases/           每版對應的小轉址頁（refresh 到 release_index 的 anchor）
 │
-├── ScheduleCalculator/         產品 2：營造工程工期計算（規劃中，目前空資料夾）
+├── ScheduleCalculator/         產品 2：工期計算工具（營造工程工期計算）
+│   ├── index.html              介紹頁（沿用 StockKeeper 的版面與 class）
+│   ├── style.css, script.js    複製自 StockKeeper，style.css 末尾另加教學頁用的表格與提示框
+│   ├── FoxInfo.svg / .ico      favicon（複製）
+│   ├── images/                 hero 主畫面與各教學截圖（images/Tutorial/<教學名稱>/，Main.png 是卡片縮圖與 og:image）
+│   ├── tutorials/              各功能教學 HTML
+│   └── download/               latest*.html 轉址到 GitHub Release（foxking0416/ScheduleCalculatorRelease）
 │
 ├── download/                   【LEGACY MIRROR】見 download/README.md
 ├── tutorials/                  【LEGACY REDIRECTS】見 tutorials/README.md
@@ -72,6 +78,14 @@
    - 下載卡標題與三顆 platform version pill
 6. **方案 A 鏡像**：同時更新 `/StockKeeper/download/latest*.html` **以及** `/download/latest*.html` 三份，目標 URL 改為新版本 GitHub Release 檔案
 7. `/sitemap.xml` 的首頁與 release_index 的 lastmod 更新為當天日期
+
+### 工期計算工具新 release 版本
+1. 更新 `/ScheduleCalculator/download/latest.html`、`latest-setup.html` 的目標 URL（沒有 root 鏡像）
+2. 更新 `/ScheduleCalculator/index.html`：JSON-LD `softwareVersion`、showcase 的版本 pill、下載卡標題與兩顆 version pill
+3. `/sitemap.xml` 的 `/ScheduleCalculator/` lastmod 更新為當天日期
+- Release repo：`foxking0416/ScheduleCalculatorRelease`；Tag `ScheduleCalculator_v1_0_0`，
+  檔案 `ScheduleCalculator_Setup_v1_0_0.exe`（安裝版）、`ScheduleCalculator_v1_0_0.zip`（免安裝版）
+- 教學截圖用虛構的示範工程產生，不要放真實客戶的工程資料
 
 ### GitHub Release 檔案命名規範
 - Tag: `StockKeeper_v3_6_0`（底線分隔）

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教學：工期條件與國定假日 - 工期計算工具</title>
+    <meta name="description" content="工期計算工具教學：工作天（無週休／週休一日／週休二日）、日曆天、限期完工的計算方式，以及國定假日與補班日的設定。">
+    <link rel="canonical" href="https://www.firefoxinfo.com/ScheduleCalculator/tutorials/tutorial_工期條件.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="火狐資訊 工期計算工具">
+    <meta property="og:title" content="教學：工期條件與國定假日 - 工期計算工具">
+    <meta property="og:description" content="工期計算工具教學：工作天（無週休／週休一日／週休二日）、日曆天、限期完工的計算方式，以及國定假日與補班日的設定。">
+    <meta property="og:url" content="https://www.firefoxinfo.com/ScheduleCalculator/tutorials/tutorial_工期條件.html">
+    <meta property="og:image" content="https://www.firefoxinfo.com/ScheduleCalculator/images/Tutorial/工期條件/Main.png">
+    <meta property="og:locale" content="zh_TW">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="教學：工期條件與國定假日 - 工期計算工具">
+    <meta name="twitter:description" content="工期計算工具教學：工作天（無週休／週休一日／週休二日）、日曆天、限期完工的計算方式，以及國定假日與補班日的設定。">
+    <meta name="twitter:image" content="https://www.firefoxinfo.com/ScheduleCalculator/images/Tutorial/工期條件/Main.png">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../FoxInfo.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="../FoxInfo.ico">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo-link" title="回到火狐資訊首頁"><img src="../images/FoxInfo_Big.png" alt="火狐資訊 Logo" class="logo"></a>
+            <h1><a href="/" class="brand-parent" title="回到火狐資訊首頁">火狐資訊</a> - 工期計算工具</h1>
+            <button class="hamburger-menu-toggle" aria-label="Toggle navigation">
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+            </button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="../index.html#intro">回首頁</a></li>
+                    <li><a href="../index.html#features">程式特點</a></li>
+                    <li><a href="../index.html#tutorials">教學</a></li>
+                    <li><a href="../index.html#download">下載</a></li>
+                    <li><a href="../index.html#contact">聯絡方式</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="tutorial-detail-section">
+            <div class="container">
+                <h2>工期條件與國定假日</h2>
+                <div class="tutorial-content">
+                    <p>契約上的工期計算方式不同，完工日就會差很多。在<span class="highlight-field-blue">編輯工程</span>裡選好工期條件、開工日期與契約工期，
+                        下方的<span class="highlight-field">計算結果</span>會即時顯示契約完工日與含追加工期完工日。</p>
+
+                    <h3>1、三種工期條件</h3>
+                    <div class="table-scroll"><table class="rule-table">
+                        <tr><th>工期條件</th><th>哪些日子計入工期</th><th>天候、人為因素</th></tr>
+                        <tr><td>工作天（無週休）</td><td>每天都是工作日；國定假日不計（有套用假日時）</td><td>依不計工期條件扣除</td></tr>
+                        <tr><td>工作天（週休一日）</td><td>星期日不計；國定假日不計、補班日照計</td><td>依不計工期條件扣除</td></tr>
+                        <tr><td>工作天（週休二日）</td><td>星期六、日不計；國定假日不計、補班日照計</td><td>依不計工期條件扣除</td></tr>
+                        <tr><td>日曆天</td><td>星期六、日也計入；國定假日不計（有套用假日時）</td><td>天氣照計；人為因素依條件扣除</td></tr>
+                        <tr><td>限期完工</td><td>開工日到契約完工日每一天都計入</td><td>都不扣工期</td></tr>
+                    </table></div>
+
+                    <h3>2、工作天</h3>
+                    <p>選<span class="highlight-field-blue">工作天</span>後，再選<span class="highlight-field">無週休</span>、<span class="highlight-field">週休一日</span>或<span class="highlight-field">週休二日</span>。輸入契約工期（工作天數），
+                        程式會跳過不計入工期的日子，算出契約完工日。</p>
+                    <img src="../images/Tutorial/工期條件/工作天.png" alt="工作天" class="content-image">
+
+                    <h3>3、日曆天</h3>
+                    <p><span class="highlight-field-blue">日曆天</span>是包括星期六、日在內每天都計入工期。依常見的工期核算規定，日曆天<span class="highlight-field">包括雨天在內都計入工期</span>，
+                        所以切換到日曆天時，程式會自動把<span class="highlight-field">天氣的不計工期條件全部設為「照計工期」</span>；
+                        停電等人為因素維持原本的設定。</p>
+                    <img src="../images/Tutorial/工期條件/日曆天.png" alt="日曆天" class="content-image">
+                    <p>切回工作天時，會還原切換前的天氣條件。如果契約另有規定，仍可在<span class="highlight-field-blue">天氣及人為因素不計工期條件</span>裡自行調整，
+                        請見<a href="tutorial_追加工期與不計工期條件.html">追加工期與不計工期條件</a>。</p>
+
+                    <h3>4、限期完工</h3>
+                    <p>契約直接訂好完工日期的工程，選<span class="highlight-field-blue">限期完工</span>，再輸入<span class="highlight-field">契約完工日</span>，
+                        <span class="highlight-field">契約工期會自動推算</span>成開工日到契約完工日的日曆天數（含頭尾兩天）。</p>
+                    <img src="../images/Tutorial/工期條件/限期完工.png" alt="限期完工" class="content-image">
+                    <p>限期完工的規則：</p>
+                    <p>● 每一天都計入工期，國定假日、天候、人為因素、停工都<span class="highlight-field">不扣工期</span>，所以國定假日與不計工期條件的設定會停用。</p>
+                    <p>● 有核定的<span class="highlight-field">追加工期</span>時，以日曆天加在後面。</p>
+                    <p>主視窗會顯示「國定假日／補班：不適用（限期完工）」與「限期完工不扣工期」：</p>
+                    <img src="../images/Tutorial/工期條件/限期完工_主視窗.png" alt="限期完工的主視窗" class="content-image">
+
+                    <h3>5、國定假日與補班日</h3>
+                    <p>勾選<span class="highlight-field-blue">套用國定假日／補班</span>時，放假日不計入工期、補班日照算；取消勾選時假日資料仍會保留，只是不參與計算。
+                        按<span class="highlight-field-blue">國定假日／補班設定</span>可以檢視與修改這個工程的假日：</p>
+                    <img src="../images/Tutorial/工期條件/國定假日.png" alt="國定假日與補班設定" class="content-image">
+                    <p>● <span class="highlight-field-blue">帶入國定假日</span>：連網下載最新的國定假日與補班日。如果某一天你已經自己改過（例如改成補班），會先詢問再覆蓋。
+                        連不上網路時改用上次下載的資料。</p>
+                    <p>● <span class="highlight-field-blue">新增</span>：加入自訂的假日或補班日，例如地方政府的停班停課日。</p>
+                    <p>● 每一列可以<span class="highlight-field-blue">編輯</span>或<span class="highlight-field-blue">刪除</span>；勾選多列後可一次刪除。</p>
+                    <div class="note-box"><p>新增工程時會自動帶入程式上次下載的國定假日（程式啟動時會在背景更新），不需要另外操作。</p></div>
+                </div>
+                <a href="../index.html#tutorials" class="button primary-button back-to-tutorials">返回教學列表</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 火狐資訊. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

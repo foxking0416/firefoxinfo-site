@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>火狐資訊 FoxInfo — 獨立開發的實用工具</title>
-  <meta name="description" content="火狐資訊 FoxInfo：由資深軟體工程師獨立開發、獨立維護的實用工具。目前提供 StockKeeper 台股 / 美股投資記帳工具。">
+  <meta name="description" content="火狐資訊 FoxInfo：由資深軟體工程師獨立開發、獨立維護的實用工具。目前提供 StockKeeper 台股 / 美股投資記帳工具，以及營造工程用的工期計算工具。">
   <link rel="canonical" href="https://www.firefoxinfo.com/">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="火狐資訊 FoxInfo">
   <meta property="og:title" content="火狐資訊 FoxInfo">
-  <meta property="og:description" content="由資深軟體工程師獨立開發、獨立維護的實用工具。目前提供 StockKeeper 台股 / 美股投資記帳工具。">
+  <meta property="og:description" content="由資深軟體工程師獨立開發、獨立維護的實用工具。目前提供 StockKeeper 台股 / 美股投資記帳工具，以及營造工程用的工期計算工具。">
   <meta property="og:url" content="https://www.firefoxinfo.com/">
   <meta property="og:image" content="https://www.firefoxinfo.com/StockKeeper/images/hero/main-app.png">
   <meta property="og:locale" content="zh_TW">
@@ -58,33 +58,34 @@
 
     /* ========== Hero ========== */
     .hero {
-      padding: 72px 0 56px;
+      padding: 96px 0 72px;
       text-align: center;
       border-bottom: 1px solid var(--card-border);
-      background: radial-gradient(ellipse 60% 50% at 50% 20%, rgba(247,127,0,0.08), transparent 70%);
+      background: radial-gradient(ellipse 70% 60% at 50% 25%, rgba(247,127,0,0.1), transparent 70%);
     }
     .hero-logo {
-      width: 72px;
-      height: 72px;
-      margin: 0 auto 20px;
+      width: 240px;
+      height: 240px;
+      margin: 0 auto 28px;
     }
     .hero h1 {
-      font-size: 2.4em;
+      font-size: 3em;
       font-weight: 700;
-      margin: 0 0 10px;
+      margin: 0;
       letter-spacing: 2px;
     }
     .hero h1 .en {
-      color: var(--text-dim);
-      font-weight: 500;
-      font-size: 0.6em;
-      margin-left: 10px;
-      letter-spacing: 3px;
+      color: var(--text-color);
+      font-weight: 600;
+      font-size: 0.75em;
+      margin-right: 14px;
+      letter-spacing: 4px;
     }
-    .hero-tagline {
-      font-size: 1.05em;
-      color: var(--text-dim);
-      margin: 0;
+    @media (max-width: 700px) {
+      .hero { padding: 56px 0 48px; }
+      .hero-logo { width: 160px; height: 160px; margin-bottom: 20px; }
+      .hero h1 { font-size: 2.2em; }
+      .hero h1 .en { font-size: 0.7em; letter-spacing: 3px; }
     }
 
     /* ========== Products ========== */
@@ -116,6 +117,9 @@
       border-radius: 16px;
       overflow: hidden;
       transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .product-card + .product-card {
+      margin-top: 24px;
     }
     .product-card:hover {
       transform: translateY(-2px);
@@ -225,16 +229,12 @@
   <section class="hero">
     <div class="container">
       <img src="FoxInfo.svg" alt="火狐資訊 Logo" class="hero-logo">
-      <h1>火狐資訊<span class="en">FoxInfo</span></h1>
-      <p class="hero-tagline">獨立開發的實用工具</p>
+      <h1><span class="en">FoxInfo</span>火狐資訊</h1>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <span class="section-eyebrow">Products</span>
-      <h2>目前提供的工具</h2>
-
       <a href="/StockKeeper/" class="product-card">
         <div class="product-card-image">
           <img src="/StockKeeper/images/hero/main-app.png" alt="StockKeeper 主畫面">
@@ -243,6 +243,21 @@
           <h3>StockKeeper</h3>
           <p class="sub">台股 / 美股 投資記帳工具（Windows / macOS）</p>
           <p class="desc">自動帶入股利、處理減資與分割合併，支援台股融資、股票質押、二代健保補充保費；提供回測工具、歷史回溯、損益走勢圖表與 TWR / XIRR 績效分析。單機版完全免費。</p>
+          <span class="cta">
+            了解更多
+            <span class="arrow">→</span>
+          </span>
+        </div>
+      </a>
+
+      <a href="/ScheduleCalculator/" class="product-card">
+        <div class="product-card-image">
+          <img src="/ScheduleCalculator/images/hero/main-app.png" alt="工期計算工具主畫面">
+        </div>
+        <div class="product-card-body">
+          <h3>工期計算工具</h3>
+          <p class="sub">營造工程工期計算（Windows）</p>
+          <p class="desc">支援工作天、日曆天、限期完工，自動帶入國定假日與追加工期；填日報表即時重算變動完工日，一鍵輸出預計完工表、晴雨表與工期計算表。</p>
           <span class="cta">
             了解更多
             <span class="arrow">→</span>

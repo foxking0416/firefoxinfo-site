@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>工期計算工具 ScheduleCalculator｜營造工程契約完工日、晴雨表一次搞定 - 火狐資訊</title>
+  <meta name="description" content="工期計算工具（ScheduleCalculator）是給營造工程使用的工期計算軟體：支援工作天、日曆天、限期完工，自動帶入國定假日與補班日，填日報表即時重算變動完工日，並可一鍵輸出預計完工表、晴雨表與工期計算表（Excel / PDF）。">
+  <meta name="keywords" content="工期計算,工期計算工具,ScheduleCalculator,晴雨表,預計完工表,工期計算表,契約完工日,變動完工日,工作天,日曆天,限期完工,不計工期,追加工期,營造,火狐資訊">
+  <meta name="author" content="火狐資訊 FoxInfo">
+  <link rel="canonical" href="https://www.firefoxinfo.com/ScheduleCalculator/">
+
+  <!-- Open Graph (Facebook / LINE) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="火狐資訊 工期計算工具">
+  <meta property="og:title" content="工期計算工具｜營造工程契約完工日、晴雨表一次搞定">
+  <meta property="og:description" content="工作天、日曆天、限期完工都能算；國定假日自動帶入，填日報表即時重算變動完工日，一鍵輸出預計完工表與晴雨表。">
+  <meta property="og:url" content="https://www.firefoxinfo.com/ScheduleCalculator/">
+  <meta property="og:image" content="https://www.firefoxinfo.com/ScheduleCalculator/images/hero/main-app.png">
+  <meta property="og:image:alt" content="工期計算工具主畫面">
+  <meta property="og:locale" content="zh_TW">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="工期計算工具｜營造工程契約完工日、晴雨表一次搞定">
+  <meta name="twitter:description" content="工作天、日曆天、限期完工都能算；填日報表即時重算變動完工日，一鍵輸出預計完工表與晴雨表。">
+  <meta name="twitter:image" content="https://www.firefoxinfo.com/ScheduleCalculator/images/hero/main-app.png">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="FoxInfo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/FoxInfo_Big.png">
+  <link rel="shortcut icon" href="FoxInfo.ico">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "工期計算工具 ScheduleCalculator",
+    "operatingSystem": "Windows 10, Windows 11",
+    "applicationCategory": "BusinessApplication",
+    "description": "營造工程工期計算軟體：支援工作天、日曆天、限期完工，自動帶入國定假日，依日報表計算變動完工日，輸出預計完工表、晴雨表與工期計算表。",
+    "softwareVersion": "1.0.0",
+    "inLanguage": "zh-TW",
+    "url": "https://www.firefoxinfo.com/ScheduleCalculator/",
+    "downloadUrl": "https://www.firefoxinfo.com/ScheduleCalculator/download/latest-setup.html",
+    "image": "https://www.firefoxinfo.com/ScheduleCalculator/images/hero/main-app.png",
+    "publisher": {
+      "@type": "Organization",
+      "name": "火狐資訊 FoxInfo",
+      "url": "https://www.firefoxinfo.com/"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <a href="/" class="logo-link" title="回到火狐資訊首頁"><img src="images/FoxInfo_Big.png" alt="火狐資訊 Logo" class="logo"></a>
+      <h1><a href="/" class="brand-parent" title="回到火狐資訊首頁">火狐資訊</a> - 工期計算工具</h1>
+      <button class="hamburger-menu-toggle" aria-label="Toggle navigation">
+        <span class="hamburger-icon"></span>
+        <span class="hamburger-icon"></span>
+        <span class="hamburger-icon"></span>
+      </button>
+
+      <nav id="main-nav">
+        <ul>
+          <li><a href="#intro">簡介</a></li>
+          <li><a href="#features">程式特點</a></li>
+          <li><a href="#tutorials">教學</a></li>
+          <li><a href="#download">下載</a></li>
+          <li><a href="#contact">聯絡方式</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="intro" class="hero-section hero-split">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-text">
+            <span class="hero-eyebrow"><i class="fa-solid fa-helmet-safety"></i> 營造工程的工期計算工具</span>
+            <h2>契約完工日、晴雨表<br><span class="hero-accent">填完日報就算好</span></h2>
+            <p class="hero-lead"><span class="hero-inline-accent">輸入開工日與契約工期，假日、補班、追加工期自動算進去。</span><br>每天填上下午天氣與人為因素，<span class="hero-inline-accent">變動完工日即時重算</span>，月底一鍵輸出晴雨表。</p>
+            <ul class="hero-bullets">
+              <li><i class="fa-solid fa-calendar-check"></i> 工作天（無週休／週休一日／週休二日）、日曆天、限期完工</li>
+              <li><i class="fa-solid fa-cloud-rain"></i> 日報表依氣象站雨量預先帶入天氣，不計工期自動扣除</li>
+              <li><i class="fa-solid fa-file-pdf"></i> 預計完工表、晴雨表、工期計算表一鍵輸出 Excel / PDF</li>
+            </ul>
+            <div class="hero-cta">
+              <a href="#download" class="button primary-button hero-cta-primary"><i class="fa-solid fa-download"></i> 下載工期計算工具</a>
+              <a href="#tutorials" class="button hero-cta-secondary"><i class="fa-solid fa-book-open"></i> 看使用教學</a>
+            </div>
+            <div class="hero-trust">
+              <span><i class="fa-brands fa-windows"></i> Windows</span>
+              <span><i class="fa-solid fa-layer-group"></i> 多工程管理</span>
+              <span><i class="fa-solid fa-cloud"></i> 單機或雲端模式</span>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-mockup">
+              <div class="hero-mockup-bar">
+                <span></span><span></span><span></span>
+              </div>
+              <img src="images/hero/main-app.png" alt="工期計算工具主畫面" class="hero-screenshot">
+            </div>
+            <div class="hero-glow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features-section features-grid-section">
+      <div class="container">
+        <h2>從開工到完工，工期都幫你算</h2>
+        <p class="section-lead">工期計算最花時間的，是一天一天扣假日、扣雨天、加追加工期，再把結果畫成晴雨表 ── 這些都交給程式。</p>
+
+        <h3 class="features-subtitle"><i class="fa-solid fa-calculator"></i> 契約工期 ── 輸入一次，完工日自動算出</h3>
+        <div class="features-grid">
+          <div class="feature-card feature-card-highlight">
+            <div class="feature-icon"><i class="fa-solid fa-calendar-week"></i></div>
+            <h3>三種工期條件</h3>
+            <p>工作天（無週休、週休一日、週休二日）、日曆天、限期完工。限期完工只要輸入契約完工日，契約工期自動推算。</p>
+          </div>
+          <div class="feature-card feature-card-highlight">
+            <div class="feature-icon"><i class="fa-solid fa-flag"></i></div>
+            <h3>國定假日自動帶入</h3>
+            <p>新增工程就帶入國定假日與補班日，也可以自己增減。放假日不計工期、補班日照算，不用每年翻行事曆。</p>
+          </div>
+          <div class="feature-card feature-card-highlight">
+            <div class="feature-icon"><i class="fa-solid fa-calendar-plus"></i></div>
+            <h3>追加工期</h3>
+            <p>記錄每次追加的起始日、天數、理由與核定日期，「含追加工期完工日」立即更新。</p>
+          </div>
+        </div>
+
+        <h3 class="features-subtitle"><i class="fa-solid fa-clipboard-list"></i> 日報表 ── 每天填一下，變動完工日跟著走</h3>
+        <div class="features-grid features-grid-2">
+          <div class="feature-card feature-card-highlight">
+            <div class="feature-icon"><i class="fa-solid fa-cloud-sun-rain"></i></div>
+            <h3>天氣與人為因素不計工期</h3>
+            <p>上下午分開填天氣（雨、豪雨、颱風、酷熱、泥濘…）與人為因素（停電…），依你設定的條件扣 1 天、0.5 天或照計，即時重算變動完工日。</p>
+          </div>
+          <div class="feature-card feature-card-highlight">
+            <div class="feature-icon"><i class="fa-solid fa-droplet"></i></div>
+            <h3>氣象站雨量自動帶入</h3>
+            <p>選好工地附近的氣象站，日報表列出每天雨量；新增日報時依雨量標準預先帶入「雨」或「豪雨」，不用再一天天查。</p>
+          </div>
+        </div>
+
+        <h3 class="features-subtitle"><i class="fa-solid fa-circle-check"></i> 輸出與資料管理</h3>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-table-cells"></i></div>
+            <h3>預計完工表</h3>
+            <p>整個工期一年一張月曆，標出每天累計的工期天數，週末可用三角形或顏色標記。</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-sun"></i></div>
+            <h3>晴雨表＋工期計算表</h3>
+            <p>依日報表畫出每天上下午的天氣圖示，右邊附上每月的工期計算表，可直接附在報告書裡。</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <h3>多工程管理</h3>
+            <p>所有工程集中在工程總表，可搜尋、切換；每個工程的假日、追加工期、不計工期條件各自獨立。</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+            <h3>單機或雲端</h3>
+            <p>單機模式資料只存在這台電腦；雲端模式用 Google 帳號登入，換電腦登入同一個帳號就能繼續使用。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="vs-excel" class="vs-excel-section">
+      <div class="container">
+        <div class="vs-header">
+          <span class="vs-eyebrow"><i class="fa-solid fa-scale-balanced"></i> 為什麼不繼續用 Excel 自己排？</span>
+          <h2>同樣一件事，差距就是這麼大</h2>
+          <p class="section-lead">工期表難的不是公式，而是每一次開工日、假日、雨天、追加工期一改，整張表都要重新數過。</p>
+        </div>
+
+        <div class="vs-table">
+          <div class="vs-table-head">
+            <div class="vs-th vs-th-task">工期計算任務</div>
+            <div class="vs-th vs-th-excel">
+              <i class="fa-solid fa-file-excel"></i> 用 Excel 自己排
+            </div>
+            <div class="vs-th vs-th-sk">
+              <img src="images/FoxInfo_Big.png" alt="工期計算工具" class="vs-th-logo">
+              用工期計算工具
+            </div>
+          </div>
+
+          <div class="vs-row">
+            <div class="vs-cell vs-cell-task">
+              <i class="fa-solid fa-calendar-check"></i> 契約完工日
+            </div>
+            <div class="vs-cell vs-cell-bad">
+              <i class="fa-solid fa-xmark"></i>
+              <span>對著月曆一天天數，跳過週末與假日</span>
+            </div>
+            <div class="vs-cell vs-cell-good">
+              <i class="fa-solid fa-check"></i>
+              <span>輸入開工日與契約工期，立即算出</span>
+            </div>
+          </div>
+
+          <div class="vs-row">
+            <div class="vs-cell vs-cell-task">
+              <i class="fa-solid fa-flag"></i> 國定假日／補班
+            </div>
+            <div class="vs-cell vs-cell-bad">
+              <i class="fa-solid fa-xmark"></i>
+              <span>每年查行事曆，手動標記放假與補班</span>
+            </div>
+            <div class="vs-cell vs-cell-good">
+              <i class="fa-solid fa-check"></i>
+              <span>新增工程自動帶入，也可隨時重新帶入</span>
+            </div>
+          </div>
+
+          <div class="vs-row">
+            <div class="vs-cell vs-cell-task">
+              <i class="fa-solid fa-cloud-rain"></i> 每天的天候
+            </div>
+            <div class="vs-cell vs-cell-bad">
+              <i class="fa-solid fa-xmark"></i>
+              <span>上氣象網站逐日查雨量，再自己判斷</span>
+            </div>
+            <div class="vs-cell vs-cell-good">
+              <i class="fa-solid fa-check"></i>
+              <span>自動下載氣象站雨量，依標準預先帶入</span>
+            </div>
+          </div>
+
+          <div class="vs-row">
+            <div class="vs-cell vs-cell-task">
+              <i class="fa-solid fa-hourglass-half"></i> 變動完工日
+            </div>
+            <div class="vs-cell vs-cell-bad">
+              <i class="fa-solid fa-xmark"></i>
+              <span>改一天日報，後面全部要重算</span>
+            </div>
+            <div class="vs-cell vs-cell-good">
+              <i class="fa-solid fa-check"></i>
+              <span>改任何一天，即時重算到最後一天</span>
+            </div>
+          </div>
+
+          <div class="vs-row vs-row-exclusive">
+            <div class="vs-cell vs-cell-task">
+              <i class="fa-solid fa-sun"></i> 晴雨表
+            </div>
+            <div class="vs-cell vs-cell-bad">
+              <i class="fa-solid fa-ban"></i>
+              <span>每個月手動畫圖示、填工期計算表</span>
+            </div>
+            <div class="vs-cell vs-cell-good">
+              <i class="fa-solid fa-check"></i>
+              <span>一鍵輸出晴雨表＋工期計算表（Excel / PDF）</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="vs-footnote">每個月都在做的工期整理，交給工期計算工具一次處理。</p>
+      </div>
+    </section>
+
+    <section id="showcase" class="v3-showcase-section">
+      <div class="container">
+        <div class="v3-header">
+          <span class="v3-pill">v1.0.0</span>
+          <h2>實際畫面</h2>
+          <p class="section-lead">以下畫面都是用示範工程實際操作的截圖。</p>
+        </div>
+
+        <div class="showcase-row">
+          <div class="showcase-text">
+            <span class="showcase-tag"><i class="fa-solid fa-clipboard-list"></i> 日報表</span>
+            <h3>每天填五個欄位，累計工期全部算好</h3>
+            <p>停工、上午天氣、下午天氣、上午人為、下午人為 ── 填完立即看到今日不計、累計追加工期、開工迄今使用工期、剩餘工期與變動完工日。還沒填的日子以灰底「無資料」標出，不會漏掉。</p>
+            <ul class="showcase-bullets">
+              <li>列出開工日到今天的每一天</li>
+              <li>氣象站雨量與建議天氣並列</li>
+              <li>改動任何一天都即時重算</li>
+            </ul>
+            <a href="tutorials/tutorial_日報表.html" class="showcase-link">查看完整教學 →</a>
+          </div>
+          <div class="showcase-visual">
+            <img src="images/Tutorial/日報表/日報表列表.png" alt="日報表列表">
+          </div>
+        </div>
+
+        <div class="showcase-row reverse">
+          <div class="showcase-text">
+            <span class="showcase-tag"><i class="fa-solid fa-sun"></i> 晴雨表</span>
+            <h3>一鍵輸出，直接附進報告</h3>
+            <p>依日報表畫出每天上下午的天氣圖示、假日與週末標記，並附上每月的工期計算表。有安裝 Excel 時可以直接存成 PDF。</p>
+            <ul class="showcase-bullets">
+              <li>兩種版面：日期另列一行／日期印在圖示上</li>
+              <li>週末用三角形或顏色標記</li>
+              <li>圖示顏色可自訂</li>
+            </ul>
+            <a href="tutorials/tutorial_輸出報表.html" class="showcase-link">查看完整教學 →</a>
+          </div>
+          <div class="showcase-visual">
+            <img src="images/Tutorial/輸出報表/晴雨表_日期另列一行.png" alt="晴雨表">
+          </div>
+        </div>
+
+        <div class="showcase-row">
+          <div class="showcase-text">
+            <span class="showcase-tag"><i class="fa-solid fa-calendar-week"></i> 工期條件</span>
+            <h3>工作天、日曆天、限期完工都能算</h3>
+            <p>選好工期條件、開工日與契約工期，畫面下方立即顯示契約完工日與含追加工期完工日。限期完工則是輸入契約完工日，契約工期自動推算。</p>
+            <ul class="showcase-bullets">
+              <li>工作天可選無週休、週休一日、週休二日</li>
+              <li>切到日曆天時天氣自動設為照計工期</li>
+              <li>按「確認」才存檔，按「取消」全部不變</li>
+            </ul>
+            <a href="tutorials/tutorial_工期條件.html" class="showcase-link">查看完整教學 →</a>
+          </div>
+          <div class="showcase-visual">
+            <img src="images/Tutorial/工期條件/工作天.png" alt="編輯工程">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tutorials" class="tutorials-section">
+      <div class="container">
+        <h2>學習工期計算工具</h2>
+        <div class="tutorial-grid">
+          <a href="tutorials/tutorial_開始使用.html" class="tutorial-card">
+            <img src="images/Tutorial/開始使用/Main.png" alt="開始使用">
+            <h3>開始使用</h3>
+            <p>選擇單機或雲端模式、認識主視窗，建立第一個工程。</p>
+          </a>
+          <a href="tutorials/tutorial_工期條件.html" class="tutorial-card">
+            <img src="images/Tutorial/工期條件/Main.png" alt="工期條件與國定假日">
+            <h3>工期條件與國定假日</h3>
+            <p>工作天、日曆天、限期完工的差別，以及國定假日／補班的設定方式。</p>
+          </a>
+          <a href="tutorials/tutorial_追加工期與不計工期條件.html" class="tutorial-card">
+            <img src="images/Tutorial/追加工期與不計工期條件/Main.png" alt="追加工期與不計工期條件">
+            <h3>追加工期與不計工期條件</h3>
+            <p>記錄追加工期；設定雨天、颱風、停電等因素要扣 1 天、0.5 天還是照計。</p>
+          </a>
+          <a href="tutorials/tutorial_日報表.html" class="tutorial-card">
+            <img src="images/Tutorial/日報表/Main.png" alt="日報表與變動完工日">
+            <h3>日報表與變動完工日</h3>
+            <p>每天填天氣與人為因素，雨量自動帶入，變動完工日即時重算。</p>
+          </a>
+          <a href="tutorials/tutorial_輸出報表.html" class="tutorial-card">
+            <img src="images/Tutorial/輸出報表/Main.png" alt="輸出報表">
+            <h3>輸出預計完工表與晴雨表</h3>
+            <p>輸出預計完工表、晴雨表＋工期計算表、日報總表，並自訂圖示顏色。</p>
+          </a>
+          <a href="tutorials/tutorial_匯入匯出與雲端.html" class="tutorial-card">
+            <img src="images/Tutorial/匯入匯出與雲端/Main.png" alt="匯入匯出與雲端模式">
+            <h3>匯入匯出與雲端模式</h3>
+            <p>備份工程、搬到另一台電腦，或把單機的工程搬上雲端。</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="download-section download-section-new">
+      <div class="container">
+        <div class="download-header">
+          <span class="download-eyebrow"><i class="fa-solid fa-download"></i> 立即下載</span>
+          <h2>下載工期計算工具</h2>
+          <p class="section-lead">完整繁體中文，下載安裝後即可建立第一個工程。</p>
+        </div>
+
+        <div class="download-cards" id="download-cards">
+          <div class="download-card download-card-primary download-single">
+
+            <div class="download-single-head">
+              <h3>ScheduleCalculator_v1.0.0</h3>
+            </div>
+
+            <ul class="download-specs">
+              <li><i class="fa-solid fa-circle-check"></i> 支援 Windows 10 / 11（64-bit）</li>
+              <li><i class="fa-solid fa-circle-check"></i> Windows 安裝版可<span class="highlight-field-blue">自動更新</span>；免安裝版解壓即用</li>
+              <li><i class="fa-solid fa-circle-check"></i> 輸出 PDF 需要電腦有安裝 Microsoft Excel；沒有 Excel 時可輸出 Excel 檔</li>
+            </ul>
+
+            <ul class="download-platforms">
+              <li class="download-platform-row" data-platform="windows">
+                <div class="download-platform-icon"><i class="fa-brands fa-windows"></i></div>
+                <a class="download-platform-cta"
+                   href="https://www.firefoxinfo.com/ScheduleCalculator/download/latest-setup.html"
+                   data-active-label="下載 Windows 安裝版（可自動更新）"
+                   data-disabled-label="請用 Windows 電腦下載">
+                  <i class="fa-solid fa-download"></i>
+                  <span class="download-platform-label">下載 Windows 安裝版（可自動更新）</span>
+                  <span class="download-platform-badge">推薦</span>
+                </a>
+                <span class="download-version-pill">v1.0.0</span>
+              </li>
+
+              <li class="download-platform-row" data-platform="windows">
+                <div class="download-platform-icon"><i class="fa-brands fa-windows"></i></div>
+                <a class="download-platform-cta is-secondary"
+                   href="https://www.firefoxinfo.com/ScheduleCalculator/download/latest.html"
+                   data-active-label="下載 Windows 免安裝版"
+                   data-disabled-label="請用 Windows 電腦下載">
+                  <i class="fa-solid fa-download"></i>
+                  <span class="download-platform-label">下載 Windows 免安裝版</span>
+                </a>
+                <span class="download-version-pill">v1.0.0</span>
+              </li>
+            </ul>
+
+            <p class="download-source">
+              <i class="fa-brands fa-github"></i> 釋出於
+              <a href="https://github.com/foxking0416/ScheduleCalculatorRelease/releases" target="_blank" rel="noopener">GitHub Release</a>
+              ── 透明公開，可確認檔案真實性
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section contact-section-new">
+      <div class="container">
+        <div class="contact-header">
+          <span class="contact-eyebrow"><i class="fa-solid fa-headset"></i> 聯絡與支援</span>
+          <h2>有任何問題或建議都歡迎告訴我</h2>
+          <p class="section-lead">使用上的疑問、計算結果與契約規定不同、想要新增的功能，都歡迎來信。</p>
+        </div>
+
+        <div class="contact-body">
+          <div class="contact-brand">
+            <img src="images/FoxInfo_Big.png" alt="火狐資訊 Logo" class="contact-brand-logo">
+            <div class="contact-brand-name">火狐資訊</div>
+            <div class="contact-brand-tagline">FoxInfo · 工期計算工具</div>
+          </div>
+
+          <div class="contact-cards">
+            <a href="mailto:foxking0416@gmail.com?subject=工期計算工具" class="contact-card">
+              <div class="contact-icon-circle contact-icon-mail"><i class="fa-solid fa-envelope"></i></div>
+              <h3>Email 直接聯繫</h3>
+              <p>使用問題、Bug 回報、功能建議都歡迎來信，會盡快回覆。</p>
+              <span class="contact-card-link">foxking0416@gmail.com <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 火狐資訊. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- 下載區：只有 Windows 版，非 Windows 電腦以 disabled 提示 -->
+  <script>
+    (function () {
+      const rows = document.querySelectorAll('.download-platform-row[data-platform]');
+      if (!rows.length) return;
+
+      const ua = navigator.userAgent || '';
+      const platform = (navigator.userAgentData && navigator.userAgentData.platform) || '';
+      const isMobile = /iPad|iPhone|iPod|Android/i.test(ua) || (/Mac/.test(ua) && navigator.maxTouchPoints > 1);
+      const isWindows = /Win/i.test(platform) || /Windows/.test(ua);
+      const activePlatform = (!isMobile && isWindows) ? 'windows' : null;
+
+      rows.forEach(row => {
+        const cta = row.querySelector('.download-platform-cta');
+        const label = cta.querySelector('.download-platform-label');
+        if (row.dataset.platform === activePlatform) {
+          label.textContent = cta.dataset.activeLabel;
+          return;
+        }
+        cta.classList.add('is-disabled');
+        cta.setAttribute('aria-disabled', 'true');
+        cta.removeAttribute('href');
+        label.textContent = cta.dataset.disabledLabel;
+      });
+    })();
+  </script>
+</body>
+
+</html>
