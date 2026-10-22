@@ -51,12 +51,23 @@ header .container {
     flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
+header .logo-link {
+    display: inline-flex;
+    text-decoration: none;
+    line-height: 0;
+}
+
 header .logo {
     height: 50px;
     width: 50px; /* Ensure logo is circular or square for consistency */
     border-radius: 50%; /* If your logo is not perfectly round, this will make it so */
     margin-right: 15px;
     object-fit: cover; /* Ensures image fills the circle */
+    transition: transform 0.25s ease;
+}
+
+header .logo-link:hover .logo {
+    transform: scale(1.05);
 }
 
 header h1 {
@@ -64,6 +75,17 @@ header h1 {
     color: var(--text-color);
     margin: 0;
     flex-grow: 1; /* Allows h1 to take available space */
+}
+
+/* 「火狐資訊」在 h1 裡做成可點選的父品牌連結，點了回到 / landing */
+header h1 .brand-parent {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+header h1 .brand-parent:hover {
+    color: var(--primary-color);
 }
 
 header nav ul {
