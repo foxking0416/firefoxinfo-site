@@ -87,6 +87,20 @@
   檔案 `ScheduleCalculator_Setup_v1_0_0.exe`（安裝版）、`ScheduleCalculator_v1_0_0.zip`（免安裝版）
 - 教學截圖用虛構的示範工程產生，不要放真實客戶的工程資料
 
+### 教學短網址（英文別名）
+教學頁檔名是中文，貼到 PTT 等不支援中文網址的地方會斷掉，所以每篇教學都有一個英文短網址：
+`/<產品>/<別名>/index.html` 是轉址頁，轉到 `/<產品>/tutorials/tutorial_<中文>.html`（保留 #anchor、canonical 指向原教學頁）。
+例：`https://www.firefoxinfo.com/StockKeeper/pledge/` → 股票質押教學。
+
+- **新增教學時要一起建短網址**：複製任一個既有的短網址資料夾（例如 `StockKeeper/pledge/`），改名成新別名，
+  再把 `index.html` 裡的目標路徑（canonical / refresh / script / 連結共 4 處，中文要 URL 編碼）與 title 換成新教學；
+  別名用小寫英文 + 連字號，不可與 `download` / `images` / `tutorials` / `updates` 等既有資料夾同名
+- 目前對照表
+  - StockKeeper：`display-direction`、`acquisition`、`dividend-fee`、`settings`、`backtest`、`import-excel`、`columns`、
+    `chart`、`sell-lots`、`timeline`、`traceback`、`us-stock`、`pledge`、`custom-stock`、`financing`、`file-path`、
+    `reload`、`data-check`、`cloud-login`
+  - ScheduleCalculator：`getting-started`、`conditions`、`extension`、`daily-report`、`export-report`、`import-export`
+
 ### GitHub Release 檔案命名規範
 - Tag: `StockKeeper_v3_6_0`（底線分隔）
 - 檔案: `StockKeeper_v3_6_0.zip`（Windows 免安裝 & Mac）、`StockKeeper_Setup_v3_6_0.exe`（Windows 安裝版）
