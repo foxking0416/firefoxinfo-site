@@ -1,7 +1,8 @@
 User-agent: *
 Allow: /
 
-# /download/ 內為下載重新導向頁，本身無索引價值
+# 下載重新導向頁本身無索引價值
 Disallow: /download/
+Disallow: /StockKeeper/download/
 
 Sitemap: https://www.firefoxinfo.com/sitemap.xml

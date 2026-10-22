@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教學：動態匯費設定 - StockKeeper</title>
+    <meta name="description" content="StockKeeper 動態匯費設定教學：股利匯費可依時間分段設定，反映券商不同期間調整的匯款手續費，讓歷年股利成本計算更精準。">
+    <link rel="canonical" href="https://www.firefoxinfo.com/tutorials/tutorial_動態匯費設定.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="火狐資訊 StockKeeper">
+    <meta property="og:title" content="教學：動態匯費設定 - StockKeeper">
+    <meta property="og:description" content="股利匯費可依時間分段設定，反映不同期間調整的匯款手續費，歷年成本更精準。">
+    <meta property="og:url" content="https://www.firefoxinfo.com/tutorials/tutorial_動態匯費設定.html">
+    <meta property="og:image" content="https://www.firefoxinfo.com/images/Tutorial/動態匯費設定/Main.png">
+    <meta property="og:locale" content="zh_TW">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="教學：動態匯費設定 - StockKeeper">
+    <meta name="twitter:description" content="股利匯費可依時間分段設定，反映不同期間調整的匯款手續費，歷年成本更精準。">
+    <meta name="twitter:image" content="https://www.firefoxinfo.com/images/Tutorial/動態匯費設定/Main.png">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../FoxInfo.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="../FoxInfo.ico">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <img src="../images/FoxInfo_Big.png" alt="火狐資訊 Logo" class="logo">
+            <h1>火狐資訊 - StockKeeper</h1>
+            <button class="hamburger-menu-toggle" aria-label="Toggle navigation">
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+            </button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="../index.html#intro">回首頁</a></li>
+                    <li><a href="../index.html#features">程式特點</a></li>
+                    <li><a href="../index.html#tutorials">教學</a></li>
+                    <li><a href="../index.html#download">下載</a></li>
+                    <li><a href="../index.html#contact">聯絡方式</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="tutorial-detail-section">
+            <div class="container">
+                <h2>動態匯費設定</h2>
+                <div class="tutorial-content">
+
+                    <p>領取現金股利或現金減資退回款時，券商 / 銀行會收一筆<span class="highlight-field">匯款手續費（匯費）</span>。這筆匯費會因為您的劵商或保管銀行不同而有所差異。<br>
+                        而若是您在持有該支股票期間更換過保管銀行，那匯費金額也有可能會有變動。<br>StockKeeper 支援每檔股票自訂不同時間區間的匯費金額，
+                        讓歷年每一筆股利的成本計算都更貼近實際。
+                        </p>
+                   
+
+                    <h3>1、從哪裡進入設定</h3>
+                    <p>開啟上方<span class="highlight-field-blue">各項計算設定</span>，
+                        往下捲動找到<span class="highlight-field-blue">股利匯費設定</span>區塊。</p>
+                    <p>● 在輸入框輸入<span class="highlight-field">股票代碼或名稱</span>，按
+                        <span class="highlight-field-blue">新增股票</span>，即可為該檔建立匯費設定。</p>
+                    <p>● 已建立的股票會列在下方清單，點右側的<span class="highlight-field-blue">編輯</span>（鉛筆）可修改、
+                        <span class="highlight-field-blue">刪除</span>（垃圾桶）可移除。</p>
+                    <p>● <span class="highlight-field">沒有特別設定的股票，匯費一律預設為 10 元。</span></p>
+                    <img src="../images/Tutorial/動態匯費設定/操作入口.png" alt="各項計算設定中的股利匯費設定區塊" class="content-image">
+
+                    <h3>2、只收固定匯費的情況</h3>
+                    <p>若某檔股票的匯費長期都一樣（例如固定 5 元），
+                        只要在區間設定裡填<span class="highlight-field">一個金額</span>即可，
+                        清單會直接顯示該金額（如 <span class="highlight-field-blue">$5</span>）。</p>
+
+                    <h3>3、設定隨時間變動的匯費</h3>
+                    <p>當匯費在某個時間點調整過，就用<span class="highlight-field-blue">分段</span>來表達。
+                        重點只有一個觀念：</p>
+                    <p>● <span class="highlight-field">分隔日 = 新費率生效的第一天</span>，
+                        上一段就結束在分隔日的<span class="highlight-field">前一天</span>。</p>
+                    <p>操作方式：在區間設定對話框按 <span class="highlight-field-blue">+ 新增分段</span> 會多出一個
+                        <span class="highlight-field-blue">分隔日</span>與一個<span class="highlight-field-blue">金額</span>；
+                        設定各段金額、並選好分隔日期即可。要移除某個切點，按該分隔日旁的
+                        <span class="highlight-field-blue">刪除此分隔日</span>，前後兩段會自動合併。</p>
+                    <p>下圖範例：<span class="highlight-field">2022-09-01</span> 起匯費由 10 元改為 5 元
+                        —— 填兩個金額 <span class="highlight-field-blue">10</span>、<span class="highlight-field-blue">5</span>，
+                        分隔日選 <span class="highlight-field-blue">2022-09-01</span>。
+                        系統即認定 2022-08-31（含）以前算 10 元，2022-09-01（含）以後算 5 元。</p>
+                    <img src="../images/Tutorial/動態匯費設定/區間設定_兩段.png" alt="兩段式匯費區間設定" class="content-image">
+                    <p>需要更多轉折就繼續<span class="highlight-field-blue">新增分段</span>。
+                        下圖為三段：10 元 →（2022-09-01）→ 5 元 →（2026-09-01）→ 0 元。</p>
+                    <img src="../images/Tutorial/動態匯費設定/區間設定_三段.png" alt="三段式匯費區間設定" class="content-image">
+
+                    <h3>4、清單怎麼看</h3>
+                    <p>設定完成後，清單會用 <span class="highlight-field-blue">$10 | $5 | $0(目前)</span> 這樣的方式，
+                        依時間先後把各段金額<span class="highlight-field">由早到晚</span>列出，
+                        並在<span class="highlight-field">目前生效</span>的那一段標上
+                        <span class="highlight-field-blue">(目前)</span>，一眼就能確認現在套用的是哪個費率。</p>
+                    <img src="../images/Tutorial/動態匯費設定/列表顯示.png" alt="匯費清單多段顯示" class="content-image">
+
+                    <h3>5、每筆股利用哪一天的費率</h3>
+                    <p>● <span class="highlight-field">現金股利</span>：以<span class="highlight-field-blue">現金股利發放日</span>
+                        （實際入帳扣費的時間點）決定套用哪一段匯費；若該筆沒有發放日資料（例如手動輸入的股利），
+                        則改用<span class="highlight-field-blue">除權息日</span>。</p>
+                    <p>● <span class="highlight-field">現金減資退回款</span>：以<span class="highlight-field-blue">減資日</span>決定，
+                        且與現金股利<span class="highlight-field">共用同一組</span>時間區間設定。</p>
+
+                </div>
+                <a href="../index.html#tutorials" class="button primary-button back-to-tutorials">返回教學列表</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 火狐資訊. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

@@ -1,108 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>教學：指定賣出批次 - StockKeeper</title>
-    <meta name="description" content="StockKeeper 指定賣出批次教學：跳脫先買先賣（FIFO）預設，手動挑選這次要出清哪些買進批次，讓帳面損益與券商對帳單一致、掌控已實現損益、方便稅務規劃。">
-    <link rel="canonical" href="https://www.firefoxinfo.com/tutorials/tutorial_指定賣出批次.html">
-
-    <meta property="og:type" content="article">
-    <meta property="og:site_name" content="火狐資訊 StockKeeper">
-    <meta property="og:title" content="教學：指定賣出批次 - StockKeeper">
-    <meta property="og:description" content="跳脫先買先賣（FIFO）預設，手動挑選要出清哪些買進批次，讓帳面損益與券商對帳單一致。">
-    <meta property="og:url" content="https://www.firefoxinfo.com/tutorials/tutorial_指定賣出批次.html">
-    <meta property="og:image" content="https://www.firefoxinfo.com/images/Tutorial/指定賣出批次/Main.png">
-    <meta property="og:locale" content="zh_TW">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="教學：指定賣出批次 - StockKeeper">
-    <meta name="twitter:description" content="跳脫先買先賣（FIFO）預設，手動挑選要出清哪些買進批次，讓帳面損益與券商對帳單一致。">
-    <meta name="twitter:image" content="https://www.firefoxinfo.com/images/Tutorial/指定賣出批次/Main.png">
-
-    <link rel="stylesheet" href="../style.css">
-    <link rel="icon" href="../FoxInfo.svg" type="image/svg+xml">
-    <link rel="shortcut icon" href="../FoxInfo.ico">
+  <meta charset="UTF-8">
+  <title>教學已搬家 - StockKeeper</title>
+  <link rel="canonical" href="https://www.firefoxinfo.com/StockKeeper/tutorials/tutorial_指定賣出批次.html">
+  <meta http-equiv="refresh" content="0; url=/StockKeeper/tutorials/tutorial_指定賣出批次.html">
+  <script>window.location.replace("/StockKeeper/tutorials/tutorial_指定賣出批次.html");</script>
+  <link rel="icon" href="/FoxInfo.svg" type="image/svg+xml">
 </head>
-
 <body>
-    <header>
-        <div class="container">
-            <img src="../images/FoxInfo_Big.png" alt="火狐資訊 Logo" class="logo">
-            <h1>火狐資訊 - StockKeeper</h1>
-            <button class="hamburger-menu-toggle" aria-label="Toggle navigation">
-                <span class="hamburger-icon"></span>
-                <span class="hamburger-icon"></span>
-                <span class="hamburger-icon"></span>
-            </button>
-            <nav id="main-nav">
-                <ul>
-                    <li><a href="../index.html#intro">回首頁</a></li>
-                    <li><a href="../index.html#features">程式特點</a></li>
-                    <li><a href="../index.html#tutorials">教學</a></li>
-                    <li><a href="../index.html#download">下載</a></li>
-                    <li><a href="../index.html#contact">聯絡方式</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <section class="tutorial-detail-section">
-            <div class="container">
-                <h2>指定賣出批次 <span class="feature-badge" style="margin-left:6px;">v3.5.0 新增</span></h2>
-                <div class="tutorial-content">
-
-                    <p>同一檔股票，你可能在不同時間、不同價格分批買進。
-                        一般記帳軟體賣出時預設用<span class="highlight-field">先買先賣（FIFO）</span>自動扣庫存。<br>
-                        「指定賣出批次」讓你手動指定這次要賣出的是哪些買進批次
-                        —— 依<span class="highlight-field-blue">買進日期 + 買進價格</span>挑選，還能決定每個批次各賣幾股。</p>
-
-                    <h3>1、什麼時候會用到？</h3>
-                    <p>● <strong>對齊券商實際成交</strong>：券商有時不是純先買先賣，指定批次可讓你的帳面損益與<span class="highlight-field-blue">對帳單一致</span>。</p>
-                    <p>● <strong>掌控已實現損益</strong>：想實現獲利或認列虧損時，自己選要賣<span class="highlight-field-blue">高成本</span>或<span class="highlight-field-blue">低成本</span>的批次。</p>
-                    <p>● <strong>稅務 / 報表規劃</strong>：精準控制每次賣出對應的成本，讓損益數字符合你的規劃。</p>
-
-                    <h3>2、開啟指定賣出批次視窗</h3>
-                    <p>新增一筆<span class="highlight-field-blue">普通賣出</span>時，點旁邊的<span class="highlight-field">小按鈕</span>就會開啟「指定賣出批次」頁面。</p>
-                    <img src="../images/Tutorial/指定賣出批次/開啟按鈕.png" alt="普通賣出旁邊的指定賣出批次按鈕" class="content-image">
-
-                    <h3>3、挑要賣的批次、填股數</h3>
-                    <p>系統會列出賣出日<span class="highlight-field">之前仍有庫存</span>的所有買進批次，欄位包含
-                        <span class="highlight-field-blue">買進日期</span>、
-                        <span class="highlight-field-blue">每股買價</span>、
-                        <span class="highlight-field-blue">可用股數</span>。
-                        在各批次的「本次賣出」欄填入這次要賣掉的股數即可。</p>
-                    <img src="../images/Tutorial/指定賣出批次/批次列表.png" alt="指定賣出批次視窗列出所有可用批次" class="content-image">
-
-                    <p>● <span class="highlight-field">沒有指定的股數會自動以先買先賣扣除</span>，不必每檔都填滿。</p>
-                    <p>● 底部即時顯示「<span class="highlight-field-blue">已指定 X / 總股數，其餘 Y 股走先買先賣</span>」，一眼看清楚剩下多少會走 FIFO。</p>
-                    <p>● 連<span class="highlight-field-blue">股票股利配來的零成本股數</span>也能被指定賣出。</p>
-
-                    <h3>4、指定完後怎麼看</h3>
-                    <p>賣出的那一列會多出一個 <span class="highlight-field-blue">🎯 標記</span>，
-                        滑鼠移上去就會看到這筆賣出<span class="highlight-field">實際用了哪些批次</span>
-                        （買進日期 <strong>@</strong> 每股買價 <strong>×</strong> 股數）。</p>
-                    <img src="../images/Tutorial/指定賣出批次/標記與提示.png" alt="賣出列的 🎯 標記與 hover 顯示的批次組成" class="content-image">
-
-                    <h3>5、雲端 / 單機都會存檔</h3>
-                    <p>不論你用<span class="highlight-field-blue">雲端模式</span>或<span class="highlight-field-blue">單機模式</span>，
-                        指定的批次都會<span class="highlight-field">完整存檔</span>，程式重開後保留原本的指定，不會退回先買先賣。</p>
-
-                </div>
-                <a href="../index.html#tutorials" class="button primary-button back-to-tutorials">返回教學列表</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 火狐資訊. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="../script.js"></script>
+  <p>教學頁已搬至 <a href="/StockKeeper/tutorials/tutorial_指定賣出批次.html">新位置</a>。</p>
 </body>
-
 </html>

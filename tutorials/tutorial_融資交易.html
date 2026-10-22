@@ -1,126 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>教學：融資交易記帳 - StockKeeper</title>
-    <meta name="description" content="StockKeeper 融資交易記帳教學：融資買進、融資賣出、融資現償一次記錄，自動計算融資利息與維持率，報酬率也會反映槓桿的真實結果。">
-    <link rel="canonical" href="https://www.firefoxinfo.com/tutorials/tutorial_融資交易.html">
-
-    <meta property="og:type" content="article">
-    <meta property="og:site_name" content="火狐資訊 StockKeeper">
-    <meta property="og:title" content="教學：融資交易記帳 - StockKeeper">
-    <meta property="og:description" content="融資買進、融資賣出、融資現償一次記錄，自動計算融資利息與維持率。">
-    <meta property="og:url" content="https://www.firefoxinfo.com/tutorials/tutorial_融資交易.html">
-    <meta property="og:image" content="https://www.firefoxinfo.com/images/Tutorial/融資交易/Main.png">
-    <meta property="og:locale" content="zh_TW">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="教學：融資交易記帳 - StockKeeper">
-    <meta name="twitter:description" content="融資買進、融資賣出、融資現償一次記錄，自動計算融資利息與維持率。">
-    <meta name="twitter:image" content="https://www.firefoxinfo.com/images/Tutorial/融資交易/Main.png">
-
-    <link rel="stylesheet" href="../style.css">
-    <link rel="icon" href="../FoxInfo.svg" type="image/svg+xml">
-    <link rel="shortcut icon" href="../FoxInfo.ico">
+  <meta charset="UTF-8">
+  <title>教學已搬家 - StockKeeper</title>
+  <link rel="canonical" href="https://www.firefoxinfo.com/StockKeeper/tutorials/tutorial_融資交易.html">
+  <meta http-equiv="refresh" content="0; url=/StockKeeper/tutorials/tutorial_融資交易.html">
+  <script>window.location.replace("/StockKeeper/tutorials/tutorial_融資交易.html");</script>
+  <link rel="icon" href="/FoxInfo.svg" type="image/svg+xml">
 </head>
-
 <body>
-    <header>
-        <div class="container">
-            <img src="../images/FoxInfo_Big.png" alt="火狐資訊 Logo" class="logo">
-            <h1>火狐資訊 - StockKeeper</h1>
-            <button class="hamburger-menu-toggle" aria-label="Toggle navigation">
-                <span class="hamburger-icon"></span>
-                <span class="hamburger-icon"></span>
-                <span class="hamburger-icon"></span>
-            </button>
-            <nav id="main-nav">
-                <ul>
-                    <li><a href="../index.html#intro">回首頁</a></li>
-                    <li><a href="../index.html#features">程式特點</a></li>
-                    <li><a href="../index.html#tutorials">教學</a></li>
-                    <li><a href="../index.html#download">下載</a></li>
-                    <li><a href="../index.html#contact">聯絡方式</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <section class="tutorial-detail-section">
-            <div class="container">
-                <h2>融資交易記帳 <span class="feature-badge" style="margin-left:6px;">v3.6.0 新增</span></h2>
-                <div class="tutorial-content">
-
-                    <p>有在使用融資的投資人，以往只能把融資當成一般買進來記，借款、利息、維持率都要另外自己算。<br>
-                        StockKeeper 現在可以完整記錄<span class="highlight-field">融資買進</span>、<span class="highlight-field">融資賣出</span>與<span class="highlight-field">融資現償</span>，
-                        自動計算<span class="highlight-field-blue">融資利息</span>與<span class="highlight-field-blue">維持率</span>，損益與報酬率也會反映槓桿的真實結果。</p>
-                    <p>● 融資為<span class="highlight-field-blue">台股</span>專屬功能，美股帳戶不會顯示融資相關選項。</p>
-
-                    <h3>1、融資買進</h3>
-                    <p>新增一筆<span class="highlight-field-blue">普通買進</span>時，勾選下方的「<span class="highlight-field">融資買進</span>」，再選擇輸入方式：</p>
-                    <p>● <strong>融資成數</strong>：例如 6 成，程式依成交價金算出融資金額（以千元為單位無條件捨去）。</p>
-                    <p>● <strong>自備款</strong>：直接輸入自備款金額，其餘為融資金額。</p>
-                    <p>下方會即時顯示<span class="highlight-field-blue">融資金額</span>、<span class="highlight-field-blue">自備款</span>與<span class="highlight-field-blue">持有成本</span>。</p>
-                    <img src="../images/Tutorial/融資交易/融資買進.png" alt="股票交易視窗勾選融資買進" class="content-image">
-                    <p>● 零股交易不可使用融資。</p>
-
-                    <h3>2、融資賣出</h3>
-                    <p>新增<span class="highlight-field-blue">普通賣出</span>時勾選「<span class="highlight-field">融資賣出</span>」。程式會依先買先賣扣除融資部位，並自動計算：</p>
-                    <p>● <strong>償還融資金額</strong>：這次賣出的股數對應的借款。</p>
-                    <p>● <strong>融資利息</strong>：從買進交割日算到賣出交割日。</p>
-                    <p>● <strong>應收付</strong>：賣出淨額 − 償還融資 − 融資利息，和券商交割金額一致。</p>
-
-                    <h3>3、融資現償</h3>
-                    <p>不賣股票、直接用現金還清融資時，點主畫面下方的「<span class="highlight-field">新增融資現償紀錄</span>」。
-                        還清後，那批股票會<span class="highlight-field-blue">轉為現股</span>，利息計入現股的持有成本。</p>
-                    <img src="../images/Tutorial/融資交易/融資現償.png" alt="融資現償視窗" class="content-image">
-                    <p>● 以<span class="highlight-field-blue">張</span>為單位輸入償還張數，視窗會即時顯示償還融資金額、利息與應付金額。</p>
-                    <p>● 點「<span class="highlight-field-blue">指定償還批次</span>」可以挑要還哪幾批；沒有指定的部分依先進先出償還。</p>
-
-                    <h3>4、利息與維持率一目了然</h3>
-                    <p>有融資的股票，總表會用<span class="highlight-field">一列兩行</span>分別顯示「現股 / 融資」的庫存、持有成本、均價、損益與損益平衡價。
-                        持有成本後面的「<span class="highlight-field-blue">貸</span>」是目前的融資借款金額。</p>
-                    <p>上方摘要會顯示<span class="highlight-field-blue">累計融資利息</span>與<span class="highlight-field-blue">整戶維持率</span>，並提示距離追繳還能再跌多少；
-                        總表的「<span class="highlight-field-blue">融資維持率</span>」欄則顯示每一檔各自的維持率（欄位較多時可左右捲動查看）。</p>
-                    <img src="../images/Tutorial/融資交易/庫存表.png" alt="總表顯示現股與融資兩行，以及整戶維持率" class="content-image">
-                    <p>交易明細中，融資賣出與融資現償的利息會顯示在「<span class="highlight-field">手續費 / 交易稅 / 融資利息</span>」欄的第三段。</p>
-                    <img src="../images/Tutorial/融資交易/交易明細.png" alt="交易明細顯示融資買進、融資賣出、融資現償與融資利息" class="content-image">
-
-                    <h3>5、融資利息怎麼算？</h3>
-                    <p>● 利息 ＝ 融資金額 × 年利率 ÷ 365 × 天數，四捨五入到元。</p>
-                    <p>● 天數從<span class="highlight-field-blue">買進交割日（T+2）</span>起算，<span class="highlight-field-blue">算頭不算尾</span>；推算交割日時會自動跳過台股休市日。</p>
-                    <p>● 融資現償時，在交割日當天就還款也會收 1 天利息。</p>
-
-                    <h3>6、融資利率可設時間區間</h3>
-                    <p>在「<span class="highlight-field">各項計算設定</span>」的「融資利率」區塊點「<span class="highlight-field-blue">設定利率區間</span>」，
-                        可以依時間區間設定不同的年利率。券商調整利率時，利息會依各區間<span class="highlight-field-blue">分段計算</span>。</p>
-                    <p>同一個視窗的「未實現損益計算方式」也可以勾選「<span class="highlight-field-blue">扣除融資利息</span>」（預設勾選），讓帳面損益更接近實際出場的結果。</p>
-                    <img src="../images/Tutorial/融資交易/各項計算設定.png" alt="各項計算設定中的融資利率與扣除融資利息" class="content-image">
-
-                    <h3>7、匯入對帳單</h3>
-                    <p>匯入券商對帳單時也支援<span class="highlight-field-blue">融資買進 / 融資賣出</span>，融資的部分可以用「融資成數」或「融資金額」欄位對應。
-                        操作方式請見教學：<a href="tutorial_如何匯入Excel對帳單.html">如何匯入Excel對帳單</a>。</p>
-
-                    <h3>8、報酬率也會納入融資</h3>
-                    <p><span class="highlight-field-blue">年化報酬率（XIRR）</span>會用融資的實際交割現金流計算，
-                        <a href="tutorial_時序列表.html">時序列表</a>與<a href="tutorial_庫存損益走勢圖表.html">庫存損益走勢圖表</a>也都會把融資部位算進去。</p>
-
-                </div>
-                <a href="../index.html#tutorials" class="button primary-button back-to-tutorials">返回教學列表</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 火狐資訊. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="../script.js"></script>
+  <p>教學頁已搬至 <a href="/StockKeeper/tutorials/tutorial_融資交易.html">新位置</a>。</p>
 </body>
-
 </html>
