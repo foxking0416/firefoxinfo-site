@@ -88,8 +88,8 @@
 - 教學截圖用虛構的示範工程產生，不要放真實客戶的工程資料
 
 ### GitHub Release 檔案命名規範
-- Tag: `StockKeeper_v3_5_0`（底線分隔）
-- 檔案: `StockKeeper_v3_5_0.zip`（Windows 免安裝 & Mac）、`StockKeeper_Setup_v3_5_0.exe`（Windows 安裝版）
+- Tag: `StockKeeper_v3_6_0`（底線分隔）
+- 檔案: `StockKeeper_v3_6_0.zip`（Windows 免安裝 & Mac）、`StockKeeper_Setup_v3_6_0.exe`（Windows 安裝版）
 
 ## 部署
 
