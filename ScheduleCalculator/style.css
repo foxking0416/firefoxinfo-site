@@ -414,7 +414,46 @@ section h2::after {
 .download-card-meta {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
+    flex-grow: 1;
+}
+
+.download-card-head .download-card-meta h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.download-card-sub {
+    color: var(--light-text-color);
+    font-size: 0.92em;
+    font-weight: 500;
+}
+
+/* ============================================================
+   雙版本並列（網頁版 + 桌面版）
+   ============================================================ */
+.download-cards-dual {
+    grid-template-columns: 1fr 1fr;
+}
+
+.download-card--web .download-icon-circle {
+    background: rgba(19,164,243,0.18);
+    color: var(--text_highlight-color-blue);
+}
+
+.download-card--web.download-card-primary {
+    background: linear-gradient(160deg, rgba(19,164,243,0.14), rgba(19,164,243,0.02)), linear-gradient(160deg, #1f1f1f, #161616);
+    border-color: rgba(19,164,243,0.4);
+}
+
+.download-card--web.download-card-primary::before {
+    background: linear-gradient(90deg, var(--text_highlight-color-blue), #5ec2ff);
+}
+
+@media (max-width: 820px) {
+    .download-cards-dual {
+        grid-template-columns: 1fr;
+    }
 }
 
 .download-version-pill {

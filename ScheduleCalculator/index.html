@@ -95,12 +95,13 @@
               <li><i class="fa-solid fa-file-pdf"></i> 預計完工表、晴雨表、工期計算表一鍵輸出 Excel / PDF</li>
             </ul>
             <div class="hero-cta">
-              <a href="#download" class="button primary-button hero-cta-primary"><i class="fa-solid fa-download"></i> 下載工期計算工具</a>
+              <a href="https://schedule.firefoxinfo.com/" class="button primary-button hero-cta-primary" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i> 開啟網頁版</a>
+              <a href="#download" class="button primary-button hero-cta-primary"><i class="fa-solid fa-download"></i> 下載 Windows 版</a>
               <a href="#tutorials" class="button hero-cta-secondary"><i class="fa-solid fa-book-open"></i> 看使用教學</a>
             </div>
             <div class="hero-trust">
-              <span><i class="fa-brands fa-windows"></i> Windows</span>
-              <span><i class="fa-solid fa-layer-group"></i> 多工程管理</span>
+              <span><i class="fa-solid fa-globe"></i> 任何瀏覽器</span>
+              <span><i class="fa-brands fa-windows"></i> Windows 10 / 11</span>
               <span><i class="fa-solid fa-cloud"></i> 單機或雲端模式</span>
             </div>
           </div>
@@ -378,22 +379,64 @@
     <section id="download" class="download-section download-section-new">
       <div class="container">
         <div class="download-header">
-          <span class="download-eyebrow"><i class="fa-solid fa-download"></i> 立即下載</span>
-          <h2>下載工期計算工具</h2>
-          <p class="section-lead">完整繁體中文，下載安裝後即可建立第一個工程。</p>
+          <span class="download-eyebrow"><i class="fa-solid fa-circle-play"></i> 立即開始</span>
+          <h2>選擇適合你的版本</h2>
+          <p class="section-lead">兩個版本功能相同、計算結果一致，用同一套 Python 計算引擎。差別只在使用情境。</p>
         </div>
 
-        <div class="download-cards" id="download-cards">
-          <div class="download-card download-card-primary download-single">
+        <div class="download-cards download-cards-dual" id="download-cards">
 
-            <div class="download-single-head">
-              <h3>ScheduleCalculator_v1.0.0</h3>
+          <!-- 網頁版 -->
+          <div class="download-card download-card-primary download-card--web">
+            <div class="download-card-head">
+              <div class="download-icon-circle"><i class="fa-solid fa-globe"></i></div>
+              <div class="download-card-meta">
+                <h3>網頁版</h3>
+                <span class="download-card-sub">任何現代瀏覽器</span>
+              </div>
             </div>
 
             <ul class="download-specs">
-              <li><i class="fa-solid fa-circle-check"></i> 支援 Windows 10 / 11（64-bit）</li>
-              <li><i class="fa-solid fa-circle-check"></i> Windows 安裝版可<span class="highlight-field-blue">自動更新</span>；免安裝版解壓即用</li>
-              <li><i class="fa-solid fa-circle-check"></i> 輸出 PDF 需要電腦有安裝 Microsoft Excel；沒有 Excel 時可輸出 Excel 檔</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>無需安裝</strong>，開啟網址就能用</li>
+              <li><i class="fa-solid fa-circle-check"></i> Google 帳號登入，工程<span class="highlight-field-blue">自動雲端儲存</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> Mac、Linux、ChromeOS 皆可</li>
+              <li><i class="fa-solid fa-circle-check"></i> 輸出 Excel（瀏覽器無法產出 PDF）</li>
+            </ul>
+
+            <ul class="download-platforms">
+              <li class="download-platform-row">
+                <div class="download-platform-icon"><i class="fa-solid fa-globe"></i></div>
+                <a class="download-platform-cta"
+                   href="https://schedule.firefoxinfo.com/"
+                   target="_blank" rel="noopener">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  <span class="download-platform-label">開啟網頁版</span>
+                  <span class="download-platform-badge">免安裝</span>
+                </a>
+              </li>
+            </ul>
+
+            <p class="download-source">
+              <i class="fa-solid fa-shield-halved"></i> 計算在你的瀏覽器執行，資料存入你自己的 Google 帳號雲端
+            </p>
+          </div>
+
+          <!-- 桌面版 -->
+          <div class="download-card download-card-primary download-card--desktop">
+            <div class="download-card-head">
+              <div class="download-icon-circle"><i class="fa-brands fa-windows"></i></div>
+              <div class="download-card-meta">
+                <h3>桌面版</h3>
+                <span class="download-card-sub">Windows 10 / 11（64-bit）</span>
+              </div>
+              <span class="download-version-pill">v1.0.0</span>
+            </div>
+
+            <ul class="download-specs">
+              <li><i class="fa-solid fa-circle-check"></i> 工程檔存在本機，<strong>完全離線可用</strong></li>
+              <li><i class="fa-solid fa-circle-check"></i> 可選單機或雲端模式（Google 登入同步）</li>
+              <li><i class="fa-solid fa-circle-check"></i> 安裝版可<span class="highlight-field-blue">自動更新</span>；免安裝版解壓即用</li>
+              <li><i class="fa-solid fa-circle-check"></i> 輸出 Excel 或 PDF（PDF 需電腦有 Microsoft Excel）</li>
             </ul>
 
             <ul class="download-platforms">
@@ -407,7 +450,6 @@
                   <span class="download-platform-label">下載 Windows 安裝版（可自動更新）</span>
                   <span class="download-platform-badge">推薦</span>
                 </a>
-                <span class="download-version-pill">v1.0.0</span>
               </li>
 
               <li class="download-platform-row" data-platform="windows">
@@ -419,7 +461,6 @@
                   <i class="fa-solid fa-download"></i>
                   <span class="download-platform-label">下載 Windows 免安裝版</span>
                 </a>
-                <span class="download-version-pill">v1.0.0</span>
               </li>
             </ul>
 
@@ -428,8 +469,8 @@
               <a href="https://github.com/foxking0416/ScheduleCalculatorRelease/releases" target="_blank" rel="noopener">GitHub Release</a>
               ── 透明公開，可確認檔案真實性
             </p>
-
           </div>
+
         </div>
 
       </div>
