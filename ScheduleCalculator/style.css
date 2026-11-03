@@ -1825,6 +1825,21 @@ footer {
     margin-right: 8px;
 }
 
+/* 非 Windows 電腦開啟時，Hero「下載 Windows 版」按鈕 disabled 樣式 */
+.hero-cta-primary.is-disabled {
+    background: rgba(255,255,255,0.04);
+    color: var(--light-text-color);
+    border: 1px dashed rgba(255,255,255,0.18);
+    cursor: not-allowed;
+    pointer-events: none;
+    box-shadow: none;
+    font-weight: 600;
+}
+
+.hero-cta-primary.is-disabled i {
+    display: none;
+}
+
 .hero-cta-secondary {
     padding: 15px 28px;
     font-size: 1.05em;

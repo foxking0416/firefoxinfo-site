@@ -96,7 +96,10 @@
             </ul>
             <div class="hero-cta">
               <a href="https://schedule.firefoxinfo.com/" class="button primary-button hero-cta-primary" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i> 開啟網頁版</a>
-              <a href="#download" class="button primary-button hero-cta-primary"><i class="fa-solid fa-download"></i> 下載 Windows 版</a>
+              <a href="#download" class="button primary-button hero-cta-primary"
+                 data-platform="windows"
+                 data-active-label="下載 Windows 版"
+                 data-disabled-label="請用 Windows 電腦下載"><i class="fa-solid fa-download"></i> <span class="hero-cta-label">下載 Windows 版</span></a>
               <a href="#tutorials" class="button hero-cta-secondary"><i class="fa-solid fa-book-open"></i> 看使用教學</a>
             </div>
             <div class="hero-trust">
@@ -512,29 +515,41 @@
 
   <script src="script.js"></script>
 
-  <!-- 下載區：只有 Windows 版，非 Windows 電腦以 disabled 提示 -->
+  <!-- Windows 版按鈕：非 Windows 電腦以 disabled 提示（下載區 + Hero CTA） -->
   <script>
     (function () {
-      const rows = document.querySelectorAll('.download-platform-row[data-platform]');
-      if (!rows.length) return;
-
       const ua = navigator.userAgent || '';
       const platform = (navigator.userAgentData && navigator.userAgentData.platform) || '';
       const isMobile = /iPad|iPhone|iPod|Android/i.test(ua) || (/Mac/.test(ua) && navigator.maxTouchPoints > 1);
       const isWindows = /Win/i.test(platform) || /Windows/.test(ua);
       const activePlatform = (!isMobile && isWindows) ? 'windows' : null;
 
-      rows.forEach(row => {
+      // 下載區：.download-platform-row[data-platform] 內的 CTA
+      document.querySelectorAll('.download-platform-row[data-platform]').forEach(row => {
         const cta = row.querySelector('.download-platform-cta');
+        if (!cta) return;
         const label = cta.querySelector('.download-platform-label');
         if (row.dataset.platform === activePlatform) {
-          label.textContent = cta.dataset.activeLabel;
+          if (label) label.textContent = cta.dataset.activeLabel;
           return;
         }
         cta.classList.add('is-disabled');
         cta.setAttribute('aria-disabled', 'true');
         cta.removeAttribute('href');
-        label.textContent = cta.dataset.disabledLabel;
+        if (label) label.textContent = cta.dataset.disabledLabel;
+      });
+
+      // Hero CTA：.hero-cta a[data-platform]
+      document.querySelectorAll('.hero-cta a[data-platform]').forEach(cta => {
+        const label = cta.querySelector('.hero-cta-label');
+        if (cta.dataset.platform === activePlatform) {
+          if (label && cta.dataset.activeLabel) label.textContent = cta.dataset.activeLabel;
+          return;
+        }
+        cta.classList.add('is-disabled');
+        cta.setAttribute('aria-disabled', 'true');
+        cta.removeAttribute('href');
+        if (label && cta.dataset.disabledLabel) label.textContent = cta.dataset.disabledLabel;
       });
     })();
   </script>
