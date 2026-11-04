@@ -1863,6 +1863,34 @@ footer {
     font-size: 0.92em;
 }
 
+/* 開發中提示（下載按鈕隱藏時出現在 Hero CTA 下方） */
+.hero-wip-notice {
+    display: block;
+    margin: -14px 0 24px;
+    padding: 12px 16px;
+    background: rgba(247,127,0,0.06);
+    border-left: 3px solid rgba(247,127,0,0.6);
+    color: var(--light-text-color);
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+.hero-wip-notice i {
+    color: var(--primary-color);
+    margin-right: 6px;
+}
+
+.hero-wip-notice a {
+    color: var(--primary-color);
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(247,127,0,0.5);
+}
+
+.hero-wip-notice a:hover {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
 .hero-trust span {
     display: inline-flex;
     align-items: center;
